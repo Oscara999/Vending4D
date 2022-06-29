@@ -615,6 +615,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf01ed3b51f729e41836d0beb5e1dda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLineRutine: {fileID: 0}
+  currentState: {fileID: 0}
   movimiento: {fileID: 2083705563}
 --- !u!114 &28913241
 MonoBehaviour:
@@ -986,7 +988,7 @@ RectTransform:
   - {fileID: 1659533092}
   - {fileID: 663752794}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1271,7 +1273,7 @@ Transform:
   - {fileID: 1599472226}
   - {fileID: 1412047818}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254121740
 GameObject:
