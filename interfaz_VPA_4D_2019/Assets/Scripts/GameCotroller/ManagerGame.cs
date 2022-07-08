@@ -22,7 +22,6 @@ public class ManagerGame : Singleton<ManagerGame>
 
     void Update()
     {
-
         if (Player.Instance.IsActivate)
         {
             HandsState();
@@ -68,10 +67,10 @@ public class ManagerGame : Singleton<ManagerGame>
         //Debug.Log("2");
         Player.Instance.movimiento.CrossFireState(true);
         //Debug.Log("3");
-        //Enemy.Instance.IsActivate = true;
-        ////Enemy.Instance.ChageStateAnimation();
-        //inProcess = true;
-        //timer.StartTimer();
+        Enemy.Instance.IsActivate = true;
+        //Enemy.Instance.ChageStateAnimation();
+        inProcess = true;
+        timer.StartTimer();
     }
 
     public void PauseGame()

@@ -6,8 +6,10 @@ public class StatesManager : Singleton<StatesManager>
 {
     public TimeLineRutine timeLineRutine;
     public State currentState;
-
+    public bool isThereSomeone;
     public Movimiento_UI_Control_Juego movimiento;
+    public UIController uIController;
+    LedsController ledsController;
 
     void Start()
     {
@@ -22,10 +24,10 @@ public class StatesManager : Singleton<StatesManager>
 
     void FixedUpdate()
     {
-        HandleCurrentState();
+        HandleStateMachine();
     }
 
-    void HandleCurrentState()
+    void HandleStateMachine()
     {
         if (currentState != null)
         {
@@ -50,7 +52,7 @@ public class StatesManager : Singleton<StatesManager>
 
     void SwitchToNextState(State state)
     {
-
+        currentState = state;
     }
 
     public void ChangeTimeLine()

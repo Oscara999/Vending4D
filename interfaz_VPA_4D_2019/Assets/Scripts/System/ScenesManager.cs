@@ -84,7 +84,7 @@ public class ScenesManager : Singleton<ScenesManager>
         }
 
 
-        LoadLevel("Test3");
+        LoadLevel(mainLevel);
     }
 
     /// <summary>
@@ -174,15 +174,13 @@ public class ScenesManager : Singleton<ScenesManager>
 
         switch (CurrentLevelName)
         {
-            case "Escena_2":
+            case "TestMenu 1":
                 ManagerSound.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
-                ManagerSound.Instance.PlayNewSound("BackGroundMainManu");
-                //ManagerSound.Instance.RandomBackGroundSound();
                 break;
 
             case "Test3":
                 ManagerSound.Instance.CreateSoundsLevel(MusicLevel.GAME);
-                //ManagerSound.Instance.PlayNewSound("BackgroundGame");
+                ManagerSound.Instance.PlayNewSound("BackgroundGame");
                 //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
                 break;
         }
@@ -235,6 +233,7 @@ public class ScenesManager : Singleton<ScenesManager>
             yield return new WaitUntil(() => ao.progress.Equals(0.9f));
             slider.value = 1f; 
             ao.allowSceneActivation = true;
+            yield return new WaitForSeconds(2f);
             systemPrefabs[1].SetActive(false);
         }
     }

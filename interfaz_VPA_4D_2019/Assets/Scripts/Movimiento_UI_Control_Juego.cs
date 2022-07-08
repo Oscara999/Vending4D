@@ -16,6 +16,7 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
     public Selected selected;
     public GameObject crossFire; 
     public Ray ray;
+    public Camera positionReferenceCamera;
 
     public void CrossFireState(bool isSelected)
     {
@@ -37,13 +38,22 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
         }
 
         RaycastHit hit;
+
         ray = Camera.main.ScreenPointToRay(crossFire.transform.position);
 
-        //Vector3 handPostition = HandModelBase.GetPalmDirection();
+
         Vector3 handPostition = HandModelBase.GetPalmDirection();
 
-        ScreenXy = Camera.main.WorldToScreenPoint(handPostition * speed);
-        //crossFire.transform.position = new Vector3(ScreenXy.x, ScreenXy.y, crossFire.transform.position.z);
+        if (kindScene == kindScene.Game)
+        {
+            ScreenXy = Camera.main.WorldToScreenPoint(handPostition * speed);
+        }
+        else
+        {
+            ScreenXy = positionReferenceCamera.WorldToScreenPoint(handPostition * speed);
+        }
+
+        crossFire.transform.position = new Vector3(ScreenXy.x, ScreenXy.y, crossFire.transform.position.z);
 
         Debug.DrawRay(ray.origin, ray.direction * 30f, Color.red);
 
