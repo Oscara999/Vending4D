@@ -9,7 +9,8 @@ using System.Collections;
 
 public class UIController : MonoBehaviour
 {
-    public Movimiento_UI_Control_Juego move;
+    public bool enabledMovement;
+    public Movimiento_UI_Control_Juego movimiento;
     [SerializeField]
     PlayerInput playerInput;
     [SerializeField]
@@ -67,7 +68,7 @@ public class UIController : MonoBehaviour
         mainPanel.SetActive(true);
         
         yield return new WaitForSeconds(10f);
-        ManagerSound.Instance.PlayNewSound("SelectedFinish");
+        SoundManager.Instance.PlayNewSound("SelectedFinish");
         
         yield return new WaitForSeconds(2f);
         ScenesManager.Instance.LoadLevel("Test3");
@@ -85,10 +86,11 @@ public class UIController : MonoBehaviour
     }
     void UpdateMotion()
     {
-        if (virtualMouse == null)
+        if (virtualMouse == null && !enabledMovement)
             return;
-
-        Vector2 deltaValue = move.ScreenXy;
+        
+        movimiento.Selected();
+        Vector2 deltaValue = movimiento.ScreenXy;
         Vector2 currentPosition = Vector3.zero; 
         Vector2 newPosition = currentPosition + deltaValue;
 

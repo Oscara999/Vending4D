@@ -64,7 +64,7 @@ public class Player : Singleton<Player>
 
         if (!isImmune && lifes != 0)
         {
-            ManagerSound.Instance.PlayNewSound(Player.Instance.fx_Sound[0].name);
+            SoundManager.Instance.PlayNewSound(Player.Instance.fx_Sound[0].name);
             lifes--;
         }
 

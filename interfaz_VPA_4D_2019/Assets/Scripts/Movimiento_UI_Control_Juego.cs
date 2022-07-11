@@ -118,7 +118,7 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
 
     void EditBulletSelected(EnemyBullet bulletEnemy, int index, bool state)
     {
-        ManagerSound.Instance.PlayNewSound(Player.Instance.fx_Sound[index].name);
+        SoundManager.Instance.PlayNewSound(Player.Instance.fx_Sound[index].name);
         StartCoroutine(ChangeColor());
         bulletEnemy.uiSelected.SetActive(state);
         bulletEnemy.selected = state;

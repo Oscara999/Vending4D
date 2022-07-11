@@ -73,7 +73,8 @@ public class ScenesManager : Singleton<ScenesManager>
 
         for (int i = 0; i < systemPrefabs.Count; i++)
         {
-            if (systemPrefabs[i].name.Equals("ManagerBaseData") || systemPrefabs[i].name.Equals("ManagerSound"))
+            if (systemPrefabs[i].name.Equals("BaseDataManager") || systemPrefabs[i].name.Equals("SoundManager") 
+                || systemPrefabs[i].name.Equals("StatesManager"))
             {
                 systemPrefabs[i].SetActive(true);
             }
@@ -170,17 +171,18 @@ public class ScenesManager : Singleton<ScenesManager>
         if (_lastLevelName != "")
             UnLoadLevel(_lastLevelName);
 
-        ManagerSound.Instance.DeleteSoundsLevel();
+        SoundManager.Instance.DeleteSoundsLevel();
 
         switch (CurrentLevelName)
         {
-            case "TestMenu 1":
-                ManagerSound.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
+            case "TestMenu":
+                SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
+                //systemPrefabs[4].SetActive(true);
                 break;
 
             case "Test3":
-                ManagerSound.Instance.CreateSoundsLevel(MusicLevel.GAME);
-                ManagerSound.Instance.PlayNewSound("BackgroundGame");
+                SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
+                SoundManager.Instance.PlayNewSound("BackgroundGame");
                 //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
                 break;
         }
@@ -200,9 +202,7 @@ public class ScenesManager : Singleton<ScenesManager>
     public void Pause()
     {
         is_pause = !is_pause;
-        Debug.Log("Secreo");
-        ManagerSound.Instance.PauseAllSounds(is_pause);
-        Debug.Log("sadasdas");
+        SoundManager.Instance.PauseAllSounds(is_pause);
         systemPrefabs[0].SetActive(is_pause);
 
         if (is_pause)
@@ -228,8 +228,6 @@ public class ScenesManager : Singleton<ScenesManager>
         while(ao.isDone == false)
         {
             slider.value = ao.progress;
-            Debug.Log(slider.value);
-            
             yield return new WaitUntil(() => ao.progress.Equals(0.9f));
             slider.value = 1f; 
             ao.allowSceneActivation = true;

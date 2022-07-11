@@ -157,13 +157,13 @@ public class Enemy : Singleton<Enemy>
         spawns.Add(test);
         test.GetComponent<EnemyBullet>().SetTarget(Player.Instance.transform.position);
         test.GetComponent<EnemyBullet>().SetLookTarget(ray.origin);
-        ManagerSound.Instance.PlayNewSound(fx_Sound[0].name);
+        SoundManager.Instance.PlayNewSound(fx_Sound[0].name);
     }
 
     public void AttackGround()
     {
         QTEManager.Instance.startEvent(eventQTE);
-        ManagerSound.Instance.PlayNewSound(ManagerSound.Instance.songs[0].name);
+        SoundManager.Instance.PlayNewSound(SoundManager.Instance.songs[0].name);
     }
 
     public void ChageStateAnimation()
@@ -182,7 +182,7 @@ public class Enemy : Singleton<Enemy>
 
         if (state)
         {
-            ManagerSound.Instance.EndSound(ManagerSound.Instance.songs[0].name);
+            SoundManager.Instance.EndSound(SoundManager.Instance.songs[0].name);
         }
     }
 

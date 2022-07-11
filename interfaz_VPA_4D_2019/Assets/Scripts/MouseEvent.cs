@@ -13,13 +13,13 @@ public class MouseEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerEnter(PointerEventData eventData)
     {
         Change(selectedColor);
-        ManagerSound.Instance.PlayNewSound("SelectedQuest");
+        SoundManager.Instance.PlayNewSound("SelectedQuest");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         Change(normalColor);
-        ManagerSound.Instance.PlayNewSound("SelectedQuest");
+        SoundManager.Instance.PlayNewSound("SelectedQuest");
     }
 
     void Change(Color newColor)

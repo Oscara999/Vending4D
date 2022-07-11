@@ -14,7 +14,7 @@ public class ControllerSettings : MonoBehaviour
     void Start()
     {
         float valueVolumen;
-        ManagerSound.Instance.audioMixer.GetFloat(Tags.VOLUMENMASTER_TAG, out valueVolumen);
+        SoundManager.Instance.audioMixer.GetFloat(Tags.VOLUMENMASTER_TAG, out valueVolumen);
         sliderVoluemSettings.value = valueVolumen;
         SetQualitySettings(valueQuality);
         Debug.Log(valueVolumen);
@@ -35,7 +35,7 @@ public class ControllerSettings : MonoBehaviour
     /// <param name="value">Numero de volumen que queremos cambiar.</param>
     public void SetVolumenSettings(float value)
     {
-        ManagerSound.Instance.SetVolume(value);
+        SoundManager.Instance.SetVolume(value);
     }
 
     /// <summary>

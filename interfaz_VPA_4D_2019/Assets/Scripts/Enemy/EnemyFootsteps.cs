@@ -46,7 +46,7 @@ public class EnemyFootsteps : MonoBehaviour
 
         if(accumulated_Distance > stepDistance)
         { 
-            ManagerSound.Instance.PlayNewSound(footstepProvisional_Sound[index].name);
+            SoundManager.Instance.PlayNewSound(footstepProvisional_Sound[index].name);
             index = (index + 1) % footstepProvisional_Sound.Length;
             accumulated_Distance = 0f;
         }

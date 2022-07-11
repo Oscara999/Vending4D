@@ -14,7 +14,7 @@ public class EnemyCollisionDetected : MonoBehaviour
         if (other.gameObject.tag == "Projectile")
         {
             Destroy(other.gameObject);
-            ManagerSound.Instance.PlayNewSound(Enemy.Instance.fx_Sound[1].name);
+            SoundManager.Instance.PlayNewSound(Enemy.Instance.fx_Sound[1].name);
             Enemy.Instance.GetDamage(damage);
         }
     }
