@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class StatesManager : Singleton<StatesManager>
 {
-    public State currentState;
     public LedsController ledsController;
     
+    [SerializeField] 
+    GameObject valuePanel;
+    [SerializeField]
+    State currentState;
+    [SerializeField]
     TimeLineRutine timeLineRutine;
+
+    [Header("Stats Settings")]
     [SerializeField]
     bool isThereSomeone;
+    [SerializeField]
+    bool paymentMade;
+    [SerializeField]
+    int repeatShowPanel;
+    [SerializeField]
     int coins;
 
+    
     public int Coins { get => coins; set => coins = value; }
     public bool IsThereSomeone { get => isThereSomeone; set => isThereSomeone = value; }
     public TimeLineRutine TimeLineRutine { get => timeLineRutine; set => timeLineRutine = value; }
+    public bool PaymentMade { get => paymentMade; set => paymentMade = value; }
+    public int RepeatShowPanel { get => repeatShowPanel; set => repeatShowPanel = value; }
 
     void Start()
     {
@@ -33,6 +47,9 @@ public class StatesManager : Singleton<StatesManager>
 
     void HandleStateMachine()
     {
+        if (ScenesManager.Instance.systemPrefabs[1].activeInHierarchy)
+            return;
+        
         if (currentState != null)
         {
             State nextState = currentState.Tick();
@@ -49,11 +66,6 @@ public class StatesManager : Singleton<StatesManager>
 
     }
 
-    public void LightsUpdate()
-    {
-
-    }
-
     void SwitchToNextState(State state)
     {
         currentState = state;
@@ -65,6 +77,21 @@ public class StatesManager : Singleton<StatesManager>
         {
 
         }
+    }
+
+    public IEnumerator ShowValuePanel(float startTime, float waitTime, float endTime)
+    {
+        yield return new WaitForSeconds(startTime);
+        
+        while (repeatShowPanel > 0)
+        {
+            valuePanel.SetActive(true);
+            yield return new WaitForSeconds(waitTime);
+            valuePanel.SetActive(false);
+            yield return new WaitForSeconds(endTime);
+            repeatShowPanel--;
+        }        
+        Debug.Log(1230);
     }
 
     public void Segregation()

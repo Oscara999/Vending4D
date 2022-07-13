@@ -84,8 +84,7 @@ public class ScenesManager : Singleton<ScenesManager>
             }
         }
 
-
-        LoadLevel(mainLevel);
+       LoadLevel(mainLevel);
     }
 
     /// <summary>
@@ -177,7 +176,6 @@ public class ScenesManager : Singleton<ScenesManager>
         {
             case "TestMenu":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
-                //systemPrefabs[4].SetActive(true);
                 break;
 
             case "Test3":

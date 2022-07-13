@@ -10,18 +10,20 @@ public class ReposeState : State
     public VideoClip[] videos;
     public int currentVideoIndex;
 
-
-    void Start()
+    void StartMachine()
     {
-        demoPanel.SetActive(true);
+        StatesManager.Instance.RepeatShowPanel = 3;
+        StartCoroutine(StatesManager.Instance.ShowValuePanel(2f,3f,5f));
+        StatesManager.Instance.ledsController.ramdom = true;
         currentVideoIndex = 0;
         videoPlayer.clip = videos[currentVideoIndex];
+        demoPanel.SetActive(true);
         videoPlayer.Play();
     }
 
     public override State Tick()
     {
-        if (StatesManager.Instance.IsThereSomeone == false)
+        if (!StatesManager.Instance.IsThereSomeone)
         {
             Check();
             return this;
@@ -37,26 +39,9 @@ public class ReposeState : State
     {
         if (!demoPanel.activeInHierarchy)
         {
-            Start();
+            StartMachine();
         }
-        
-        //validar el sensor de que alguien entra a la maquina
-        //mostrar videos 
-        ChangeVideo();
-        //Camiar color leds
-        // activar letrero de precio
-    }
 
-    void ExitState()
-    {
-        demoPanel.SetActive(false);
-        videoPlayer.Stop();
-        SoundManager.Instance.PlayNewSound("BackGroundMainManu");
-        StartCoroutine(SceneController.Instance.uIController.StartTimer());
-    }
-
-    void ChangeVideo()
-    {
         if (videoPlayer.clip != null && !videoPlayer.isPlaying)
         {
             if (currentVideoIndex == videos.Length - 1)
@@ -69,9 +54,32 @@ public class ReposeState : State
                 currentVideoIndex++;
             }
 
+            switch (currentVideoIndex)
+            {
+                case 0:
+                    StatesManager.Instance.RepeatShowPanel = 3;
+                    StartCoroutine(StatesManager.Instance.ShowValuePanel(2f, 3f, 5f));
+                    break;
+                
+                case 1:
+                    StatesManager.Instance.RepeatShowPanel = 2;
+                    StartCoroutine(StatesManager.Instance.ShowValuePanel(2f, 3f, 5f));
+                    break;
+            }
+
             videoPlayer.clip = videos[currentVideoIndex];
             videoPlayer.Play();
-            //Segregar olor
         }
     }
+
+    void ExitState()
+    {
+        demoPanel.SetActive(false);
+        videoPlayer.Stop();
+        SoundManager.Instance.PlayNewSound("BackGroundMainManu");
+        StatesManager.Instance.ledsController.ramdom = false;
+        StartCoroutine(SceneController.Instance.uIController.StartTimer());
+    }
+
+
 }

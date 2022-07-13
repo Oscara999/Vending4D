@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3468857121131270867}
-  - component: {fileID: 3925847197989467823}
+  - component: {fileID: 1278497065}
   m_Layer: 0
   m_Name: ScenesManager
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3925847197989467823
+--- !u!114 &1278497065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5964097120855639420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10270b68f11fc6f47b94d8faa270c367, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dc3791871557a54d92670d7335b4aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   systemPrefabs:
@@ -48,5 +48,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   is_pause: 0
-  mainLevel: MainMenu
+  mainLevel: TestMenu

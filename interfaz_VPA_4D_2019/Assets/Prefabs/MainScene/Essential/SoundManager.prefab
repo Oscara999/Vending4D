@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5520455910809952965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5520455910809952987}
+  - component: {fileID: 8377854326343486382}
+  - component: {fileID: 390729616}
+  m_Layer: 0
+  m_Name: ManagerSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5520455910809952987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520455910809952965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &8377854326343486382
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520455910809952965}
+  m_Enabled: 1
+--- !u!114 &390729616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520455910809952965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee2b05107295634bbf8b97254595c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteButton: {fileID: 0}
+  mute: 0
+  songIcons: []
+  audioMixer: {fileID: 24100000, guid: d743c5bffc67c854eab99090a46a760c, type: 2}
+  songs:
+  - {fileID: 11400000, guid: 68e2b9a4571b35048a4478d920157a62, type: 2}
+  - {fileID: 11400000, guid: 5556d3b7c9f558c41a7be49a141ff6c6, type: 2}
+  - {fileID: 11400000, guid: cd44fcd881132094eb7ce2ed369c13e7, type: 2}
+  - {fileID: 11400000, guid: 52d36f06c2d35ff458b11d603b712f27, type: 2}
+  - {fileID: 11400000, guid: b53a5ee8163ad3543bdf6f6043866974, type: 2}
+  - {fileID: 11400000, guid: 958c2e8c492796e438b9550979ecc5a2, type: 2}
+  - {fileID: 11400000, guid: bfa7e995e6ca67a459f08344bc7db187, type: 2}
+  - {fileID: 11400000, guid: d2421621bd7914b4bb136271a7d681e3, type: 2}
+  - {fileID: 11400000, guid: 4d75a8c4464309945a3a8dac2d8d89ca, type: 2}
+  - {fileID: 11400000, guid: 264bd7dcf815d3c4791bb2a4c04fc429, type: 2}
+  - {fileID: 11400000, guid: 24d9c3c0d67b71b419b270bdf0bf6e60, type: 2}
+  - {fileID: 11400000, guid: 8e92b21a07efc1c45b193fee4b93e4b6, type: 2}
+  - {fileID: 11400000, guid: 455d068e164e2004d8280076d9907a9f, type: 2}
+  - {fileID: 11400000, guid: 8e78bcb14e3cb9843b19de15154dfc20, type: 2}
+  - {fileID: 11400000, guid: 7c06213cc411a994e99a587570e39213, type: 2}
+  - {fileID: 11400000, guid: 111b657fbbfb70645bf70199fa67f240, type: 2}
+  - {fileID: 11400000, guid: 8c3017b14b7af6446a63dc1326d5daa4, type: 2}
+  provicionalLevelSound: []
+  pauseSoundProvicional: []

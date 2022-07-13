@@ -296,7 +296,7 @@ TextureImporter:
         width: 2331
         height: 208
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -304,6 +304,27 @@ TextureImporter:
       bones: []
       spriteID: dd094faea734a1dd0800000000000000
       internalID: -2514623246726033187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface Export_5
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 395
+        width: 1831
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cd82f1ad2628960800000000000000
+      internalID: 7602747809919982673
       vertices: []
       indices: 
       edges: []
