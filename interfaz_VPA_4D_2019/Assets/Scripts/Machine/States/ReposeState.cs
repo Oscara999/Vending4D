@@ -12,7 +12,7 @@ public class ReposeState : State
 
     void StartMachine()
     {
-        StatesManager.Instance.RepeatShowPanel = 3;
+        StatesManager.Instance.StateValuePanel = true;
         StartCoroutine(StatesManager.Instance.ShowValuePanel(2f,3f,5f));
         StatesManager.Instance.ledsController.ramdom = true;
         currentVideoIndex = 0;
@@ -47,6 +47,7 @@ public class ReposeState : State
             if (currentVideoIndex == videos.Length - 1)
             {
                 currentVideoIndex = 0;
+                StatesManager.Instance.Coins++;
                 StatesManager.Instance.Check(true);
             }
             else
@@ -57,12 +58,12 @@ public class ReposeState : State
             switch (currentVideoIndex)
             {
                 case 0:
-                    StatesManager.Instance.RepeatShowPanel = 3;
+                    StatesManager.Instance.StateValuePanel = true;
                     StartCoroutine(StatesManager.Instance.ShowValuePanel(2f, 3f, 5f));
                     break;
                 
                 case 1:
-                    StatesManager.Instance.RepeatShowPanel = 2;
+                    StatesManager.Instance.StateValuePanel = true;
                     StartCoroutine(StatesManager.Instance.ShowValuePanel(2f, 3f, 5f));
                     break;
             }
@@ -74,11 +75,13 @@ public class ReposeState : State
 
     void ExitState()
     {
+        StatesManager.Instance.StateValuePanel = false;
         demoPanel.SetActive(false);
         videoPlayer.Stop();
         SoundManager.Instance.PlayNewSound("BackGroundMainManu");
         StatesManager.Instance.ledsController.ramdom = false;
-        StartCoroutine(SceneController.Instance.uIController.StartTimer());
+        introductionState.inFirstCinematic = true;
+        //StartCoroutine(SceneController.Instance.uIController.StartTimer());
     }
 
 

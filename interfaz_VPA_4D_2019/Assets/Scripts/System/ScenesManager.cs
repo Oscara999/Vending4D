@@ -178,6 +178,10 @@ public class ScenesManager : Singleton<ScenesManager>
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;
 
+            case "IntroduccionMottisTestOscar":
+                SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
+                break;
+
             case "Test3":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
                 SoundManager.Instance.PlayNewSound("BackgroundGame");

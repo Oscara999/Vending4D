@@ -5,7 +5,19 @@ using UnityEngine.Playables;
 
 public class TimeLineRutine : MonoBehaviour
 {
-    public List<PlayableDirector> playableDirectors = new List<PlayableDirector>();
+    [SerializeField]
+    List<PlayableDirector> playableDirectors = new List<PlayableDirector>();
+
+
+    public void SetCinematics(GameObject Container)
+    {
+        playableDirectors.Clear();
+
+        foreach (PlayableDirector playable in Container.GetComponentsInChildren<PlayableDirector>())
+        {
+            playableDirectors.Add(playable);
+        }
+    }
 
     public bool StatePlayable(int index)
     {

@@ -156,6 +156,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2190604849849414641, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: timeLineRutine
+      value: 
+      objectReference: {fileID: 2190604851112203751}
     - target: {fileID: 2190604849849414654, guid: f21a82641291618438f32bdd555fe9bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -213,6 +218,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f21a82641291618438f32bdd555fe9bf, type: 3}
+--- !u!114 &2190604851112203751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4879651314341130316, guid: f21a82641291618438f32bdd555fe9bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2190604851112203750}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7ffe7fbb9c4d748b8c2a8f7f5e4d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2254040994747911160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -474,6 +491,10 @@ PrefabInstance:
       propertyPath: systemPrefabs.Array.data[4]
       value: 
       objectReference: {fileID: 1464854038}
+    - target: {fileID: 1278497065, guid: 93685f976e4877a48a3d6d9e9479a77c, type: 3}
+      propertyPath: mainLevel
+      value: IntroduccionMottisTestOscar
+      objectReference: {fileID: 0}
     - target: {fileID: 3468857121131270867, guid: 93685f976e4877a48a3d6d9e9479a77c,
         type: 3}
       propertyPath: m_LocalPosition.x

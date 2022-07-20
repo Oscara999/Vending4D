@@ -62,7 +62,7 @@ public class UIController : MonoBehaviour
         InputSystem.onAfterUpdate += UpdateMotion;
     }
 
-    public IEnumerator  StartTimer()
+    public IEnumerator StartTimer()
     {
         yield return new WaitForSeconds(5f);
         mainPanel.SetActive(true);

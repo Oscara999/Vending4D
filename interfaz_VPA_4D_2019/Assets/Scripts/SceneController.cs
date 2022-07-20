@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class SceneController : Singleton<SceneController>
 {
-    public TimeLineRutine timeLineRutine;
     public UIController uIController;
-
+    public GameObject timeLines;
 
     void Start()
     {
-        StatesManager.Instance.TimeLineRutine = timeLineRutine;
+        StatesManager.Instance.SetChangeTimeLine(timeLines);
     }
 
     // Update is called once per frame

@@ -1,34 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class StatesManager : Singleton<StatesManager>
 {
+    [Header("Components Settings")]
     public LedsController ledsController;
-    
+    public TimeLineRutine timeLineRutine;
+    [SerializeField]
+    State currentState;
+
+    [Header(" UI Settings")]
     [SerializeField] 
     GameObject valuePanel;
     [SerializeField]
-    State currentState;
-    [SerializeField]
-    TimeLineRutine timeLineRutine;
+    TMP_Text coinsText;
 
     [Header("Stats Settings")]
+    [SerializeField]
+    bool inCinematic;
+
     [SerializeField]
     bool isThereSomeone;
     [SerializeField]
     bool paymentMade;
     [SerializeField]
-    int repeatShowPanel;
+    bool stateValuePanel;
     [SerializeField]
     int coins;
 
     
     public int Coins { get => coins; set => coins = value; }
     public bool IsThereSomeone { get => isThereSomeone; set => isThereSomeone = value; }
-    public TimeLineRutine TimeLineRutine { get => timeLineRutine; set => timeLineRutine = value; }
     public bool PaymentMade { get => paymentMade; set => paymentMade = value; }
-    public int RepeatShowPanel { get => repeatShowPanel; set => repeatShowPanel = value; }
+    public bool StateValuePanel { get => stateValuePanel; set => stateValuePanel = value; }
+    public bool InCinematic { get => inCinematic;}
 
     void Start()
     {
@@ -38,6 +46,11 @@ public class StatesManager : Singleton<StatesManager>
     void Update()
     {
         CoinsValidation();
+    }
+
+    public void StateInCinematic(bool value)
+    {
+        inCinematic = value;
     }
 
     void FixedUpdate()
@@ -63,7 +76,7 @@ public class StatesManager : Singleton<StatesManager>
 
     public void StartGame()
     {
-
+        coins--;
     }
 
     void SwitchToNextState(State state)
@@ -71,11 +84,11 @@ public class StatesManager : Singleton<StatesManager>
         currentState = state;
     }
 
-    public void ChangeTimeLine()
+    public void SetChangeTimeLine(GameObject container)
     {
         if (timeLineRutine != null)
         {
-
+            timeLineRutine.SetCinematics(container);
         }
     }
 
@@ -83,15 +96,13 @@ public class StatesManager : Singleton<StatesManager>
     {
         yield return new WaitForSeconds(startTime);
         
-        while (repeatShowPanel > 0)
+        while (stateValuePanel)
         {
             valuePanel.SetActive(true);
             yield return new WaitForSeconds(waitTime);
             valuePanel.SetActive(false);
             yield return new WaitForSeconds(endTime);
-            repeatShowPanel--;
         }        
-        Debug.Log(1230);
     }
 
     public void Segregation()
@@ -106,9 +117,18 @@ public class StatesManager : Singleton<StatesManager>
 
     public void CoinsValidation()
     {
-        if (coins > 0)
+        if (coins != 0)
         {
+            if (!coinsText.gameObject.activeInHierarchy)
+            {
+                coinsText.gameObject.SetActive(true);
+            }
 
+            coinsText.text = "Coins " + coins.ToString();
+        }
+        else
+        {
+            coinsText.gameObject.SetActive(false);
         }
     }
 
