@@ -148,7 +148,7 @@ Material:
     - _RandomSh1Mult: 1
     - _RandomSh2Mult: 1
     - _RandomSh3Mult: 1
-    - _RenderingMode: 3
+    - _RenderingMode: 0
     - _RimAddAmount: 1
     - _RimBias: 0.076
     - _RimErodesAlpha: 0
@@ -176,12 +176,12 @@ Material:
     - _Shape2ColorWeight: 2
     - _Shape2Contrast: 1
     - _Shape2DistortAmount: 0.28
-    - _Shape2DistortXSpeed: 0.46
-    - _Shape2DistortYSpeed: 0.4
+    - _Shape2DistortXSpeed: 0.05
+    - _Shape2DistortYSpeed: 0.07
     - _Shape2RotationOffset: 0
     - _Shape2RotationSpeed: 0
-    - _Shape2XSpeed: 0.13
-    - _Shape2YSpeed: 0.16
+    - _Shape2XSpeed: 0.02
+    - _Shape2YSpeed: 0.02
     - _Shape3AlphaWeight: 2
     - _Shape3Brightness: 0
     - _Shape3ColorWeight: 2
@@ -198,11 +198,11 @@ Material:
     - _ShapeColorWeight: 1
     - _ShapeContrast: 2.43
     - _ShapeDistortAmount: 0.5
-    - _ShapeDistortXSpeed: 0.1
-    - _ShapeDistortYSpeed: 0.1
+    - _ShapeDistortXSpeed: 0.01
+    - _ShapeDistortYSpeed: 0.01
     - _ShapeRotationOffset: 0
     - _ShapeRotationSpeed: 0
-    - _ShapeXSpeed: 0.1
+    - _ShapeXSpeed: 0.03
     - _ShapeYSpeed: 0
     - _SoftFactor: 0.08
     - _SrcMode: 1
@@ -216,7 +216,7 @@ Material:
     - _TwistUvRadius: 0.75
     - _VertOffsetAmount: 1.06
     - _VertOffsetPower: 0.51
-    - _VertOffsetTexXSpeed: 0.1
+    - _VertOffsetTexXSpeed: 0.06
     - _VertOffsetTexYSpeed: 0.1
     - _WaveAmount: 7
     - _WaveSpeed: 10
@@ -237,7 +237,7 @@ Material:
     - _FrontFaceTint: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0, g: 0.2845836, b: 0.8962264, a: 1}
+    - _RimColor: {r: 0.6792453, g: 0.5204478, b: 0.47098613, a: 1}
     - _Shape2Color: {r: 1, g: 1, b: 1, a: 1}
     - _Shape3Color: {r: 1, g: 1, b: 1, a: 1}
     - _ShapeColor: {r: 1, g: 1, b: 1, a: 1}

@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-5730825766483674994
+--- !u!1102 &-2957377800545562749
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Esqueleto|EsqueletoAction
+  m_Name: Esqueleto_EsqueletoAction
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,8 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -6877751558034246562, guid: 7056fcd36c1b6c1428293784fdf5e57d,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 7ed1194f54bd7c84897e73e0ddd83e35, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -37,8 +36,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -5730825766483674994}
-    m_Position: {x: 387.30798, y: 68.73702, z: 0}
+    m_State: {fileID: -2957377800545562749}
+    m_Position: {x: 446.0667, y: 107.474335, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -48,7 +47,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -5730825766483674994}
+  m_DefaultState: {fileID: -2957377800545562749}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
