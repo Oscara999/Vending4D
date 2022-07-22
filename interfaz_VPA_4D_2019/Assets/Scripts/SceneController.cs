@@ -6,6 +6,7 @@ public class SceneController : Singleton<SceneController>
 {
     public UIController uIController;
     public GameObject timeLines;
+    public Dialogue[] dialogues;
 
     void Start()
     {
@@ -17,4 +18,21 @@ public class SceneController : Singleton<SceneController>
     {
         
     }
+
+    public void NextDialogue()
+    {
+        if (DialogueSystem.Instance == null)
+            return;
+
+        DialogueSystem.Instance.DisplayNextDialogue();
+    }
+    public void StartDialogue(int index)
+    {
+        if (DialogueSystem.Instance == null)
+            return;
+        
+        DialogueSystem.Instance.StartNewDialogue(dialogues[index]);
+    }
+
+
 }
