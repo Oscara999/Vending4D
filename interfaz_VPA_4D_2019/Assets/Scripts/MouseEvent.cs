@@ -5,28 +5,30 @@ using UnityEngine.Events;
 
 public class MouseEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [Header("Color actions")]
+    [Header("Panel Settings")]
     public Color normalColor;
     public Color selectedColor;
-    public Image panelImage;
+    public Image panelReference;
+    public Sprite normalPanelImage;
+    public Sprite selectedPanelImage;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Change(selectedColor);
+        Change(selectedPanelImage);
         SoundManager.Instance.PlayNewSound("SelectedQuest");
         StatesManager.Instance.ledsController.SetColor(selectedColor);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Change(normalColor);
+        Change(normalPanelImage);
         SoundManager.Instance.PlayNewSound("SelectedQuest");
         StatesManager.Instance.ledsController.SetColor(normalColor);
     }
 
-    void Change(Color newColor)
+    void Change(Sprite newImage)
     {
-        panelImage.color = newColor;
+        panelReference.overrideSprite = newImage;
     } 
 
 }

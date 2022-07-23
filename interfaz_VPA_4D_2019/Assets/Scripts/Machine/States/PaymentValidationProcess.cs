@@ -14,4 +14,9 @@ public class PaymentValidationProcess : State
 
         return this;
     }
+
+    protected override void ExitState()
+    {
+        throw new System.NotImplementedException();
+    }
 }

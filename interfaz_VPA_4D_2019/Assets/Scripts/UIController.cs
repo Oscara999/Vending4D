@@ -16,8 +16,6 @@ public class UIController : MonoBehaviour
     [SerializeField]
     RectTransform canvasRectTransform;
     [SerializeField]
-    GameObject mainPanel;
-    [SerializeField]
     Canvas canvas;
     [SerializeField]
     RectTransform cursorTransform;
@@ -60,18 +58,6 @@ public class UIController : MonoBehaviour
         }
 
         InputSystem.onAfterUpdate += UpdateMotion;
-    }
-
-    public IEnumerator StartTimer()
-    {
-        yield return new WaitForSeconds(5f);
-        mainPanel.SetActive(true);
-        
-        yield return new WaitForSeconds(10f);
-        SoundManager.Instance.PlayNewSound("SelectedFinish");
-        
-        yield return new WaitForSeconds(2f);
-        ScenesManager.Instance.LoadLevel("Test3");
     }
 
     void OnDisable()

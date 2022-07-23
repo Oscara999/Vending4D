@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 public class ReposeState : State
 {
-    public IntroductionState introductionState;
+    public CinematicState cinematicState;
     public GameObject demoPanel;
     public VideoPlayer videoPlayer;
     public VideoClip[] videos;
@@ -31,7 +31,7 @@ public class ReposeState : State
         else
         {
             ExitState();
-            return introductionState;
+            return cinematicState;
         }
     }
 
@@ -58,12 +58,10 @@ public class ReposeState : State
             switch (currentVideoIndex)
             {
                 case 0:
-                    StatesManager.Instance.StateValuePanel = true;
                     StartCoroutine(StatesManager.Instance.ShowValuePanel(2f, 3f, 5f));
                     break;
                 
                 case 1:
-                    StatesManager.Instance.StateValuePanel = true;
                     StartCoroutine(StatesManager.Instance.ShowValuePanel(2f, 3f, 5f));
                     break;
             }
@@ -73,16 +71,13 @@ public class ReposeState : State
         }
     }
 
-    void ExitState()
+    protected override void ExitState()
     {
+        cinematicState.ChangeState(0);
         StatesManager.Instance.StateValuePanel = false;
         demoPanel.SetActive(false);
         videoPlayer.Stop();
         SoundManager.Instance.PlayNewSound("BackGroundMainManu");
         StatesManager.Instance.ledsController.ramdom = false;
-        introductionState.inFirstCinematic = true;
-        //StartCoroutine(SceneController.Instance.uIController.StartTimer());
     }
-
-
 }

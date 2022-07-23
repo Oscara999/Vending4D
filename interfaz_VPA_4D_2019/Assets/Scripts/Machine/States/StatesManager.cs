@@ -21,7 +21,6 @@ public class StatesManager : Singleton<StatesManager>
     [Header("Stats Settings")]
     [SerializeField]
     bool inCinematic;
-
     [SerializeField]
     bool isThereSomeone;
     [SerializeField]
@@ -60,9 +59,6 @@ public class StatesManager : Singleton<StatesManager>
 
     void HandleStateMachine()
     {
-        if (ScenesManager.Instance.systemPrefabs[1].activeInHierarchy)
-            return;
-        
         if (currentState != null)
         {
             State nextState = currentState.Tick();
@@ -74,9 +70,17 @@ public class StatesManager : Singleton<StatesManager>
         }
     }
 
-    public void StartGame()
+    public bool SubtractCoin()
     {
-        coins--;
+        if (coins > 0)
+        {
+            coins--;
+            return paymentMade = true;
+        }
+        else
+        {
+            return paymentMade = false;
+        }
     }
 
     void SwitchToNextState(State state)
@@ -117,7 +121,7 @@ public class StatesManager : Singleton<StatesManager>
 
     public void CoinsValidation()
     {
-        if (coins != 0)
+        if (coins >= 0)
         {
             if (!coinsText.gameObject.activeInHierarchy)
             {

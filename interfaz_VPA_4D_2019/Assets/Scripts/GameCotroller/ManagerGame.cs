@@ -20,7 +20,7 @@ public class ManagerGame : Singleton<ManagerGame>
         StartCoroutine(StartGame());
     }
 
-    void Update()
+    public void UpdateState()
     {
         if (Player.Instance.IsActivate)
         {

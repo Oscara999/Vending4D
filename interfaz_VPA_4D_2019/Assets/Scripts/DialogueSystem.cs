@@ -14,7 +14,6 @@ public class DialogueSystem : Singleton<DialogueSystem>
 
     bool inPlaying;
     private float deltaTime;
-    private float msec;
     private float fps;
 
     void Start()
@@ -77,7 +76,6 @@ public class DialogueSystem : Singleton<DialogueSystem>
 
     void CalculateFps()
     {
-        msec = deltaTime * 1000.0f;
         fps = 1.0f / deltaTime;
     }
 
@@ -87,7 +85,7 @@ public class DialogueSystem : Singleton<DialogueSystem>
        
         yield return new WaitForSeconds(0.01f);
 
-        if (fps < 55)
+        if (fps < 60)
         {
             textBox.text += sentence;
             Debug.Log("Que computador tan lento");
@@ -107,7 +105,7 @@ public class DialogueSystem : Singleton<DialogueSystem>
     public void EndDialogue()
     {
         inPlaying = false;
-        msec = fps = 0;
+        fps = 0;
         sentences.Clear();
         panelDialogue.SetActive(false);
         newDialogue = null;
