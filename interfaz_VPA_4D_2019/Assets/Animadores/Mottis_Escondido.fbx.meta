@@ -1,0 +1,190 @@
+fileFormatVersion: 2
+guid: 2c962aa2ed293d444b84e50654d7eb58
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 801559349605277213
+    second: Esqueleto|CuerpoAction
+  - first:
+      74: -6877751558034246562
+    second: Esqueleto|EsqueletoAction
+  - first:
+      74: 3128727951945634319
+    second: Esqueleto|OjoDAction
+  - first:
+      74: -1869813780215683509
+    second: Esqueleto|OjoIAction
+  - first:
+      74: 3608668877185786026
+    second: Esqueleto|ParpadoDAction
+  - first:
+      74: 5853295462585991849
+    second: Esqueleto|ParpadoIAction
+  - first:
+      74: 510498974745299374
+    second: Cuerpo|CuerpoAction
+  - first:
+      74: -9163583826571984259
+    second: Cuerpo|OjoDAction
+  - first:
+      74: 6452947368828283319
+    second: Cuerpo|OjoIAction
+  - first:
+      74: -7232790125501231202
+    second: Cuerpo|ParpadoDAction
+  - first:
+      74: -4006040909193127087
+    second: Cuerpo|ParpadoIAction
+  - first:
+      74: 8163285739751858331
+    second: OjoD|CuerpoAction
+  - first:
+      74: 7430520500008226053
+    second: OjoD|OjoDAction
+  - first:
+      74: 7535118948190757844
+    second: OjoD|OjoIAction
+  - first:
+      74: 977602189768524167
+    second: OjoD|ParpadoDAction
+  - first:
+      74: 5420281562016695156
+    second: OjoD|ParpadoIAction
+  - first:
+      74: 7436045192872359054
+    second: OjoI|CuerpoAction
+  - first:
+      74: 5230141702226912325
+    second: OjoI|OjoDAction
+  - first:
+      74: -4837569876646132318
+    second: OjoI|OjoIAction
+  - first:
+      74: 4680916801961268220
+    second: OjoI|ParpadoDAction
+  - first:
+      74: 6862626499927406975
+    second: OjoI|ParpadoIAction
+  - first:
+      74: -4602965671003910986
+    second: ParpadoD|CuerpoAction
+  - first:
+      74: 1853702781042669911
+    second: ParpadoD|OjoDAction
+  - first:
+      74: 6222580047862564277
+    second: ParpadoD|OjoIAction
+  - first:
+      74: -6362440411221914041
+    second: ParpadoD|ParpadoDAction
+  - first:
+      74: 5580861567118850135
+    second: ParpadoD|ParpadoIAction
+  - first:
+      74: -7348111474962816540
+    second: ParpadoI|CuerpoAction
+  - first:
+      74: -7319489297353297578
+    second: ParpadoI|OjoDAction
+  - first:
+      74: -1196336732633980073
+    second: ParpadoI|OjoIAction
+  - first:
+      74: 5051385453225379733
+    second: ParpadoI|ParpadoDAction
+  - first:
+      74: 5803193369682458327
+    second: ParpadoI|ParpadoIAction
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
