@@ -21,7 +21,8 @@ public class TimeLineRutine : MonoBehaviour
 
     public bool StatePlayable(int index)
     {
-        if (playableDirectors[index].state == PlayState.Playing)
+        if (playableDirectors[index].state == PlayState.Playing 
+            && playableDirectors[index].state != PlayState.Paused )
         {
             return true;
         }
@@ -34,6 +35,7 @@ public class TimeLineRutine : MonoBehaviour
     public void Play(int index)
     {
         playableDirectors[index].Play();
+        Debug.Log(playableDirectors[index].name);
     }
 
     public void Pause(int index)

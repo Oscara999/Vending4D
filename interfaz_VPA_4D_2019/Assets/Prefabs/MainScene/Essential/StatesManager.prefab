@@ -657,6 +657,8 @@ MonoBehaviour:
   isThereSomeone: 0
   paymentMade: 0
   stateValuePanel: 0
+  challengeAccepted: 0
+  inGame: 0
   coins: 0
 --- !u!1 &2190604850134905499
 GameObject:
@@ -702,10 +704,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 8921544917783846134}
+  skipState: {fileID: 0}
+  validationProcessState: {fileID: 0}
+  nextState: {fileID: 0}
   stateOff: 0
+  skipCinematic: 0
   inFirstCinematic: 0
   inSecondCinematic: 0
   inThirdCinematic: 0
+  inFourthCinematic: 0
+  inFivethCinematic: 0
+  inSixthCinematic: 0
+  inSeventhCinematic: 0
 --- !u!1 &2190604850449043023
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,14 +776,14 @@ RectTransform:
   m_GameObject: {fileID: 2488532796574140724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.28275, y: 0.28275, z: 0.28275}
+  m_LocalScale: {x: 0.28275, y: 0.04948125, z: 0.28275}
   m_Children: []
   m_Father: {fileID: 509521123}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -475}
+  m_AnchoredPosition: {x: 0, y: 487}
   m_SizeDelta: {x: 1831.0001, y: 544.04517}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5753594381723533565

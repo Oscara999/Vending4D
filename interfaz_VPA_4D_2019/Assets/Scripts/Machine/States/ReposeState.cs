@@ -73,7 +73,7 @@ public class ReposeState : State
 
     protected override void ExitState()
     {
-        cinematicState.ChangeState(0);
+        cinematicState.ChangeState(1);
         StatesManager.Instance.StateValuePanel = false;
         demoPanel.SetActive(false);
         videoPlayer.Stop();

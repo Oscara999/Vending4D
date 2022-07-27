@@ -15,14 +15,15 @@ public class SceneController : Singleton<SceneController>
         StatesManager.Instance.SetChangeTimeLine(timeLines);
     }
 
-    public IEnumerator StartTimer()
+    public IEnumerator StartQuestTimer()
     {
         questPanel.SetActive(true);
         //mostrar reloj
         yield return new WaitForSeconds(10f);
         //seleccioar respuesta correcta 
         SoundManager.Instance.PlayNewSound("SelectedFinish");
-
+        // validar si acepta o no el reto para definir acciones
+        StatesManager.Instance.ChallengeAccepted = true;
         yield return new WaitForSeconds(2f);
         questPanel.SetActive(false);
     }

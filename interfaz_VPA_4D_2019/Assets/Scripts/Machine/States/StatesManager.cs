@@ -28,6 +28,10 @@ public class StatesManager : Singleton<StatesManager>
     [SerializeField]
     bool stateValuePanel;
     [SerializeField]
+    bool challengeAccepted;
+    [SerializeField]
+    bool inGame;
+    [SerializeField]
     int coins;
 
     
@@ -36,10 +40,13 @@ public class StatesManager : Singleton<StatesManager>
     public bool PaymentMade { get => paymentMade; set => paymentMade = value; }
     public bool StateValuePanel { get => stateValuePanel; set => stateValuePanel = value; }
     public bool InCinematic { get => inCinematic;}
+    public bool ChallengeAccepted { get => challengeAccepted; set => challengeAccepted = value; }
+    public bool InGame { get => inGame; set => inGame = value; }
 
     void Start()
     {
         //BaseDataManager.Instance.Load();
+
     }
 
     void Update()
@@ -63,8 +70,9 @@ public class StatesManager : Singleton<StatesManager>
         {
             State nextState = currentState.Tick();
 
-            if (nextState != null)
+            if (nextState != currentState)
             {
+                Debug.Log("check");
                 SwitchToNextState(nextState);
             }
         }
@@ -75,6 +83,7 @@ public class StatesManager : Singleton<StatesManager>
         if (coins > 0)
         {
             coins--;
+            Debug.Log("Coin Subtracted");
             return paymentMade = true;
         }
         else
@@ -86,6 +95,7 @@ public class StatesManager : Singleton<StatesManager>
     void SwitchToNextState(State state)
     {
         currentState = state;
+        Debug.Log(currentState.name);
     }
 
     public void SetChangeTimeLine(GameObject container)
@@ -113,15 +123,9 @@ public class StatesManager : Singleton<StatesManager>
     {
 
     }
-
-    public void Subtitles()
-    {
-
-    }
-
     public void CoinsValidation()
     {
-        if (coins >= 0)
+        if (coins == 0)
         {
             if (!coinsText.gameObject.activeInHierarchy)
             {

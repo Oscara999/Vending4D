@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class CinematicState : State
 {
-    [Header("States Cinematics")]
+    [Header("States ")]
     public GameState gameState;
-    public bool stateOff;
+    public SkipState skipState;
+    public PaymentValidationProcess validationProcessState;
+    [SerializeField]
+    State nextState;
 
+    [Header("States Settings ")]
+    [SerializeField]
+    bool stateOff;
+    [SerializeField]
+    bool skipCinematic;
     [SerializeField]
     bool inFirstCinematic;
     [SerializeField]
     bool inSecondCinematic;
     [SerializeField]
     bool inThirdCinematic;
-    private bool inFourthCinematic;
+    [SerializeField]
+    bool inFourthCinematic;
+    [SerializeField]
+    bool inFivethCinematic;
+    [SerializeField]
+    bool inSixthCinematic;
+    [SerializeField]
+    bool inSeventhCinematic;
 
     public override State Tick()
     {
@@ -23,35 +38,58 @@ public class CinematicState : State
 
         if (stateOff)
         {
+            Debug.Log("exit");
             ExitState();
-            stateOff = false;
-            //if para validar porque se va y que estado pomer
-
-            return gameState;
+            return nextState;
         }
 
         if (inFirstCinematic)
         {
-            StartCoroutine(FirsCinematic());
+            Debug.Log(1);
+            StartCoroutine(FirstCinematic());
             inFirstCinematic = false;
         }
 
         if (inSecondCinematic)
         {
+            Debug.Log(2);
             StartCoroutine(SecondCinematic());
             inSecondCinematic = false;
         }
 
         if (inThirdCinematic)
         {
+            Debug.Log(3);
             StartCoroutine(ThirdCinematic());
             inThirdCinematic = false;
         }
 
         if (inFourthCinematic)
         {
+            Debug.Log(4);
             StartCoroutine(FourthCinematic());
             inFourthCinematic = false;
+        }
+
+        if (inFivethCinematic)
+        {
+            Debug.Log(5);
+            StartCoroutine(FivethCinematic());
+            inFivethCinematic = false;
+        }
+
+        if (inSixthCinematic)
+        {
+            Debug.Log(6);
+            StartCoroutine(SixthCinematic());
+            inSixthCinematic = false;
+        }
+
+        if (inSeventhCinematic)
+        {
+            Debug.Log(7);
+            StartCoroutine(SeventhCinematic());
+            inSeventhCinematic= false;
         }
 
         Debug.Log(00);
@@ -63,69 +101,149 @@ public class CinematicState : State
         switch (index)
         {
             case 0:
-                inFirstCinematic = true;
+                stateOff = true;
                 break;
 
             case 1:
-                inSecondCinematic = true;
+                inFirstCinematic = true;
                 break;
 
             case 2:
+                inSecondCinematic = true;
+                break;
+
+            case 3:
                 inThirdCinematic = true;
                 break;
+
             case 4:
                 inFourthCinematic = true; 
                 break;
 
+            case 5:
+                inFivethCinematic = true;
+                break;
+
+            case 6:
+                inSixthCinematic = true;
+                break;
+
+            case 7:
+                inSeventhCinematic = true;
+                break;
         }
     }
 
-    IEnumerator FirsCinematic()
+    IEnumerator FirstCinematic()
     {
-        StatesManager.Instance.timeLineRutine.Play(0);
         StatesManager.Instance.StateInCinematic(true);
+        StatesManager.Instance.timeLineRutine.Play(0);
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(0));
-        ChangeState(1);
+        ChangeState(2);
         StatesManager.Instance.StateInCinematic(false);
     }
 
     IEnumerator SecondCinematic()
     {
-        StatesManager.Instance.timeLineRutine.Play(1);
         StatesManager.Instance.StateInCinematic(true);
+        StatesManager.Instance.timeLineRutine.Play(1);
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(1));
         //start temporizador de pago y mostrar precio 
         yield return new WaitForSeconds(10f);
         // if para validar si seguir o salir 
-        //vamos aquiiiiii
+        
         if (StatesManager.Instance.SubtractCoin())
         {
-            ChangeState(3);
+            ChangeState(4);
         }
         else
         {
-            ChangeState(2);
+            ChangeState(3);
         }
-
+        
         StatesManager.Instance.StateInCinematic(false);
     }
 
     IEnumerator ThirdCinematic()
     {
-        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(1));
-        stateOff = true;
+        StatesManager.Instance.StateInCinematic(true);
+        StatesManager.Instance.timeLineRutine.Play(2);
+        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(2));
+        skipCinematic = true;
+        ChangeState(0);
         StatesManager.Instance.StateInCinematic(false);
     }
 
     IEnumerator FourthCinematic()
     {
-        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(1));
-        StartCoroutine(SceneController.Instance.StartTimer());
+        StatesManager.Instance.StateInCinematic(true);
+        StatesManager.Instance.timeLineRutine.Play(3);
+        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(3));
+        StartCoroutine(SceneController.Instance.StartQuestTimer());
+        yield return new WaitForSeconds(10f);
+
+        if (StatesManager.Instance.ChallengeAccepted)
+        {
+            ChangeState(5);
+            // cinematica 5
+            //if para validar porque se va y que estado pomer
+        }
+        else
+        {
+            ChangeState(6);
+            // cinematica 6
+            //aqui vooooyyy
+        }
+
+        yield return new WaitForSeconds(2f);
         StatesManager.Instance.StateInCinematic(false);
-        //validar si acepta o ño el reto
     }
-    
+
+    IEnumerator FivethCinematic()
+    {
+        StatesManager.Instance.StateInCinematic(true);
+        StatesManager.Instance.timeLineRutine.Play(4);
+        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(4));
+        //paso a las reglas
+        StatesManager.Instance.InGame = true;
+        skipCinematic = true;
+        ChangeState(0);
+        StatesManager.Instance.StateInCinematic(false);
+    }
+
+    IEnumerator SixthCinematic()
+    {
+        StatesManager.Instance.StateInCinematic(true);
+        StatesManager.Instance.timeLineRutine.Play(5);
+        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(5));
+        ChangeState(7);// play a la cinematica 7
+        StatesManager.Instance.StateInCinematic(false);
+    }
+
+    IEnumerator SeventhCinematic()
+    {
+        StatesManager.Instance.StateInCinematic(true);
+        StatesManager.Instance.timeLineRutine.Play(6);
+        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(6));
+        skipCinematic = true;
+        ChangeState(0);
+        StatesManager.Instance.StateInCinematic(false);
+    }
+
     protected override void ExitState()
     {
+        if (skipCinematic)
+        {
+            skipCinematic = false;
+            nextState = skipState;
+        }
+
+        if (StatesManager.Instance.InGame)
+        {
+            nextState = gameState;
+        }
+
+        stateOff = false;
+        StatesManager.Instance.StateInCinematic(false);
     }
 }
