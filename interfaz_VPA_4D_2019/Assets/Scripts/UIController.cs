@@ -7,6 +7,7 @@ using UnityEngine.Events;
 using System;
 using System.Collections;
 
+[DefaultExecutionOrder(10)]
 public class UIController : MonoBehaviour
 {
     public bool enabledMovement;
@@ -14,22 +15,14 @@ public class UIController : MonoBehaviour
     [SerializeField]
     PlayerInput playerInput;
     [SerializeField]
-    RectTransform canvasRectTransform;
-    [SerializeField]
-    Canvas canvas;
-    [SerializeField]
-    RectTransform cursorTransform;
-    [SerializeField]
     float cursorSpeed;
 
     Mouse virtualMouse;
     Mouse currentMouse;
     Camera mainCamera;
-
+ 
     private void OnEnable()
     {
-        cursorTransform.gameObject.SetActive(true);
-
         mainCamera = Camera.main;
         currentMouse = Mouse.current;
 
@@ -51,9 +44,9 @@ public class UIController : MonoBehaviour
 
         InputUser.PerformPairingWithDevice(virtualMouse, playerInput.user);
 
-        if (cursorTransform != null)
+        if (StatesManager.Instance.cursorTransform != null)
         {
-            Vector2 position = cursorTransform.anchoredPosition;
+            Vector2 position = StatesManager.Instance.cursorTransform.anchoredPosition;
             InputState.Change(virtualMouse.position, position);
         }
 
@@ -89,8 +82,8 @@ public class UIController : MonoBehaviour
     void AnchorCursor(Vector2 position)
     {
         Vector2 anchoredPosition;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRectTransform, position, canvas.renderMode
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(StatesManager.Instance.canvasRectTransform, position, StatesManager.Instance.canvas.renderMode
             == RenderMode.ScreenSpaceOverlay ? null : mainCamera, out anchoredPosition); ;
-        cursorTransform.anchoredPosition = anchoredPosition;
+        StatesManager.Instance.cursorTransform.anchoredPosition = anchoredPosition;
     }
 }

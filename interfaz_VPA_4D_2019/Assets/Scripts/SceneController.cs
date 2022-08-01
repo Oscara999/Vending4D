@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[DefaultExecutionOrder(-1)]
 public class SceneController : Singleton<SceneController>
 {
     public UIController uIController;
     public GameObject timeLines;
     public Dialogue[] dialogues;
-    public GameObject questPanel;
+
 
     void Start()
     {
@@ -17,7 +16,7 @@ public class SceneController : Singleton<SceneController>
 
     public IEnumerator StartQuestTimer()
     {
-        questPanel.SetActive(true);
+        StatesManager.Instance.questPanel.SetActive(true);
         //mostrar reloj
         yield return new WaitForSeconds(10f);
         //seleccioar respuesta correcta 
@@ -25,7 +24,7 @@ public class SceneController : Singleton<SceneController>
         // validar si acepta o no el reto para definir acciones
         StatesManager.Instance.ChallengeAccepted = true;
         yield return new WaitForSeconds(2f);
-        questPanel.SetActive(false);
+        StatesManager.Instance.questPanel.SetActive(false);
     }
 
     public void NextDialogue()

@@ -169,7 +169,6 @@ public class CinematicState : State
         StatesManager.Instance.StateInCinematic(true);
         StatesManager.Instance.timeLineRutine.Play(2);
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(2));
-        skipCinematic = true;
         ChangeState(0);
         StatesManager.Instance.StateInCinematic(false);
     }
@@ -206,7 +205,6 @@ public class CinematicState : State
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(4));
         //paso a las reglas
         StatesManager.Instance.InGame = true;
-        skipCinematic = true;
         ChangeState(0);
         StatesManager.Instance.StateInCinematic(false);
     }

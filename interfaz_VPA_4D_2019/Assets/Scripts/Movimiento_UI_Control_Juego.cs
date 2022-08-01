@@ -18,6 +18,14 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
     public Ray ray;
     public Camera positionReferenceCamera;
 
+    private void Start()
+    {
+        if (crossFire == null)
+        {
+            crossFire = StatesManager.Instance.cursorTransform.gameObject;
+        }
+    }
+
     public void CrossFireState(bool isSelected)
     {
         if (isSelected)

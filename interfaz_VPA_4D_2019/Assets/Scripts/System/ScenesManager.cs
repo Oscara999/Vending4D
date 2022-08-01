@@ -69,12 +69,12 @@ public class ScenesManager : Singleton<ScenesManager>
     /// </summary>
     void EditPrefabsGame()
     {
-        slider = systemPrefabs[1].GetComponentInChildren<UnityEngine.UI.Slider>();
+        slider = systemPrefabs[0].GetComponentInChildren<UnityEngine.UI.Slider>();
 
         for (int i = 0; i < systemPrefabs.Count; i++)
         {
             if (systemPrefabs[i].name.Equals("BaseDataManager") || systemPrefabs[i].name.Equals("SoundManager") 
-                || systemPrefabs[i].name.Equals("StatesManager"))
+                || systemPrefabs[i].name.Equals("StatesManager") || systemPrefabs[i].name.Equals("UICanvas"))
             {
                 systemPrefabs[i].SetActive(true);
             }
@@ -96,7 +96,7 @@ public class ScenesManager : Singleton<ScenesManager>
         if (_loadOperations.Contains(ao))
             _loadOperations.Remove(ao);
        
-        systemPrefabs[1].SetActive(false);
+        systemPrefabs[0].SetActive(false);
         ValidateLevel();
         Debug.Log("[GameManager] Escena Cargada completamente");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName));
@@ -205,7 +205,7 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         is_pause = !is_pause;
         SoundManager.Instance.PauseAllSounds(is_pause);
-        systemPrefabs[0].SetActive(is_pause);
+        GameObject.FindGameObjectWithTag("PauseMenu").SetActive(is_pause);
 
         if (is_pause)
         {
@@ -224,7 +224,7 @@ public class ScenesManager : Singleton<ScenesManager>
     /// <param name="ao">Asyncronous Operation object</param>
     IEnumerator LoadingScreen(AsyncOperation ao)
     {
-        systemPrefabs[1].SetActive(true);
+        systemPrefabs[0].SetActive(true);
         ao.allowSceneActivation = false;
 
         while(ao.isDone == false)
@@ -234,7 +234,7 @@ public class ScenesManager : Singleton<ScenesManager>
             slider.value = 1f; 
             ao.allowSceneActivation = true;
             yield return new WaitForSeconds(2f);
-            systemPrefabs[1].SetActive(false);
+            systemPrefabs[0].SetActive(false);
         }
     }
 }

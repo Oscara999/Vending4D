@@ -13,6 +13,11 @@ public class StatesManager : Singleton<StatesManager>
     State currentState;
 
     [Header(" UI Settings")]
+    public RectTransform canvasRectTransform;
+    public Canvas canvas;
+    public RectTransform cursorTransform;
+    public GameObject questPanel;
+
     [SerializeField] 
     GameObject valuePanel;
     [SerializeField]
@@ -34,7 +39,7 @@ public class StatesManager : Singleton<StatesManager>
     [SerializeField]
     int coins;
 
-    
+
     public int Coins { get => coins; set => coins = value; }
     public bool IsThereSomeone { get => isThereSomeone; set => isThereSomeone = value; }
     public bool PaymentMade { get => paymentMade; set => paymentMade = value; }

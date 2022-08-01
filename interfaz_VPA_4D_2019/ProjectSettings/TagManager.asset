@@ -11,6 +11,10 @@ TagManager:
   - WallPlayer
   - Animal
   - SelectableAttack
+  - DialoguePanel
+  - CrossFire
+  - QuestPanel
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
