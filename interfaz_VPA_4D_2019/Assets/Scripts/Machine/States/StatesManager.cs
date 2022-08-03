@@ -13,9 +13,8 @@ public class StatesManager : Singleton<StatesManager>
     State currentState;
 
     [Header(" UI Settings")]
-    public RectTransform canvasRectTransform;
+    public UIController uIController;
     public Canvas canvas;
-    public RectTransform cursorTransform;
     public GameObject questPanel;
 
     [SerializeField] 
@@ -31,8 +30,6 @@ public class StatesManager : Singleton<StatesManager>
     [SerializeField]
     bool paymentMade;
     [SerializeField]
-    bool stateValuePanel;
-    [SerializeField]
     bool challengeAccepted;
     [SerializeField]
     bool inGame;
@@ -42,16 +39,14 @@ public class StatesManager : Singleton<StatesManager>
 
     public int Coins { get => coins; set => coins = value; }
     public bool IsThereSomeone { get => isThereSomeone; set => isThereSomeone = value; }
-    public bool PaymentMade { get => paymentMade; set => paymentMade = value; }
-    public bool StateValuePanel { get => stateValuePanel; set => stateValuePanel = value; }
     public bool InCinematic { get => inCinematic;}
     public bool ChallengeAccepted { get => challengeAccepted; set => challengeAccepted = value; }
     public bool InGame { get => inGame; set => inGame = value; }
+    public bool ValuePanel { get => valuePanel.activeInHierarchy;}
 
     void Start()
     {
         //BaseDataManager.Instance.Load();
-
     }
 
     void Update()
@@ -111,17 +106,11 @@ public class StatesManager : Singleton<StatesManager>
         }
     }
 
-    public IEnumerator ShowValuePanel(float startTime, float waitTime, float endTime)
+    public IEnumerator ShowValuePanel(float waitTime)
     {
-        yield return new WaitForSeconds(startTime);
-        
-        while (stateValuePanel)
-        {
-            valuePanel.SetActive(true);
-            yield return new WaitForSeconds(waitTime);
-            valuePanel.SetActive(false);
-            yield return new WaitForSeconds(endTime);
-        }        
+        valuePanel.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        valuePanel.SetActive(false);
     }
 
     public void Segregation()

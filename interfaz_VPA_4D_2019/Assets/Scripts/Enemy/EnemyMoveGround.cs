@@ -29,6 +29,6 @@ public class EnemyMoveGround : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss.ChageStateAnimation();
-        Player.Instance.movimiento.CrossFireState(true);
+        StatesManager.Instance.uIController.CrossFireState(true);
     }
 }

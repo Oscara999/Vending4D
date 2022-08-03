@@ -178,6 +178,10 @@ public class ScenesManager : Singleton<ScenesManager>
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;
 
+            case "Introduccion_Mottis 1":
+                SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
+                break;
+
             case "IntroduccionMottisTestOscar":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;

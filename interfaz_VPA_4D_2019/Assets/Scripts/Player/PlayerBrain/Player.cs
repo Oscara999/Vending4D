@@ -45,12 +45,12 @@ public class Player : Singleton<Player>
 
     public void Attack()
     {
-        if (!movimiento.crossFire.activeInHierarchy)
+        if (!StatesManager.Instance.uIController.crossFire.activeInHierarchy)
             return;
 
         if (isActive && currentTimeSpawn > timeToSpawn)
         {
-            Destroy(Instantiate(poder_invierno, movimiento.ray.origin, Quaternion.identity), 20f);
+            Destroy(Instantiate(poder_invierno, StatesManager.Instance.uIController.ray.origin, Quaternion.identity), 20f);
             currentTimeSpawn = 0;
             //ProjectileMoveScript poder = pooling.GetPooledObjects().GetComponent<ProjectileMoveScript>();
             //poder.Start();

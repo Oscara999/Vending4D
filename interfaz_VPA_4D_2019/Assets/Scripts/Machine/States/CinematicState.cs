@@ -7,7 +7,7 @@ public class CinematicState : State
     [Header("States ")]
     public GameState gameState;
     public SkipState skipState;
-    public PaymentValidationProcess validationProcessState;
+    public PaymentValidationState validationProcessState;
     [SerializeField]
     State nextState;
 
@@ -230,6 +230,7 @@ public class CinematicState : State
 
     protected override void ExitState()
     {
+
         if (skipCinematic)
         {
             skipCinematic = false;
@@ -243,5 +244,6 @@ public class CinematicState : State
 
         stateOff = false;
         StatesManager.Instance.StateInCinematic(false);
+        ScenesManager.Instance.LoadLevel("Test3");
     }
 }

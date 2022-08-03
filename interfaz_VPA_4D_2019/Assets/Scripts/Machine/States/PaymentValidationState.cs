@@ -1,0 +1,22 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PaymentValidationState : State
+{
+    public override State Tick()
+    {
+        //imiciar tercera ciematica o cuasexta y septima ciematica
+        // activar quest
+        //imiciar quimta ciematica o cuarta ciematica
+        // Activar temporizador
+        //imiciar octava ciematica
+
+        return this;
+    }
+
+    protected override void ExitState()
+    {
+        throw new System.NotImplementedException();
+    }
+}

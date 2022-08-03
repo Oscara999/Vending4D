@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SceneController : Singleton<SceneController>
 {
-    public UIController uIController;
     public GameObject timeLines;
     public Dialogue[] dialogues;
 

@@ -342,7 +342,7 @@ public class Enemy : Singleton<Enemy>
 
         if (Vector3.Distance(transform.position, startPoint.transform.position) < 0.1f)
         {
-            Player.Instance.movimiento.CrossFireState(true);
+            StatesManager.Instance.uIController.CrossFireState(true);
             isMove = false; 
         }
     }

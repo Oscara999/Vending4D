@@ -65,7 +65,7 @@ public class ManagerGame : Singleton<ManagerGame>
         //Debug.Log("1");
         Player.Instance.StateController();
         //Debug.Log("2");
-        Player.Instance.movimiento.CrossFireState(true);
+        StatesManager.Instance.uIController.CrossFireState(true);
         //Debug.Log("3");
         Enemy.Instance.IsActivate = true;
         //Enemy.Instance.ChageStateAnimation();
@@ -123,7 +123,7 @@ public class ManagerGame : Singleton<ManagerGame>
 
     public void FinishGame()
     {
-        Player.Instance.movimiento.CrossFireState(false);
+        StatesManager.Instance.uIController.CrossFireState(false);
         sliderEnemyUI.gameObject.SetActive(false);
         Enemy.Instance.IsActivate = false;
         Enemy.Instance.ChageStateAnimation();

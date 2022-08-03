@@ -12,8 +12,7 @@ public class ReposeState : State
 
     void StartMachine()
     {
-        StatesManager.Instance.StateValuePanel = true;
-        StartCoroutine(StatesManager.Instance.ShowValuePanel(2f,3f,5f));
+        //StartCoroutine(StatesManager.Instance.ShowValuePanel(5f));
         StatesManager.Instance.ledsController.ramdom = true;
         currentVideoIndex = 0;
         videoPlayer.clip = videos[currentVideoIndex];
@@ -53,17 +52,17 @@ public class ReposeState : State
             else
             {
                 currentVideoIndex++;
-            }
 
-            switch (currentVideoIndex)
-            {
-                case 0:
-                    StartCoroutine(StatesManager.Instance.ShowValuePanel(2f, 3f, 5f));
-                    break;
-                
-                case 1:
-                    StartCoroutine(StatesManager.Instance.ShowValuePanel(2f, 3f, 5f));
-                    break;
+                switch (currentVideoIndex)
+                {
+                    case 0:
+                        StartCoroutine(StatesManager.Instance.ShowValuePanel(5f));
+                        break;
+
+                    case 1:
+                        StartCoroutine(StatesManager.Instance.ShowValuePanel(3f));
+                        break;
+                }
             }
 
             videoPlayer.clip = videos[currentVideoIndex];
@@ -74,7 +73,6 @@ public class ReposeState : State
     protected override void ExitState()
     {
         cinematicState.ChangeState(1);
-        StatesManager.Instance.StateValuePanel = false;
         demoPanel.SetActive(false);
         videoPlayer.Stop();
         SoundManager.Instance.PlayNewSound("BackGroundMainManu");
