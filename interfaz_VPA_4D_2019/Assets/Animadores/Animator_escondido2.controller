@@ -26,14 +26,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-2957377800545562749
+--- !u!1102 &-2874946654815264825
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Esqueleto_EsqueletoAction
+  m_Name: jalar
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7ed1194f54bd7c84897e73e0ddd83e35, type: 2}
+  m_Motion: {fileID: 7400000, guid: b65bf3f27cd05c84ab043a79cd806a07, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -62,11 +62,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -2957377800545562749}
-    m_Position: {x: 446.0667, y: 107.474335, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 5993084676643422521}
-    m_Position: {x: 481.0667, y: 172.47433, z: 0}
+    m_State: {fileID: 6298589286997151337}
+    m_Position: {x: 479.65918, y: 106.875, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -76,14 +73,14 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -2957377800545562749}
+  m_DefaultState: {fileID: 6298589286997151337}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Animator Controller
+  m_Name: Animator_escondido2
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -99,14 +96,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &5993084676643422521
+--- !u!1102 &6298589286997151337
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Escodido_1
+  m_Name: Esqueleto|EsqueletoAction_001
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -119,7 +116,8 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6099de33a694a67459893f9fc636ead2, type: 2}
+  m_Motion: {fileID: 8330357187053516584, guid: e5504c903c29aec40aa29490d9459341,
+    type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

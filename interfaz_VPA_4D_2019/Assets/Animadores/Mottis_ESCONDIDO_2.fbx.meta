@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 2c962aa2ed293d444b84e50654d7eb58
+guid: e5504c903c29aec40aa29490d9459341
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -6877751558034246562
-    second: Esqueleto|EsqueletoAction
+      74: 8330357187053516584
+    second: Esqueleto|EsqueletoAction.001
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Esqueleto|EsqueletoAction
-      takeName: Esqueleto|EsqueletoAction
+      name: Esqueleto|EsqueletoAction.001
+      takeName: Esqueleto|EsqueletoAction.001
       internalID: 0
-      firstFrame: 10
-      lastFrame: 50
+      firstFrame: 18
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -66,7 +66,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 6
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -113,7 +113,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.06
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
