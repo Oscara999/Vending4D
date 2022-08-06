@@ -458,7 +458,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1739333900}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1130360980}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e0ed5922e911b343b8400997c95409c, type: 3}
@@ -656,6 +656,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1130360980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1137685427885016, guid: 2aa010a1e75292e49a24f3f71bb9cddb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1739333900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1145044380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1991,8 +1997,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poder_invierno: {fileID: 1339477995214658, guid: 4815f9cfb419f904d98fe28319b55b55,
     type: 3}
-  mira: {fileID: 0}
-  mano_derecha: {fileID: 0}
   lista_poderes: []
 --- !u!114 &1667328593
 MonoBehaviour:
@@ -2012,8 +2016,8 @@ MonoBehaviour:
   OnDeactivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Attack
+      - m_Target: {fileID: 1667328592}
+        m_MethodName: poder_de_invierno
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4035,6 +4039,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7341198609985123939, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7341198611391413490, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4145,6 +4154,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7341198611597148604, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.1998901
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
 --- !u!114 &7341198609881663149 stripped
@@ -4204,6 +4218,12 @@ GameObject:
 --- !u!1 &7341198609881663155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 514949700883784555, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7341198609881663148}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7341198609881663156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7341198609985123939, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
     type: 3}
   m_PrefabInstance: {fileID: 7341198609881663148}
   m_PrefabAsset: {fileID: 0}
@@ -4301,6 +4321,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
         type: 3}
+      propertyPath: hands.Array.data[0]
+      value: 
+      objectReference: {fileID: 1130360980}
+    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: hands.Array.data[1]
+      value: 
+      objectReference: {fileID: 1667328590}
+    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1711667806}
@@ -4309,6 +4339,11 @@ PrefabInstance:
       propertyPath: questPanel
       value: 
       objectReference: {fileID: 729217806}
+    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 7341198609881663156}
     - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
         type: 3}
       propertyPath: valuePanel

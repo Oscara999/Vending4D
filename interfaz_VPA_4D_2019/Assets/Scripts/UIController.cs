@@ -104,7 +104,6 @@ public class UIController : MonoBehaviour
             Debug.Log(hit.collider.name);
         }
 
-
         if (kindScene == kindScene.Menu)
         {
             if (!DesingCursor[0].activeInHierarchy)

@@ -23,7 +23,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 
     protected virtual void Awake()
     {
-        //Debug.Log("[Singleton] Se creo una instancia de la clase Singleton " + this);
+        Debug.Log("[Singleton] Se creo una instancia de la clase Singleton " + this);
 
         if (instance != null)
             Debug.Log("[Singleton] Se esta tratando de crear una segunda instancia de la clase Singleton");

@@ -17,7 +17,6 @@ public class Player : Singleton<Player>
     public Movimiento_UI_Control_Juego movimiento;
     public Sound[] fx_Sound;
     public bool IsActivate { get { return isActive; } }
-    public GameObject hand;
 
     void Start()
     {

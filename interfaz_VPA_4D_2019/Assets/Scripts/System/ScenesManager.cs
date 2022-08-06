@@ -34,6 +34,7 @@ public class ScenesManager : Singleton<ScenesManager>
     /// Variable que define si el juego esta en ejecucion.
     /// </summary>
     [SerializeField] private bool is_pause;
+    public bool isLoad;
 
     /// <summary>
     /// Varirable que almacena el nombre de la scen principal a carga.
@@ -84,6 +85,7 @@ public class ScenesManager : Singleton<ScenesManager>
             }
         }
 
+        isLoad = true;
        LoadLevel(mainLevel);
     }
 
@@ -120,6 +122,9 @@ public class ScenesManager : Singleton<ScenesManager>
     /// <param name="levelName">Nombre de la escena que se desea cargar.</param>
     public void LoadLevel(string levelName)
     {
+        if (!isLoad)
+            return;
+
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
 
         if (ao == null)
@@ -209,7 +214,7 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         is_pause = !is_pause;
         SoundManager.Instance.PauseAllSounds(is_pause);
-        GameObject.FindGameObjectWithTag("PauseMenu").SetActive(is_pause);
+        StatesManager.Instance.pausePanel.SetActive(is_pause);
 
         if (is_pause)
         {
@@ -239,6 +244,8 @@ public class ScenesManager : Singleton<ScenesManager>
             ao.allowSceneActivation = true;
             yield return new WaitForSeconds(2f);
             systemPrefabs[0].SetActive(false);
+            isLoad = false;
+            Debug.Log("salio aqui");
         }
     }
 }

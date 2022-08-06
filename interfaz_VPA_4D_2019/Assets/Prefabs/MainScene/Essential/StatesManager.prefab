@@ -213,10 +213,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ledsController: {fileID: 8178831770624095050}
   timeLineRutine: {fileID: 8178831770293114050}
+  hands:
+  - {fileID: 0}
+  - {fileID: 0}
   currentState: {fileID: 8178831769025564153}
   uIController: {fileID: 5477911701488351697}
   canvas: {fileID: 0}
   questPanel: {fileID: 0}
+  pausePanel: {fileID: 0}
   valuePanel: {fileID: 0}
   coinsText: {fileID: 0}
   inCinematic: 0

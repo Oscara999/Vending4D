@@ -6,10 +6,10 @@ public class GameState : State
 {
     public override State Tick()
     {
-        if (ManagerGame.Instance == null)
-            return this;
+        //if (ManagerGame.Instance == null)
+        //    return this;
         
-        ManagerGame.Instance.UpdateState();
+        //ManagerGame.Instance.UpdateState();
         return this;
     }
 

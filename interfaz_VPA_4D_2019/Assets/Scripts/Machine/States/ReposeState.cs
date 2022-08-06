@@ -12,7 +12,6 @@ public class ReposeState : State
 
     void StartMachine()
     {
-        //StartCoroutine(StatesManager.Instance.ShowValuePanel(5f));
         StatesManager.Instance.ledsController.ramdom = true;
         currentVideoIndex = 0;
         videoPlayer.clip = videos[currentVideoIndex];
@@ -46,7 +45,6 @@ public class ReposeState : State
             if (currentVideoIndex == videos.Length - 1)
             {
                 currentVideoIndex = 0;
-                StatesManager.Instance.Coins++;
                 StatesManager.Instance.Check(true);
             }
             else
@@ -77,5 +75,6 @@ public class ReposeState : State
         videoPlayer.Stop();
         SoundManager.Instance.PlayNewSound("BackGroundMainManu");
         StatesManager.Instance.ledsController.ramdom = false;
+        StopAllCoroutines();
     }
 }

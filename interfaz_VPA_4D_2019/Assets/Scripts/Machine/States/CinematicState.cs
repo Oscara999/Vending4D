@@ -33,7 +33,8 @@ public class CinematicState : State
 
     public override State Tick()
     {
-        if (StatesManager.Instance.InCinematic)
+        if (StatesManager.Instance.InCinematic
+            || ScenesManager.Instance.isLoad)
             return this;
 
         if (stateOff)
@@ -160,7 +161,7 @@ public class CinematicState : State
         {
             ChangeState(3);
         }
-        
+
         StatesManager.Instance.StateInCinematic(false);
     }
 
@@ -206,6 +207,7 @@ public class CinematicState : State
         //paso a las reglas
         StatesManager.Instance.InGame = true;
         ChangeState(0);
+        yield return new WaitForSeconds(2f);//aquivoy
         StatesManager.Instance.StateInCinematic(false);
     }
 
@@ -215,6 +217,7 @@ public class CinematicState : State
         StatesManager.Instance.timeLineRutine.Play(5);
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(5));
         ChangeState(7);// play a la cinematica 7
+        yield return new WaitForSeconds(2f);
         StatesManager.Instance.StateInCinematic(false);
     }
 
@@ -230,6 +233,7 @@ public class CinematicState : State
 
     protected override void ExitState()
     {
+        StopAllCoroutines();
 
         if (skipCinematic)
         {
@@ -244,6 +248,5 @@ public class CinematicState : State
 
         stateOff = false;
         StatesManager.Instance.StateInCinematic(false);
-        ScenesManager.Instance.LoadLevel("Test3");
     }
 }

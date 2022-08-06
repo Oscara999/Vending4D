@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[DefaultExecutionOrder(-1)]
+//[DefaultExecutionOrder(-1)]
 public class ManagerGame : Singleton<ManagerGame>
 {
     public Slider sliderEnemyUI;
     public Image[] lifesUI;
     public GameObject[] GameUI;
-    public GameObject[] hands;
     public Timer timer;
     public int round;
     bool inProcess;
@@ -18,9 +17,10 @@ public class ManagerGame : Singleton<ManagerGame>
     void Start()
     {
         StartCoroutine(StartGame());
+        StatesManager.Instance.uIController.kindScene = kindScene.Game;
     }
 
-    public void UpdateState()
+    public void Update()
     {
         if (Player.Instance.IsActivate)
         {
@@ -32,13 +32,14 @@ public class ManagerGame : Singleton<ManagerGame>
 
     void HandsState()
     {
-        if (!hands[0].activeInHierarchy && inProcess || !hands[1].activeInHierarchy && inProcess)
+        if (!StatesManager.Instance.hands[0].activeInHierarchy && inProcess || !StatesManager.Instance.hands[1].activeInHierarchy && inProcess)
         {
             if (!ScenesManager.Instance.IsPaused)
             {
                 PauseGame();
-                return;
             }
+            return;
+
         }
         else
         {
@@ -51,7 +52,6 @@ public class ManagerGame : Singleton<ManagerGame>
 
     public void ChageRoud()
     {
-
         if (round == 0 || round == 1)
         {
             round += 1;
@@ -61,12 +61,12 @@ public class ManagerGame : Singleton<ManagerGame>
 
     IEnumerator StartGame()
     {
+        Debug.Log(223232);
+        
         yield return new WaitForSeconds(5f);
         //Debug.Log("1");
         Player.Instance.StateController();
         //Debug.Log("2");
-        StatesManager.Instance.uIController.CrossFireState(true);
-        //Debug.Log("3");
         Enemy.Instance.IsActivate = true;
         //Enemy.Instance.ChageStateAnimation();
         inProcess = true;

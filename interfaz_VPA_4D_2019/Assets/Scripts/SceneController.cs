@@ -8,8 +8,9 @@ public class SceneController : Singleton<SceneController>
     public Dialogue[] dialogues;
 
 
-    void Start()
+    void Awake()
     {
+        base.Awake();
         StatesManager.Instance.SetChangeTimeLine(timeLines);
     }
 

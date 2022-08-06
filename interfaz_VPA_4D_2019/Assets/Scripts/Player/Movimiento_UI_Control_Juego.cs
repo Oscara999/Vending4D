@@ -9,7 +9,7 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
     [Header("Selected Settings")] 
     [SerializeField] GameObject currentObjetivo;
     [SerializeField] Color[] colors;
-    [SerializeField] Image UI;
+    [SerializeField] Image SelectedUI;
     [SerializeField] float speed;
     public Selected selected;
     public Camera positionReferenceCamera;
@@ -72,15 +72,15 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
 
     IEnumerator ChangeColor()
     {
-        UI.color = colors[1];
+        SelectedUI.color = colors[1];
         yield return new WaitForSeconds(1f);
-        UI.color = colors[0];
+        SelectedUI.color = colors[0];
     }
 
     void EditBulletSelected(EnemyBullet bulletEnemy, int index, bool state)
     {
         SoundManager.Instance.PlayNewSound(Player.Instance.fx_Sound[index].name);
-        StartCoroutine(ChangeColor());
+        //StartCoroutine(ChangeColor());
         bulletEnemy.uiSelected.SetActive(state);
         bulletEnemy.selected = state;
     }
