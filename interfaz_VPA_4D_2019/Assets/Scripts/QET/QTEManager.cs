@@ -1,22 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QTEManager : Singleton<QTEManager>
 {
     [Header("Configuration")]
     [HideInInspector]
-    public bool isEventStarted;
+    public bool startEvent;
     public QTEEvent eventData;
     public bool isFail;
     public bool isEnded;
     public bool isCorrect;
-    public float currentTime;
     public float smoothTimeUpdate;
+    float currentTime;
+
+    public GameObject eventUIPanel;
+    public GameObject[] eventUI;
+    public Text eventTimerText;
+    public Image eventTimerImage;
 
     protected void Update()
     {
-        if (!isEventStarted || eventData == null || ScenesManager.Instance.IsPaused) return;
+        if (!startEvent || eventData == null || ScenesManager.Instance.IsPaused) 
+            return;
 
         updateTimer();
 
@@ -24,6 +31,75 @@ public class QTEManager : Singleton<QTEManager>
         {
             doFinally();
         }
+    }
+
+    public void StartEvent(QTEEvent eventScriptable)
+    {
+        eventData = eventScriptable;
+
+        if (eventData.onStart != null)
+        {
+            eventData.onStart.Invoke();
+        }
+
+        isEnded = false;
+        isFail = false;
+        isCorrect = false;
+
+        currentTime = eventData.time;
+        setupGUI(eventData.index);
+        StartCoroutine(countDown());
+    }
+
+    private IEnumerator countDown()
+    {
+        startEvent = true;
+        while (currentTime > 0 && startEvent && !isEnded)
+        {
+            if (eventTimerText != null)
+            {
+                eventTimerText.text = currentTime.ToString();
+            }
+
+            currentTime--;
+            yield return new WaitForSecondsRealtime(1f);
+        }
+
+        if (!isEnded)
+        {
+            isFail = true;
+        }
+    }
+
+    protected void doFinally()
+    {
+        isEnded = true;
+
+        if (eventUI != null)
+        {
+            for (int i = 0; i < eventUI.Length; i++)
+            {
+                eventUI[i].SetActive(false);
+            }
+        }
+
+        if (eventData.onEnd != null)
+        {
+            eventData.onEnd.Invoke();
+        }
+
+        if (eventData.onFail != null && isFail)
+        {
+            eventData.onFail.Invoke();
+        }
+
+        if (eventData.onSuccess != null && isCorrect)
+        {
+            eventData.onSuccess.Invoke();
+        }
+        
+        startEvent = false;
+        eventData = null;
     }
 
     public void SetResult(bool state)
@@ -38,104 +114,50 @@ public class QTEManager : Singleton<QTEManager>
         }
     }
 
-    public void startEvent(QTEEvent eventScriptable)
+    void UISetup(int index)
     {
-        eventData = eventScriptable;
-        Debug.Log("1");
-
-        if (eventData.onStart != null)
+        for (int i = 0; i < eventUI.Length; i++)
         {
-            eventData.onStart.Invoke();
-        }
-
-        isEnded = false;
-        isFail = false;
-        isCorrect = false;
-    
-        currentTime = eventData.time;
-        setupGUI();
-        StartCoroutine(countDown());
-    }
-
-    private IEnumerator countDown()
-    {
-        isEventStarted = true;
-        while(currentTime > 0 && isEventStarted && !isEnded)
-        {
-            if(eventData.keyboardUI.eventTimerText != null)
+            if (i == index)
             {
-                eventData.keyboardUI.eventTimerText.text = currentTime.ToString();
+                eventUI[i].SetActive(true);
             }
-
-            currentTime--;
-            yield return new WaitForSecondsRealtime(1f);
+            else
+            {
+                eventUI[i].SetActive(false);
+            }
         }
 
-        if (!isEnded)
+        switch (index)
         {
-            isFail = true;
-            doFinally();
+            case 0:
+                eventTimerText = eventUI[0].GetComponentInChildren<Text>();
+                eventTimerImage= eventUI[0].GetComponentInChildren<Image>();
+                break;
+
+            case 1:
+                eventTimerText = eventUI[1].GetComponentInChildren<Text>();
+                eventTimerImage = eventUI[1].GetComponentInChildren<Image>();
+                break;
         }
-    }
-
-    protected void doFinally()
-    {
-        isEnded = true;
-        isEventStarted = false;
-
-        var ui = getUI();
-
-        if (ui.eventUI != null)
-        {
-            ui.eventUI.SetActive(false);
-        }
-
-        if (eventData.onEnd != null)
-        {
-            eventData.onEnd.Invoke();
-        }
-
-        if (eventData.onFail != null && isFail)
-        {
-            eventData.onFail.Invoke();
-        }
-
-        if(eventData.onSuccess != null && isCorrect)
-        {
-            eventData.onSuccess.Invoke();
-        }
-
-        eventData = null;
     }
 
     protected void updateTimer()
     {
-        var ui = getUI();
-
-        if (ui.eventTimerImage != null)
+        if (eventTimerImage != null)
         {
-            ui.eventTimerImage.fillAmount = smoothTimeUpdate / eventData.time;
+            eventTimerImage.fillAmount = smoothTimeUpdate / eventData.time;
         }
     }
 
-    protected void setupGUI()
+    protected void setupGUI(int index)
     {
-        var ui = getUI();
-        
-        if (ui.eventTimerImage != null)
-        {
-            ui.eventTimerImage.fillAmount = 1;
-        }
+        UISetup(index);
+        Debug.Log("1");
 
-        if (ui.eventUI != null)
+        if (eventTimerImage != null)
         {
-            ui.eventUI.SetActive(true);
+            eventTimerImage.fillAmount = 1;
         }
-    }
-
-    protected QTEUI getUI()
-    {
-        var ui = eventData.keyboardUI;
-        return ui;
     }
 }

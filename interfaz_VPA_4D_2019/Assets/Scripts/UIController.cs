@@ -30,6 +30,10 @@ public class UIController : MonoBehaviour
     public Ray ray;
     public Camera positionReferenceCamera;
 
+    [Header("Setup UI")]
+    public float currentTime;
+    public float smoothTimeUpdate;
+    public float time;
 
     void OnEnable()
     {
@@ -68,8 +72,6 @@ public class UIController : MonoBehaviour
     {
         if (virtualMouse == null || !enabledMovement)
             return;
-        Debug.Log("putamadre");
-
         CursorMovement();
         VirtualMouseMovement();
     }

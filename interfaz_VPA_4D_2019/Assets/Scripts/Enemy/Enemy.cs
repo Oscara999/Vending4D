@@ -162,7 +162,7 @@ public class Enemy : Singleton<Enemy>
 
     public void AttackGround()
     {
-        QTEManager.Instance.startEvent(eventQTE);
+        QTEManager.Instance.StartEvent(eventQTE);
         SoundManager.Instance.PlayNewSound(SoundManager.Instance.songs[0].name);
     }
 

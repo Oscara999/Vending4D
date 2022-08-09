@@ -28,6 +28,7 @@ public class ScenesManager : Singleton<ScenesManager>
     /// <summary>
     /// Barra de carga para la pantalla Loading
     /// </summary>
+    public GameObject loadingPanel;
     UnityEngine.UI.Slider slider;
 
     /// <summary>
@@ -70,7 +71,7 @@ public class ScenesManager : Singleton<ScenesManager>
     /// </summary>
     void EditPrefabsGame()
     {
-        slider = systemPrefabs[0].GetComponentInChildren<UnityEngine.UI.Slider>();
+        slider = loadingPanel.GetComponentInChildren<UnityEngine.UI.Slider>();
 
         for (int i = 0; i < systemPrefabs.Count; i++)
         {
@@ -97,8 +98,8 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         if (_loadOperations.Contains(ao))
             _loadOperations.Remove(ao);
-       
-        systemPrefabs[0].SetActive(false);
+
+        loadingPanel.SetActive(false);
         ValidateLevel();
         Debug.Log("[GameManager] Escena Cargada completamente");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName));
@@ -233,7 +234,7 @@ public class ScenesManager : Singleton<ScenesManager>
     /// <param name="ao">Asyncronous Operation object</param>
     IEnumerator LoadingScreen(AsyncOperation ao)
     {
-        systemPrefabs[0].SetActive(true);
+        loadingPanel.SetActive(true);
         ao.allowSceneActivation = false;
 
         while(ao.isDone == false)
@@ -243,9 +244,8 @@ public class ScenesManager : Singleton<ScenesManager>
             slider.value = 1f; 
             ao.allowSceneActivation = true;
             yield return new WaitForSeconds(2f);
-            systemPrefabs[0].SetActive(false);
+            loadingPanel.SetActive(false);
             isLoad = false;
-            Debug.Log("salio aqui");
         }
     }
 }
