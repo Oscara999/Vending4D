@@ -5,6 +5,7 @@ using UnityEngine;
 public class SceneController : Singleton<SceneController>
 {
     public GameObject timeLines;
+    public GameObject QTE;
     public Dialogue[] dialogues;
 
 
@@ -27,12 +28,22 @@ public class SceneController : Singleton<SceneController>
         StatesManager.Instance.questPanel.SetActive(false);
     }
 
+    public void ValidatePayment()
+    {
+        StatesManager.Instance.SubtractCoin();
+    }
+
     public void NextDialogue()
     {
         if (DialogueSystem.Instance == null)
             return;
 
         DialogueSystem.Instance.DisplayNextDialogue();
+    }
+    
+    public void StartShowPanel(float timeStart)
+    {
+      StartCoroutine(StatesManager.Instance.ShowValuePanel(timeStart));
     }
 
     public void StartDialogue(int index)

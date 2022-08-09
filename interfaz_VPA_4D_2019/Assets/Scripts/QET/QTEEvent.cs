@@ -4,14 +4,6 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 
-[System.Serializable]
-public class QTEUI
-{
-    public GameObject eventUI;
-    public Text eventTimerText;
-    public Image eventTimerImage;
-}
-
 public enum QTETimeType
 {
     Normal,
@@ -23,9 +15,8 @@ public class QTEEvent : MonoBehaviour
 {
     [Header("Event settings")]
     public float time = 3f;
-    [Header("UI")]
-    public QTEUI keyboardUI;
-
+    public int index;
+    
     [Header("Event actions")]
     public UnityEvent onStart;
     public UnityEvent onEnd;

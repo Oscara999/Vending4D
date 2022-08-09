@@ -7,7 +7,6 @@ public class CinematicState : State
     [Header("States ")]
     public GameState gameState;
     public SkipState skipState;
-    public PaymentValidationState validationProcessState;
     [SerializeField]
     State nextState;
 
@@ -149,13 +148,22 @@ public class CinematicState : State
         StatesManager.Instance.StateInCinematic(true);
         StatesManager.Instance.timeLineRutine.Play(1);
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(1));
-        //start temporizador de pago y mostrar precio 
-        yield return new WaitForSeconds(10f);
-        // if para validar si seguir o salir 
         
-        if (StatesManager.Instance.SubtractCoin())
+        //start qte de temporizador de pago. mostrara precio. originalGameObject;
+        if (SceneController.Instance != null)
         {
-            ChangeState(4);
+            QTEManager.Instance.StartEvent(SceneController.Instance.QTE.transform.GetChild(0).gameObject.GetComponent<QTEEvent>());
+            
+            yield return new WaitForSeconds(5f);
+            //StatesManager.Instance.Recharge(1);
+
+            yield return new WaitUntil(() => !QTEManager.Instance.startEvent);
+        }
+
+        //voy aqui
+        if (StatesManager.Instance.PaymentMade)
+        {
+            ChangeState(4); 
         }
         else
         {
@@ -170,6 +178,7 @@ public class CinematicState : State
         StatesManager.Instance.StateInCinematic(true);
         StatesManager.Instance.timeLineRutine.Play(2);
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(2));
+        skipCinematic = true;
         ChangeState(0);
         StatesManager.Instance.StateInCinematic(false);
     }

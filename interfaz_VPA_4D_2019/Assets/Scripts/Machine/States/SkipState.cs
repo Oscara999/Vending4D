@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class SkipState : State
 {
+    public ReposeState reposeState;
     public override State Tick()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("skip");
+
+        if (!StatesManager.Instance.IsThereSomeone)
+        {
+            return reposeState;
+        }
+        else
+        {
+            StatesManager.Instance.IsThereSomeone = false;
+            return this;
+        }
     }
 
     protected override void ExitState()

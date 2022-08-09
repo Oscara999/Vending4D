@@ -10,8 +10,7 @@ public class StatesManager : Singleton<StatesManager>
     public LedsController ledsController;
     public TimeLineRutine timeLineRutine;
     public GameObject[] hands;
-    [SerializeField]
-    State currentState;
+    public State currentState;
 
     [Header(" UI Settings")]
     public UIController uIController;
@@ -35,26 +34,24 @@ public class StatesManager : Singleton<StatesManager>
     bool challengeAccepted;
     [SerializeField]
     bool inGame;
-    [SerializeField]
-    int coins;
+    public int coins;
 
-    public int Coins { get => coins; set => coins = value; }
     public bool IsThereSomeone { get => isThereSomeone; set => isThereSomeone = value; }
     public bool InCinematic { get => inCinematic; }
     public bool ChallengeAccepted { get => challengeAccepted; set => challengeAccepted = value; }
     public bool InGame { get => inGame; set => inGame = value; }
     public bool ValuePanel { get => valuePanel.activeInHierarchy; }
+    public bool PaymentMade { get => paymentMade;}
 
     void Start()
     {
         //BaseDataManager.Instance.Load();
-        Coins++;
         StartCoroutine(test());
     }
 
     IEnumerator test()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         isThereSomeone = true;
         Debug.Log("Is there someone");
     }
@@ -86,13 +83,19 @@ public class StatesManager : Singleton<StatesManager>
             }
         }
     }
+    
+    public void Recharge(int numCoins)
+    {
+        coins += numCoins;
+        Debug.Log("recharged: "+ coins);
+    }
 
     public bool SubtractCoin()
     {
         if (coins > 0)
         {
             coins--;
-            Debug.Log("Coin Subtracted");
+            Debug.Log("Coin Subtracted");            
             return paymentMade = true;
         }
         else
@@ -101,7 +104,7 @@ public class StatesManager : Singleton<StatesManager>
         }
     }
 
-    void SwitchToNextState(State state)
+    public void SwitchToNextState(State state)
     {
         currentState = state;
         
@@ -110,7 +113,7 @@ public class StatesManager : Singleton<StatesManager>
             ScenesManager.Instance.isLoad = true;
             ScenesManager.Instance.LoadLevel("Test3");
         }
-        
+
         Debug.Log(currentState.name);
     }
 
@@ -135,7 +138,7 @@ public class StatesManager : Singleton<StatesManager>
     }
     public void CoinsValidation()
     {
-        if (coins > 0)
+        if (!inGame)
         {
             if (!coinsText.gameObject.activeInHierarchy)
             {
@@ -147,7 +150,7 @@ public class StatesManager : Singleton<StatesManager>
             coinsText.gameObject.SetActive(false);
         }
         
-        coinsText.text = "Coins " + coins.ToString();
+        coinsText.text = "Coins:" + coins.ToString();
     }
 
     public void Check(bool validation)
