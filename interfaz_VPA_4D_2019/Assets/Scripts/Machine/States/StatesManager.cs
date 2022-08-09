@@ -100,6 +100,7 @@ public class StatesManager : Singleton<StatesManager>
         }
         else
         {
+            Debug.Log("Don't have any coin");
             return paymentMade = false;
         }
     }

@@ -8,7 +8,6 @@ public class SceneController : Singleton<SceneController>
     public GameObject QTE;
     public Dialogue[] dialogues;
 
-
     void Awake()
     {
         base.Awake();
