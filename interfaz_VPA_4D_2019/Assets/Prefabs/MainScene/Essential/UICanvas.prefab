@@ -654,12 +654,12 @@ GameObject:
   - component: {fileID: 1269008974}
   - component: {fileID: 1269008973}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BlackWindowImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1269008972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -694,13 +694,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269008971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.988338, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -728,10 +728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d647c82f6b6c8648a17c18306769013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 75
   "tama\xF1o": 70
   sprite: {fileID: 1269008974}
-  rotate: 1
+  rotate: 0
   start: 0
 --- !u!1 &1373352508
 GameObject:
@@ -1486,7 +1486,7 @@ RectTransform:
   m_GameObject: {fileID: 1530989958452423635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32424, y: 0.32424, z: 0.32424}
+  m_LocalScale: {x: 0.39177918, y: 0.39177918, z: 0.39177918}
   m_Children: []
   m_Father: {fileID: 7341198611391413490}
   m_RootOrder: 3
@@ -1494,7 +1494,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 424, y: 305}
-  m_SizeDelta: {x: 2476.9998, y: 1074.0117}
+  m_SizeDelta: {x: 796, y: 796}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &817098172906748287
 CanvasRenderer:
@@ -1523,7 +1523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d0a82e5e2795f264d878018a16ae4088, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a9fc45ba98107c4fb9f0062349e8c7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1550,7 +1550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5258636437495451370
 RectTransform:
   m_ObjectHideFlags: 0
