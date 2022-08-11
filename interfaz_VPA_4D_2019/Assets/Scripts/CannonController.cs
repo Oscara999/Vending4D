@@ -23,7 +23,7 @@ public class CannonController : MonoBehaviour
     public void StartExplocion()
     {
         GameObject CreatedCannonball = Instantiate(Cannonball, ShotPoint.position, ShotPoint.rotation);
-        CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower;
+        CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower * 4;
 
         Debug.Log("entro");
 
