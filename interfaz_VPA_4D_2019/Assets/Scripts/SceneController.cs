@@ -14,22 +14,14 @@ public class SceneController : Singleton<SceneController>
         StatesManager.Instance.SetChangeTimeLine(timeLines);
     }
 
-    public IEnumerator StartQuestTimer()
-    {
-        StatesManager.Instance.questPanel.SetActive(true);
-        //mostrar reloj
-        yield return new WaitForSeconds(10f);
-        //seleccioar respuesta correcta 
-        SoundManager.Instance.PlayNewSound("SelectedFinish");
-        // validar si acepta o no el reto para definir acciones
-        StatesManager.Instance.ChallengeAccepted = true;
-        yield return new WaitForSeconds(2f);
-        StatesManager.Instance.questPanel.SetActive(false);
-    }
-
     public void ValidatePayment()
     {
         StatesManager.Instance.SubtractCoin();
+    }
+
+    public void ValidatePlayGame()
+    {
+        StatesManager.Instance.ValidateChallengeStatus();
     }
 
     public void NextDialogue()
@@ -39,8 +31,13 @@ public class SceneController : Singleton<SceneController>
 
         DialogueSystem.Instance.DisplayNextDialogue();
     }
-    
-    public void StartShowPanel(float timeStart)
+
+    public void StartQuestPanel(bool value)
+    {
+        StatesManager.Instance.questPanel.SetActive(value);
+    }
+
+        public void StartShowPanel(float timeStart)
     {
       StartCoroutine(StatesManager.Instance.ShowValuePanel(timeStart));
     }

@@ -136,8 +136,13 @@ public class CinematicState : State
 
     IEnumerator FirstCinematic()
     {
+        StatesManager.Instance.skapeTask.ChangeSize(false);
         StatesManager.Instance.StateInCinematic(true);
         StatesManager.Instance.timeLineRutine.Play(0);
+
+        yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
+        StatesManager.Instance.skapeTask.RestartSize();
+
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(0));
         ChangeState(2);
         StatesManager.Instance.StateInCinematic(false);
@@ -160,10 +165,10 @@ public class CinematicState : State
             yield return new WaitUntil(() => !QTEManager.Instance.startEvent);
         }
 
-        //voy aqui
         if (StatesManager.Instance.PaymentMade)
         {
-            ChangeState(4); 
+            SoundManager.Instance.PlayNewSound("SelectedFinish");
+            ChangeState(4);
         }
         else
         {
@@ -188,23 +193,32 @@ public class CinematicState : State
         StatesManager.Instance.StateInCinematic(true);
         StatesManager.Instance.timeLineRutine.Play(3);
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(3));
-        StartCoroutine(SceneController.Instance.StartQuestTimer());
-        yield return new WaitForSeconds(10f);
+        StatesManager.Instance.ledsController.ramdom = false;
+
+        if (SceneController.Instance != null)
+        {
+            QTEManager.Instance.StartEvent(SceneController.Instance.QTE.transform.GetChild(1).gameObject.GetComponent<QTEEvent>());
+            yield return new WaitUntil(() => !QTEManager.Instance.startEvent);
+        }
+
+        StatesManager.Instance.ledsController.ramdom = true;
+
+        yield return new WaitForSeconds(2f);
+        StatesManager.Instance.questPanel.SetActive(false);
+
+        SoundManager.Instance.PlayNewSound("SelectedFinish");
+        
+        // validar si acepta o no el reto para definir acciones
 
         if (StatesManager.Instance.ChallengeAccepted)
         {
             ChangeState(5);
-            // cinematica 5
-            //if para validar porque se va y que estado pomer
         }
         else
         {
             ChangeState(6);
-            // cinematica 6
-            //aqui vooooyyy
         }
 
-        yield return new WaitForSeconds(2f);
         StatesManager.Instance.StateInCinematic(false);
     }
 
@@ -253,6 +267,7 @@ public class CinematicState : State
         if (StatesManager.Instance.InGame)
         {
             nextState = gameState;
+            StatesManager.Instance.ledsController.ramdom = false;
         }
 
         stateOff = false;

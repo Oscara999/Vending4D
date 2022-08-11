@@ -61,8 +61,6 @@ public class ManagerGame : Singleton<ManagerGame>
 
     IEnumerator StartGame()
     {
-        Debug.Log(223232);
-        
         yield return new WaitForSeconds(5f);
         //Debug.Log("1");
         Player.Instance.StateController();

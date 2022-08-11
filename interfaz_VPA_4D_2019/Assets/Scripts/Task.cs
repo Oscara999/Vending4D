@@ -9,11 +9,11 @@ public class Task : MonoBehaviour
     public float tamaño;
     public Image sprite;
     public bool rotate;
-    public bool finish;
+    public bool start;
 
     public void Update()
     {
-        if (rotate)
+        if (rotate && start)
         {
             transform.Rotate(0, speed * Time.deltaTime, 0);
         }
@@ -21,9 +21,9 @@ public class Task : MonoBehaviour
 
     public void ChangeSize(bool validation)
     {
-        finish = false;
-        StopAllCoroutines();
-        sprite.gameObject.SetActive(true);
+        start = true;
+        sprite.enabled = true;
+
         if (validation)
         {
             StartCoroutine(BigSize());
@@ -36,8 +36,8 @@ public class Task : MonoBehaviour
 
     public bool RestartSize()
     {
-        sprite.transform.localScale =  Vector3.zero;
-        sprite.gameObject.SetActive(false);
+        sprite.transform.localScale =  new Vector3(tamaño,tamaño,1);
+        sprite.enabled = false;
         return true;
     }
 
@@ -48,7 +48,9 @@ public class Task : MonoBehaviour
             sprite.transform.localScale += new Vector3(-Time.deltaTime * speed, -Time.deltaTime * speed);
             yield return null;
         }
-        finish = true;
+
+        Debug.Log("startBlackWindows");
+        start = false;
     }
 
     IEnumerator BigSize()
@@ -58,7 +60,7 @@ public class Task : MonoBehaviour
             sprite.transform.localScale += new Vector3(Time.deltaTime * speed, Time.deltaTime * speed);
             yield return null;
         }
-        finish = true;
-    }
 
+        start = false;
+    }
 }

@@ -74,7 +74,6 @@ public class ReposeState : State
         demoPanel.SetActive(false);
         videoPlayer.Stop();
         SoundManager.Instance.PlayNewSound("BackGroundMainManu");
-        StatesManager.Instance.ledsController.ramdom = false;
         StopAllCoroutines();
     }
 }

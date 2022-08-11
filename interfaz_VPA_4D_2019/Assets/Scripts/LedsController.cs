@@ -11,7 +11,6 @@ public class LedsController : MonoBehaviour
     public Image referenceImage;
     public Color newColor;
     public Image loadingPanel;
-
     float timer;
 
     void FixedUpdate()

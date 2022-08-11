@@ -93,7 +93,6 @@ public class UIController : MonoBehaviour
     {
         if (!crossFire.activeInHierarchy || !Camera.main)
         {
-            Debug.Log(3);
             return;
         }
 

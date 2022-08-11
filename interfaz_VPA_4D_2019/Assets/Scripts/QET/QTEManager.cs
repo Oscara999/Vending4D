@@ -45,8 +45,8 @@ public class QTEManager : Singleton<QTEManager>
         isEnded = false;
         isFail = false;
         isCorrect = false;
-
         currentTime = eventData.time;
+        smoothTimeUpdate = currentTime;
         setupGUI(eventData.index);
         StartCoroutine(countDown());
     }
@@ -144,6 +144,8 @@ public class QTEManager : Singleton<QTEManager>
 
     protected void updateTimer()
     {
+        smoothTimeUpdate -= Time.unscaledDeltaTime;
+
         if (eventTimerImage != null)
         {
             eventTimerImage.fillAmount = smoothTimeUpdate / eventData.time;

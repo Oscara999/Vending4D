@@ -10,6 +10,7 @@ public class StatesManager : Singleton<StatesManager>
     public LedsController ledsController;
     public TimeLineRutine timeLineRutine;
     public GameObject[] hands;
+    public Task skapeTask;
     public State currentState;
 
     [Header(" UI Settings")]
@@ -46,7 +47,7 @@ public class StatesManager : Singleton<StatesManager>
     void Start()
     {
         //BaseDataManager.Instance.Load();
-        StartCoroutine(test());
+       // Cursor.visible = false;
     }
 
     IEnumerator test()
@@ -88,6 +89,23 @@ public class StatesManager : Singleton<StatesManager>
     {
         coins += numCoins;
         Debug.Log("recharged: "+ coins);
+    }
+
+    public void SetChallengeStatus(bool state)
+    {
+        challengeAccepted = state;
+    }
+
+    public void ValidateChallengeStatus()
+    {
+        if (challengeAccepted)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 
     public bool SubtractCoin()
