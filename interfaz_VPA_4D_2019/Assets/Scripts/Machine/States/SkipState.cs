@@ -11,6 +11,7 @@ public class SkipState : State
 
         if (!StatesManager.Instance.IsThereSomeone)
         {
+            ExitState();
             return reposeState;
         }
         else
