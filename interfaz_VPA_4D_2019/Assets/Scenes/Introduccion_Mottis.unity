@@ -1646,14 +1646,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361475641}
-  m_LocalRotation: {x: 0.09397481, y: -0.68317115, z: 0.08933475, w: 0.71865517}
+  m_LocalRotation: {x: 0.07307659, y: -0.8190763, z: 0.10710639, w: 0.5588399}
   m_LocalPosition: {x: 85, y: 44, z: 82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 810694163}
   m_Father: {fileID: 550899930}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 354, y: -1, z: 4}
+  m_LocalEulerAnglesHint: {x: 0, y: 356, z: 9}
 --- !u!114 &361475643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9266,7 +9266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.072000004}
   m_AnchorMax: {x: 1, y: 0.38946855}
-  m_AnchoredPosition: {x: -14.099976, y: -0.50001526}
+  m_AnchoredPosition: {x: -14.099976, y: -0.5}
   m_SizeDelta: {x: 29.288696, y: 5.0181274}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426856076
@@ -10342,7 +10342,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569057531}
-  m_LocalRotation: {x: 0.038514696, y: -0.9468039, z: 0.123808645, w: 0.2945341}
+  m_LocalRotation: {x: 0.033421624, y: -0.8216009, z: 0.10743659, w: 0.5588399}
   m_LocalPosition: {x: 90.99, y: 46.15, z: 82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -10621,10 +10621,10 @@ PlayableDirector:
     value: {fileID: 371736483}
   - key: {fileID: -872568800785635615, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
     value: {fileID: 2080277694}
-  - key: {fileID: -3754911855108475653, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
-    value: {fileID: 361475644}
   - key: {fileID: 86316646644803706, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
     value: {fileID: 1613777805}
+  - key: {fileID: 2185904705799713329, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
+    value: {fileID: 361475644}
   m_ExposedReferences:
     m_References:
     - cbb190e3742558c4c92ae8e273c599bd: {fileID: 552162879}
@@ -10649,6 +10649,7 @@ PlayableDirector:
     - dda3c31ed71a901489a322d371306fc7: {fileID: 552162879}
     - 302f6a7b2d1a7fb419867acdb389db30: {fileID: 1472936135}
     - 49d0a03bd26c7cd478a5fb589c623c26: {fileID: 806265426}
+    - 5d9471b31b562834cbe815744be10c7d: {fileID: 361475643}
     - 37f1b79a331d79b4db750347ea61c39d: {fileID: 0}
 --- !u!114 &1613777808
 MonoBehaviour:
@@ -15607,7 +15608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2674254, y: 0.13945046}
   m_AnchorMax: {x: 0.7547901, y: 0.28825226}
-  m_AnchoredPosition: {x: -0.5, y: 2}
+  m_AnchoredPosition: {x: -0.5, y: 1.9999962}
   m_SizeDelta: {x: -181.83484, y: -28.101685}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2073358961
