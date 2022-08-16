@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: 8330357187053516584
     second: Esqueleto|EsqueletoAction.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Textura_Rata
+    second: {fileID: 2100000, guid: 664dace4d2df3fb4687176e80d45d417, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -113,7 +118,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.06
+    globalScale: 6
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

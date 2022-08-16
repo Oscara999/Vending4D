@@ -9,7 +9,12 @@ ModelImporter:
   - first:
       74: -7736531183636422624
     second: Esqueleto|Esqueleto|Esqueleto|EsqueletoAction|Esqueleto|EsqueletoAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Textura_Rata
+    second: {fileID: 2100000, guid: 664dace4d2df3fb4687176e80d45d417, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
