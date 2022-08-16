@@ -155,7 +155,6 @@ public class QTEManager : Singleton<QTEManager>
     protected void setupGUI(int index)
     {
         UISetup(index);
-        Debug.Log("1");
 
         if (eventTimerImage != null)
         {

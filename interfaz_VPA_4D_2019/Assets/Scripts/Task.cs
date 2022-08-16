@@ -8,21 +8,17 @@ public class Task : MonoBehaviour
     [SerializeField] float speed;
     public float tamaño;
     public Image sprite;
-    public bool rotate;
     public bool start;
-
-    public void Update()
-    {
-        if (rotate && start)
-        {
-            transform.Rotate(0, speed * Time.deltaTime, 0);
-        }
-    }
 
     public void ChangeSize(bool validation)
     {
         start = true;
-        sprite.enabled = true;
+
+        if (!sprite.enabled)
+        {
+            Debug.Log("sisas");
+            sprite.enabled = true;
+        }
 
         if (validation)
         {
@@ -34,22 +30,30 @@ public class Task : MonoBehaviour
         }
     }
 
-    public bool RestartSize()
+    public void RestartSize(bool state)
     {
-        sprite.transform.localScale =  new Vector3(tamaño,tamaño,1);
         sprite.enabled = false;
-        return true;
+
+        if (state)
+        {
+            sprite.transform.localScale = new Vector3(tamaño, tamaño, 1);
+        }
+        else
+        {
+            sprite.transform.localScale = new Vector3(0, 0, 1);
+        }
+
     }
 
     IEnumerator SmallSize()
-    {
+    {        
         while (sprite.transform.localScale.x > 0)
         {
             sprite.transform.localScale += new Vector3(-Time.deltaTime * speed, -Time.deltaTime * speed);
             yield return null;
         }
 
-        Debug.Log("startBlackWindows");
+        Debug.Log("The black window starts to Disminuir.");
         start = false;
     }
 
@@ -61,6 +65,7 @@ public class Task : MonoBehaviour
             yield return null;
         }
 
+        Debug.Log("The black window starts to Grow");
         start = false;
     }
 }

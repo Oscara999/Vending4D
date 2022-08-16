@@ -15,6 +15,7 @@ TagManager:
   - CrossFire
   - QuestPanel
   - PauseMenu
+  - MouseEventTrue
   layers:
   - Default
   - TransparentFX

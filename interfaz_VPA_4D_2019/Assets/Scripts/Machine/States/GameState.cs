@@ -15,6 +15,6 @@ public class GameState : State
 
     protected override void ExitState()
     {
-        throw new System.NotImplementedException();
+        StatesManager.Instance.InGame = false;
     }
 }

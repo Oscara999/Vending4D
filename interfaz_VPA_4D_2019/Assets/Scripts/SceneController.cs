@@ -7,6 +7,7 @@ public class SceneController : Singleton<SceneController>
     public GameObject timeLines;
     public GameObject QTE;
     public Dialogue[] dialogues;
+    public bool setBoolStartGame;
 
     void Awake()
     {
@@ -21,7 +22,20 @@ public class SceneController : Singleton<SceneController>
 
     public void ValidatePlayGame()
     {
-        StatesManager.Instance.ValidateChallengeStatus();
+        MouseEvent mouseEventTrue = GameObject.FindGameObjectWithTag("MouseEventTrue").GetComponent<MouseEvent>();
+
+        if (!setBoolStartGame)
+        {
+            Debug.Log("no respondio nada");
+            mouseEventTrue.Change(mouseEventTrue.selectedPanelImage);
+            StatesManager.Instance.SetChallengeStatus(true);
+            setBoolStartGame = true;
+        }
+        else
+        {
+            mouseEventTrue.Change(mouseEventTrue.normalPanelImage);
+            mouseEventTrue.isSelected = mouseEventTrue.anotherButton.isSelected = false;
+        }
     }
 
     public void NextDialogue()

@@ -21,7 +21,7 @@ public class ReposeState : State
 
     public override State Tick()
     {
-        if (!StatesManager.Instance.IsThereSomeone)
+        if (!StatesManager.Instance.IsHereSomeOne)
         {
             Check();
             return this;

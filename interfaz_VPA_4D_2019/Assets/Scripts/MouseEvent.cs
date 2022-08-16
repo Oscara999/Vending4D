@@ -19,6 +19,7 @@ public class MouseEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public float currentTime;
     public float smoothTimeUpdate;
     public MouseEvent anotherButton;
+
     void StartSelect()
     {
         Debug.Log("StartSelected");
@@ -52,6 +53,8 @@ public class MouseEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             }
             else
             {
+                SceneController.Instance.setBoolStartGame = true;
+
                 isSelected = true;
 
                 if (anotherButton.isSelected)
@@ -63,7 +66,6 @@ public class MouseEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 EndSelect();
                 SoundManager.Instance.PlayNewSound("SelectedQuest");
             }
-
         }
     }
     
@@ -94,7 +96,7 @@ public class MouseEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         
     }
 
-    void Change(Sprite newImage)
+    public void Change(Sprite newImage)
     {
         panelReference.overrideSprite = newImage;
     }

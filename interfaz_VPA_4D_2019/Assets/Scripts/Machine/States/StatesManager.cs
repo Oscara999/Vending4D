@@ -18,6 +18,8 @@ public class StatesManager : Singleton<StatesManager>
     public Canvas canvas;
     public GameObject questPanel;
     public GameObject pausePanel;
+    public GameObject rulesPanel;
+
 
     [SerializeField]
     GameObject valuePanel;
@@ -28,7 +30,7 @@ public class StatesManager : Singleton<StatesManager>
     [SerializeField]
     bool inCinematic;
     [SerializeField]
-    bool isThereSomeone;
+    bool isHereSomeOne;
     [SerializeField]
     bool paymentMade;
     [SerializeField]
@@ -37,12 +39,12 @@ public class StatesManager : Singleton<StatesManager>
     bool inGame;
     public int coins;
 
-    public bool IsThereSomeone { get => isThereSomeone; set => isThereSomeone = value; }
+    public bool IsHereSomeOne { get => isHereSomeOne; set => isHereSomeOne = value; }
     public bool InCinematic { get => inCinematic; }
     public bool ChallengeAccepted { get => challengeAccepted; set => challengeAccepted = value; }
     public bool InGame { get => inGame; set => inGame = value; }
     public bool ValuePanel { get => valuePanel.activeInHierarchy; }
-    public bool PaymentMade { get => paymentMade;}
+    public bool PaymentMade { get => paymentMade; set => paymentMade = value; }
 
     void Start()
     {
@@ -53,7 +55,7 @@ public class StatesManager : Singleton<StatesManager>
     IEnumerator test()
     {
         yield return new WaitForSeconds(2f);
-        isThereSomeone = true;
+        isHereSomeOne = true;
         Debug.Log("Is there someone");
     }
 
@@ -94,18 +96,6 @@ public class StatesManager : Singleton<StatesManager>
     public void SetChallengeStatus(bool state)
     {
         challengeAccepted = state;
-    }
-
-    public void ValidateChallengeStatus()
-    {
-        if (challengeAccepted)
-        {
-
-        }
-        else
-        {
-
-        }
     }
 
     public bool SubtractCoin()
@@ -174,6 +164,6 @@ public class StatesManager : Singleton<StatesManager>
 
     public void Check(bool validation)
     {
-        isThereSomeone = validation;
+        isHereSomeOne = validation;
     }
 }

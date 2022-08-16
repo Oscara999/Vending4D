@@ -10372,8 +10372,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569057531}
-  m_LocalRotation: {x: 0.038514696, y: -0.9468039, z: 0.123808645, w: 0.2945341}
-  m_LocalPosition: {x: 90.99, y: 46.15, z: 82}
+  m_LocalRotation: {x: 0.022394711, y: -0.96445733, z: 0.08692746, w: 0.24852403}
+  m_LocalPosition: {x: 163.49988, y: 48.930023, z: 274.69995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16596,7 +16596,7 @@ GameObject:
   - component: {fileID: 1996978426}
   - component: {fileID: 1996978427}
   m_Layer: 0
-  m_Name: PerderPorCondicion_TimeLine
+  m_Name: PerderPorCondicion_TimeLine (MoveraTiempodeJuego)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16728,7 +16728,7 @@ GameObject:
   - component: {fileID: 2028979288}
   - component: {fileID: 2028979289}
   m_Layer: 0
-  m_Name: GanarPorVencer_TimeLine
+  m_Name: GanarPorVencer_TimeLine (MoveraTiempodeJuego)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
