@@ -28,12 +28,14 @@ public class CinematicState : State
 
         if (stateOff)
         {
+            StopAllCoroutines();
             ExitState();
             return StatesManager.Instance.skipState;
         }
 
         if (inFirstCinematic)
         {
+            StopAllCoroutines();
             Debug.Log(1);
             StartCoroutine(FirstCinematic());
             inFirstCinematic = false;
@@ -41,6 +43,7 @@ public class CinematicState : State
 
         if (inSecondCinematic)
         {
+            StopAllCoroutines();
             Debug.Log(2);
             StartCoroutine(SecondCinematic());
             inSecondCinematic = false;
@@ -48,6 +51,7 @@ public class CinematicState : State
 
         if (inThirdCinematic)
         {
+            StopAllCoroutines();
             Debug.Log(3);
             StartCoroutine(ThirdCinematic());
             inThirdCinematic = false;
@@ -55,6 +59,7 @@ public class CinematicState : State
 
         if (inFourthCinematic)
         {
+            StopAllCoroutines();
             Debug.Log(4);
             StartCoroutine(FourthCinematic());
             inFourthCinematic = false;
@@ -62,6 +67,7 @@ public class CinematicState : State
 
         if (inFivethCinematic)
         {
+            StopAllCoroutines();
             Debug.Log(5);
             StartCoroutine(FivethCinematic());
             inFivethCinematic = false;
@@ -69,6 +75,7 @@ public class CinematicState : State
 
         if (inSixthCinematic)
         {
+            StopAllCoroutines();
             Debug.Log(6);
             StartCoroutine(SixthCinematic());
             inSixthCinematic = false;

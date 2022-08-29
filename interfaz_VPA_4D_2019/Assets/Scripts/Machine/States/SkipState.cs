@@ -45,6 +45,7 @@ public class SkipState : State
             StatesManager.Instance.IsHereSomeOne = false;
             StatesManager.Instance.ledsController.ramdom = true;
             nextState = StatesManager.Instance.reposeState;
+            SceneManager.LoadScene("Boot");
             //StartCoroutine(ExitLoad());
             //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Boot"));
             //ScenesManager.Instance.UnLoadLevel("IntroduccionMottisTestOscar");
