@@ -176,15 +176,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   skapeTask: {fileID: 0}
+  reposeState: {fileID: 8178831769025564153}
+  cinematicState: {fileID: 8178831769065517429}
+  skipState: {fileID: 8247565496963050370}
+  gameState: {fileID: 8178831769806920505}
   currentState: {fileID: 8178831769025564153}
   uIController: {fileID: 5477911701488351697}
   canvas: {fileID: 0}
   questPanel: {fileID: 0}
   pausePanel: {fileID: 0}
+  rulesPanel: {fileID: 0}
   valuePanel: {fileID: 0}
   coinsText: {fileID: 0}
   inCinematic: 0
-  isThereSomeone: 0
+  isHereSomeOne: 0
   paymentMade: 0
   challengeAccepted: 0
   inGame: 0
@@ -282,18 +287,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936ec6e19ea14b6489d8fc7b81d1b18a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: {fileID: 8178831769806920505}
-  skipState: {fileID: 8247565496963050370}
-  nextState: {fileID: 0}
   stateOff: 0
-  skipCinematic: 0
   inFirstCinematic: 0
   inSecondCinematic: 0
   inThirdCinematic: 0
   inFourthCinematic: 0
   inFivethCinematic: 0
   inSixthCinematic: 0
-  inSeventhCinematic: 0
 --- !u!1 &8178831769806920504
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,4 +473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4cb9e45e1d16974a833cf1188e48227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reposeState: {fileID: 8178831769025564153}
+  isRulesTime: 0
+  exit: 0
+  videoPlayer: {fileID: 0}

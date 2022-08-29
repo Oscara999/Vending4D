@@ -12,6 +12,8 @@ public class ReposeState : State
 
     void StartMachine()
     {
+        //ScenesManager.Instance.isLoad = true;
+        //ScenesManager.Instance.LoadLevel("IntroduccionMottisTestOscar"); 
         StatesManager.Instance.ledsController.ramdom = true;
         currentVideoIndex = 0;
         videoPlayer.clip = videos[currentVideoIndex];

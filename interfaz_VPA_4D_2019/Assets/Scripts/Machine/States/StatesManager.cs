@@ -11,6 +11,12 @@ public class StatesManager : Singleton<StatesManager>
     public TimeLineRutine timeLineRutine;
     public GameObject[] hands;
     public Task skapeTask;
+
+    [Header("States")]
+    public ReposeState reposeState;
+    public CinematicState cinematicState;
+    public SkipState skipState;
+    public GameState gameState;
     public State currentState;
 
     [Header(" UI Settings")]

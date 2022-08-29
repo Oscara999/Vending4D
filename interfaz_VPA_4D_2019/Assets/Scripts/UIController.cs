@@ -68,7 +68,7 @@ public class UIController : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (virtualMouse == null || !enabledMovement)
             return;
@@ -82,29 +82,21 @@ public class UIController : MonoBehaviour
         Vector2 currentPosition = Vector3.zero;
         Vector2 newPosition = currentPosition + ScreenXy;
 
+        //Moving virtual mouse
         InputState.Change(virtualMouse.position, newPosition);
         InputState.Change(virtualMouse.delta, ScreenXy);
-
-        //Moving virtual mouse
+        
+        //Moving ui by virtual mouse
         AnchorCursor(virtualMouse.position.ReadValue());
     }
 
     void CursorMovement()
     {
         if (!crossFire.activeInHierarchy || !Camera.main)
-        {
             return;
-        }
 
-        ray = Camera.main.ScreenPointToRay(crossFire.transform.position);
         Vector3 handPostition = HandModelBase.GetPalmDirection();
         
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.Log(hit.collider.name);
-        }
-
         if (kindScene == kindScene.Menu)
         {
             if (!DesingCursor[0].activeInHierarchy)
@@ -122,15 +114,16 @@ public class UIController : MonoBehaviour
                 DesingCursor[0].SetActive(false);
                 DesingCursor[1].SetActive(true);
             }
-
+            
+            ray = Camera.main.ScreenPointToRay(crossFire.transform.position);
             ScreenXy = Camera.main.WorldToScreenPoint(handPostition * speed);
+            Debug.DrawRay(ray.origin, ray.direction * 30f, Color.red);
         }
     }
 
     void AnchorCursor(Vector2 position)
     {
         crossFire.transform.position = new Vector3(position.x, position.y, crossFire.transform.position.z);
-        Debug.DrawRay(ray.origin, ray.direction * 30f, Color.red);
     }
 
     public void CrossFireState(bool isSelected)

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CinematicState : State
 {
-    [Header("Next States")]
-    public SkipState skipState;
-
     [Header("States Settings ")]
     [SerializeField]
     bool stateOff;
@@ -22,7 +19,7 @@ public class CinematicState : State
     bool inFivethCinematic;
     [SerializeField]
     bool inSixthCinematic;
-
+    public List<string> process = new List<string>();
     public override State Tick()
     {
         if (StatesManager.Instance.InCinematic
@@ -32,7 +29,7 @@ public class CinematicState : State
         if (stateOff)
         {
             ExitState();
-            return skipState;
+            return StatesManager.Instance.skipState;
         }
 
         if (inFirstCinematic)
@@ -126,6 +123,8 @@ public class CinematicState : State
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(0));
         ChangeState(2);
         StatesManager.Instance.StateInCinematic(false);
+        
+        process.Add("1");
     }
 
     IEnumerator SecondCinematic()
@@ -137,10 +136,10 @@ public class CinematicState : State
         //start qte de temporizador de pago. mostrara precio. originalGameObject;
         if (SceneController.Instance != null)
         {
-            QTEManager.Instance.StartEvent(SceneController.Instance.QTE.transform.GetChild(0).gameObject.GetComponent<QTEEvent>());
+            QTEManager.Instance.StartEvent(SceneController.Instance.QTE[0]);
 
-            yield return new WaitForSeconds(5f);
-            StatesManager.Instance.Recharge(1);
+            //yield return new WaitForSeconds(5f);
+            //StatesManager.Instance.Recharge(1);
 
             yield return new WaitUntil(() => !QTEManager.Instance.startEvent);
         }
@@ -156,6 +155,8 @@ public class CinematicState : State
         }
 
         StatesManager.Instance.StateInCinematic(false);
+        process.Add("2");
+
     }
 
     //Skip to main state
@@ -165,7 +166,7 @@ public class CinematicState : State
         StatesManager.Instance.timeLineRutine.Play(2);
         
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(2));
-        skipState.exit = true;
+        StatesManager.Instance.skipState.exit = true;
         ChangeState(0);
 
         StatesManager.Instance.skapeTask.ChangeSize(true);
@@ -173,6 +174,7 @@ public class CinematicState : State
         
         yield return new WaitForSeconds(5f);
         StatesManager.Instance.StateInCinematic(false);
+        process.Add("3");
     }
 
     IEnumerator FourthCinematic()
@@ -184,10 +186,15 @@ public class CinematicState : State
 
         if (SceneController.Instance != null)
         {
-            QTEManager.Instance.StartEvent(SceneController.Instance.QTE.transform.GetChild(1).gameObject.GetComponent<QTEEvent>());
-            yield return new WaitUntil(() => !QTEManager.Instance.startEvent);
+            QTEManager.Instance.StartEvent(SceneController.Instance.QTE[1]);
         }
+        Debug.Log("next Part 1");
+        process.Add("4");
+    }
 
+    public IEnumerator SendResultsAcceptPlay()
+    {
+        yield return new WaitUntil(() => !QTEManager.Instance.startEvent);
         yield return new WaitUntil(() => SceneController.Instance.setBoolStartGame);
 
         StatesManager.Instance.ledsController.ramdom = true;
@@ -196,7 +203,7 @@ public class CinematicState : State
         StatesManager.Instance.questPanel.SetActive(false);
 
         SoundManager.Instance.PlayNewSound("SelectedFinish");
-        
+
         // validar si acepta o no el reto para definir acciones
 
         if (StatesManager.Instance.ChallengeAccepted)
@@ -207,6 +214,7 @@ public class CinematicState : State
         {
             ChangeState(6);
         }
+        process.Add("4.2");
 
         StatesManager.Instance.StateInCinematic(false);
     }
@@ -216,12 +224,13 @@ public class CinematicState : State
         StatesManager.Instance.StateInCinematic(true);
         StatesManager.Instance.timeLineRutine.Play(4);
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(4));
-        skipState.isRulesTime = true;
+        StatesManager.Instance.skipState.isRulesTime = true;
         ChangeState(0);
         yield return new WaitForSeconds(2f);
         StatesManager.Instance.StateInCinematic(false);
+        process.Add("5");
     }
-    
+
     //Skip to main state
     IEnumerator SixthCinematic()
     {
@@ -229,9 +238,12 @@ public class CinematicState : State
         StatesManager.Instance.timeLineRutine.Play(5);
         yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(5));
         yield return new WaitForSeconds(2f);
-        skipState.exit = true;
+        StatesManager.Instance.skapeTask.RestartSize(false);
+        yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
+        StatesManager.Instance.skipState.exit = true;
         ChangeState(0);
         StatesManager.Instance.StateInCinematic(false);
+        process.Add("6");
     }
 
     protected override void ExitState()

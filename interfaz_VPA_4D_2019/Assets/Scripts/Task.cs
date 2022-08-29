@@ -16,7 +16,6 @@ public class Task : MonoBehaviour
 
         if (!sprite.enabled)
         {
-            Debug.Log("sisas");
             sprite.enabled = true;
         }
 

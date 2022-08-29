@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneController : Singleton<SceneController>
 {
     public GameObject timeLines;
-    public GameObject QTE;
+    public QTEEvent[] QTE;
     public Dialogue[] dialogues;
     public bool setBoolStartGame;
 
@@ -13,6 +13,12 @@ public class SceneController : Singleton<SceneController>
     {
         base.Awake();
         StatesManager.Instance.SetChangeTimeLine(timeLines);
+    }
+
+    public void StartResultsEvent()
+    {
+        Debug.Log("next Part 2");
+        StartCoroutine(StatesManager.Instance.cinematicState.SendResultsAcceptPlay());
     }
 
     public void ValidatePayment()

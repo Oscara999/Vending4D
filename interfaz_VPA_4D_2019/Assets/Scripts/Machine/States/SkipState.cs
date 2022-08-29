@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class SkipState : State
 {
     [Header("Next States")]
-    public ReposeState reposeState;
-    public GameState gameState;
     public bool isRulesTime;
     public bool exit;
     public VideoPlayer videoPlayer;
@@ -38,18 +37,30 @@ public class SkipState : State
         if (StatesManager.Instance.InGame)
         {
             StatesManager.Instance.ledsController.ramdom = false;
-            nextState = gameState;
+            nextState = StatesManager.Instance.gameState;
             ScenesManager.Instance.LoadLevel("Test3");
         }
         else
         {
             StatesManager.Instance.IsHereSomeOne = false;
-            StatesManager.Instance.skapeTask.RestartSize(false);
             StatesManager.Instance.ledsController.ramdom = true;
-            nextState = reposeState;
+            nextState = StatesManager.Instance.reposeState;
+            //StartCoroutine(ExitLoad());
+            //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Boot"));
+            //ScenesManager.Instance.UnLoadLevel("IntroduccionMottisTestOscar");
         }
 
         exit = false;
+    }
+
+    IEnumerator ExitLoad()
+    {
+        yield return new WaitForSeconds(2f);
+        yield return new WaitUntil(() => !ScenesManager.Instance.isUnLoad);
+        ScenesManager.Instance.isLoad = true;
+        yield return new WaitForSeconds(10f);
+        ScenesManager.Instance.LoadLevel("IntroduccionMottisTestOscar"); 
+        Debug.Log(222220);
     }
 
     IEnumerator EnabledRules()

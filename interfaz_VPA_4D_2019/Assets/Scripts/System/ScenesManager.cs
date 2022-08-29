@@ -36,6 +36,7 @@ public class ScenesManager : Singleton<ScenesManager>
     /// </summary>
     [SerializeField] private bool is_pause;
     public bool isLoad;
+    public bool isUnLoad;
 
     /// <summary>
     /// Varirable que almacena el nombre de la scen principal a carga.
@@ -87,7 +88,7 @@ public class ScenesManager : Singleton<ScenesManager>
         }
 
         isLoad = true;
-       LoadLevel(mainLevel);
+        LoadLevel(mainLevel);
     }
 
     /// <summary>
@@ -102,7 +103,6 @@ public class ScenesManager : Singleton<ScenesManager>
         loadingPanel.SetActive(false);
         ValidateLevel();
         Debug.Log("[GameManager] Escena Cargada completamente");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName));
     }
 
     /// <summary>
@@ -113,7 +113,8 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         if (_loadOperations.Contains(ao))
             _loadOperations.Remove(ao);
-        
+
+        isUnLoad = false;
         Debug.Log("[GameManager] Escena descargada completamente");
     }
 
@@ -147,6 +148,7 @@ public class ScenesManager : Singleton<ScenesManager>
     /// <param name="levelName">Nombre de la escena que se desea descargar.</param>
     public void UnLoadLevel(string levelName)
     {
+        isUnLoad = true;
         AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName);
         ao.completed += OnUnLoadOperationComplete;
     }
@@ -189,6 +191,7 @@ public class ScenesManager : Singleton<ScenesManager>
                 break;
 
             case "IntroduccionMottisTestOscar":
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName)); 
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;
 
