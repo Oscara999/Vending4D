@@ -121,13 +121,17 @@ public class ManagerGame : Singleton<ManagerGame>
 
     public void FinishGame()
     {
-        StatesManager.Instance.uIController.CrossFireState(false);
+        Debug.Log(112121);
+        //StatesManager.Instance.uIController.CrossFireState(false);
         sliderEnemyUI.gameObject.SetActive(false);
         Enemy.Instance.IsActivate = false;
         Enemy.Instance.ChageStateAnimation();
         Player.Instance.StateController();
         Player.Instance.gameObject.SetActive(false);
-        GameUI[2].SetActive(true);
+        //GameUI[2].SetActive(true);
         inProcess = false;
+        StatesManager.Instance.currentState = StatesManager.Instance.reposeState;
+        ScenesManager.Instance.isLoad = true;
+        ScenesManager.Instance.LoadLevel("IntroduccionMottisTestOscar");
     }
 }

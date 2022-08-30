@@ -45,7 +45,7 @@ public class SkipState : State
             StatesManager.Instance.IsHereSomeOne = false;
             StatesManager.Instance.ledsController.ramdom = true;
             nextState = StatesManager.Instance.reposeState;
-            SceneManager.LoadScene("Boot");
+            //SceneManager.LoadScene("Boot");
             //StartCoroutine(ExitLoad());
             //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Boot"));
             //ScenesManager.Instance.UnLoadLevel("IntroduccionMottisTestOscar");
@@ -73,6 +73,7 @@ public class SkipState : State
         yield return new WaitForSeconds(1.5f);
         StatesManager.Instance.rulesPanel.SetActive(false);
         StatesManager.Instance.InGame = true;
+        StatesManager.Instance.IsHereSomeOne = false;
         exit = true;
     }
 }

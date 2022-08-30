@@ -145,8 +145,8 @@ public class CinematicState : State
         {
             QTEManager.Instance.StartEvent(SceneController.Instance.QTE[0]);
 
-            //yield return new WaitForSeconds(5f);
-            //StatesManager.Instance.Recharge(1);
+            yield return new WaitForSeconds(5f);
+            StatesManager.Instance.Recharge(1);
 
             yield return new WaitUntil(() => !QTEManager.Instance.startEvent);
         }
