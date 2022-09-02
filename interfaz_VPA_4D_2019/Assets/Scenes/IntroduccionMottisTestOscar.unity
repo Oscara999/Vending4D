@@ -980,6 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f0e60be18c298449f86766628db742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 212079438}
 --- !u!1001 &227078294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6685,6 +6686,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 128.51608
       objectReference: {fileID: 0}
+    - target: {fileID: -8267349684477947493, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.1714197
+      objectReference: {fileID: 0}
+    - target: {fileID: -8267349684477947493, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.4061283
+      objectReference: {fileID: 0}
     - target: {fileID: -7950635583694852319, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6764,6 +6775,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5667730148421672719, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0.0000006089486
+      objectReference: {fileID: 0}
+    - target: {fileID: -5667730148421672719, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[1]
+      value: 0.0000006089486
       objectReference: {fileID: 0}
     - target: {fileID: -3795224871409612914, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
         type: 3}
@@ -7010,6 +7031,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -28.615625
       objectReference: {fileID: 0}
+    - target: {fileID: 1997347535856077565, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.044137407
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997347535856077565, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.17765145
+      objectReference: {fileID: 0}
     - target: {fileID: 2144470589729811588, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7039,6 +7070,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -168.72385
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485606215432193113, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000003254799
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485606215432193113, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000010165385
       objectReference: {fileID: 0}
     - target: {fileID: 2659850239746847462, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
         type: 3}
@@ -7089,6 +7130,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081235382018857332, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0.0000006089486
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081235382018857332, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[1]
+      value: 0.0000006089486
       objectReference: {fileID: 0}
     - target: {fileID: 5155266754601149390, guid: 44b56b3386ed4af43aad934a1f8dbfb0,
         type: 3}
@@ -14452,6 +14503,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c1c791f4b63d39f46be6fc0ba2755519, type: 2}
     - {fileID: 11400000, guid: ab6dfd35801c62a42bec2a7ed1df0e49, type: 2}
     - {fileID: 11400000, guid: bd510ea1bb743934f966b757c7999968, type: 2}
+    - {fileID: 0}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -14463,14 +14515,14 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: GreetAction
+            m_StringArgument: Cinematica1
             m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 212079439}
-          m_MethodName: ResetSpeakBool
-          m_Mode: 6
+          m_MethodName: StartSpeaking
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14491,6 +14543,19 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 212079437}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Speaking
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!1 &1928275647
 GameObject:

@@ -55,14 +55,19 @@ public class StatesManager : Singleton<StatesManager>
     void Start()
     {
         //BaseDataManager.Instance.Load();
-       // Cursor.visible = false;
+        // Cursor.visible = false;
+        StartCoroutine(test());
     }
 
     IEnumerator test()
     {
         yield return new WaitForSeconds(2f);
-        isHereSomeOne = true;
+        isHereSomeOne = true; 
         Debug.Log("Is there someone");
+        yield return new WaitForSeconds(10f);
+        StopAllCoroutines();
+        ScenesManager.Instance.isLoad = true;
+        ScenesManager.Instance.LoadLevel("Test4");
     }
 
     void Update()
