@@ -4034,7 +4034,7 @@ PrefabInstance:
     - target: {fileID: 5520455910809952965, guid: 4e58b512f103446499b15d7d5aaf606e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5520455910809952987, guid: 4e58b512f103446499b15d7d5aaf606e,
         type: 3}
@@ -4243,7 +4243,7 @@ PrefabInstance:
     - target: {fileID: 7341198610384285497, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -18.128174
+      value: -18.128052
       objectReference: {fileID: 0}
     - target: {fileID: 7341198610499263872, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
@@ -4660,11 +4660,6 @@ PrefabInstance:
       propertyPath: currentState
       value: 
       objectReference: {fileID: 359251844}
-    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
-        type: 3}
-      propertyPath: inGame
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8178831769025564153, guid: f21a82641291618438f32bdd555fe9bf,
         type: 3}
       propertyPath: demoPanel

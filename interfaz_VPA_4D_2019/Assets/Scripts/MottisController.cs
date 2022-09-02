@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MottisController : Singleton<MottisController>
 {
-    public Animator anim;
-
+    Animator anim;
+    
     // Start is called before the first frame update
-    public void StartSpeaking()
+    void Start()
     {
-        anim.SetBool("Speaking", true);
+        anim = GetComponent<Animator>();    
     }
 
     public void ResetSpeakBool(bool state)
