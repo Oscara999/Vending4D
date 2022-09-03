@@ -56,7 +56,7 @@ public class StatesManager : Singleton<StatesManager>
     {
         //BaseDataManager.Instance.Load();
         // Cursor.visible = false;
-        StartCoroutine(test());
+        //StartCoroutine(test());
     }
 
     IEnumerator test()
@@ -131,7 +131,7 @@ public class StatesManager : Singleton<StatesManager>
         if (currentState.name == "GameState")
         {
             ScenesManager.Instance.isLoad = true;
-            ScenesManager.Instance.LoadLevel("Test3");
+            ScenesManager.Instance.LoadLevel("Test4");
         }
 
         Debug.Log(currentState.name);
