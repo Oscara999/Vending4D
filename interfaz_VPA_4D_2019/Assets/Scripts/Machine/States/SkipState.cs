@@ -38,6 +38,7 @@ public class SkipState : State
         {
             StatesManager.Instance.ledsController.ramdom = false;
             nextState = StatesManager.Instance.gameState;
+            ScenesManager.Instance.LoadLevel("Test3");
         }
         else
         {

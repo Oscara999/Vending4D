@@ -55,19 +55,14 @@ public class StatesManager : Singleton<StatesManager>
     void Start()
     {
         //BaseDataManager.Instance.Load();
-        // Cursor.visible = false;
-        //StartCoroutine(test());
+       // Cursor.visible = false;
     }
 
     IEnumerator test()
     {
         yield return new WaitForSeconds(2f);
-        isHereSomeOne = true; 
+        isHereSomeOne = true;
         Debug.Log("Is there someone");
-        yield return new WaitForSeconds(10f);
-        StopAllCoroutines();
-        ScenesManager.Instance.isLoad = true;
-        ScenesManager.Instance.LoadLevel("Test4");
     }
 
     void Update()
@@ -131,7 +126,7 @@ public class StatesManager : Singleton<StatesManager>
         if (currentState.name == "GameState")
         {
             ScenesManager.Instance.isLoad = true;
-            ScenesManager.Instance.LoadLevel("Test4");
+            ScenesManager.Instance.LoadLevel("Test3");
         }
 
         Debug.Log(currentState.name);
