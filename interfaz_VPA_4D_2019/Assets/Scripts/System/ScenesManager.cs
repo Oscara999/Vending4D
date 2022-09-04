@@ -186,7 +186,8 @@ public class ScenesManager : Singleton<ScenesManager>
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;
 
-            case "Introduccion_Mottis 1":
+            case "Test5":
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName));
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;
 
@@ -196,6 +197,12 @@ public class ScenesManager : Singleton<ScenesManager>
                 break;
 
             case "Test3":
+                SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
+                SoundManager.Instance.PlayNewSound("BackgroundGame");
+                //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
+                break;
+
+            case "Test4":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
                 SoundManager.Instance.PlayNewSound("BackgroundGame");
                 //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
