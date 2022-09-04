@@ -60,7 +60,7 @@ public class SkipState : State
         yield return new WaitUntil(() => !ScenesManager.Instance.isUnLoad);
         ScenesManager.Instance.isLoad = true;
         yield return new WaitForSeconds(10f);
-        ScenesManager.Instance.LoadLevel("IntroduccionMottisTestOscar"); 
+        ScenesManager.Instance.LoadLevel("Introduccion_Mottis"); 
         Debug.Log(222220);
     }
 

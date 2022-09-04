@@ -191,12 +191,18 @@ public class ScenesManager : Singleton<ScenesManager>
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;
 
-            case "IntroduccionMottisTestOscar":
+            case "Introduccion_Mottis":
                 SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName)); 
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;
 
+            case "IntroduccionMottisTestOscar":
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName));
+                SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
+                break;
+
             case "Test3":
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName));
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
                 SoundManager.Instance.PlayNewSound("BackgroundGame");
                 //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
