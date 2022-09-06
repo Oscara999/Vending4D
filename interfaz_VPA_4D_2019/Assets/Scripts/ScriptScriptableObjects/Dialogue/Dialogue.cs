@@ -7,5 +7,5 @@ public class Dialogue : ScriptableObject
 {
     [TextArea(3,10)]
     public string[] sequences;
-    public List<AudioSource> sounds = new List<AudioSource>();
+    public List<Sound> sounds = new List<Sound>();
 }

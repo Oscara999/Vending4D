@@ -76,14 +76,13 @@ public class ScenesManager : Singleton<ScenesManager>
 
         for (int i = 0; i < systemPrefabs.Count; i++)
         {
-            if (systemPrefabs[i].name.Equals("BaseDataManager") || systemPrefabs[i].name.Equals("SoundManager") 
-                || systemPrefabs[i].name.Equals("StatesManager") || systemPrefabs[i].name.Equals("UICanvas"))
+            if (systemPrefabs[i].name.Equals("LoadingPanel"))
             {
-                systemPrefabs[i].SetActive(true);
+                systemPrefabs[i].SetActive(false);
             }
             else
             {
-                systemPrefabs[i].SetActive(false);
+                systemPrefabs[i].SetActive(true);
             }
         }
 

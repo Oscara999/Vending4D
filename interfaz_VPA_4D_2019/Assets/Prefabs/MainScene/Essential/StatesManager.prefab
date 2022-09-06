@@ -294,6 +294,7 @@ MonoBehaviour:
   inFourthCinematic: 0
   inFivethCinematic: 0
   inSixthCinematic: 0
+  process: []
 --- !u!1 &8178831769806920504
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,14 +7,15 @@ using TMPro;
 
 public class DialogueSystem : Singleton<DialogueSystem>
 {
-    [HideInInspector] public Queue<string> sentences;
-    public GameObject panelDialogue;
-    [SerializeField] TMP_Text textBox;
-    [SerializeField] Dialogue newDialogue;
+    Queue<string> sentences;
+    List<Sound> provicionalSounds = new List<Sound>();
+    Dialogue newDialogue;
+    int index;
 
-    bool inPlaying;
-    private float deltaTime;
-    private float fps;
+    public bool inPlaying;
+    public GameObject panelDialogue;
+
+    [SerializeField] TMP_Text textBox;
 
     void Start()
     {
@@ -29,7 +30,6 @@ public class DialogueSystem : Singleton<DialogueSystem>
         }
     }
 
-
     public void StartNewDialogue(Dialogue dialogue)
     {
         newDialogue = dialogue;
@@ -41,6 +41,11 @@ public class DialogueSystem : Singleton<DialogueSystem>
     public void StartDialogue()
     {
         sentences.Clear();
+
+        for (int i = 0; i < newDialogue.sequences.Length; i++)
+        {
+            provicionalSounds.Add(newDialogue.sounds[i]);
+        }
 
         foreach (string sentence in newDialogue.sequences)
         {
@@ -58,6 +63,13 @@ public class DialogueSystem : Singleton<DialogueSystem>
             return;
         }
 
+
+        SoundManager.Instance.PlayNewSound(provicionalSounds[index].name);
+        index++;
+
+        ChangeStateBoxDialogue();
+        
+
         string sentence = sentences.Dequeue();
 
         StopAllCoroutines();
@@ -65,47 +77,20 @@ public class DialogueSystem : Singleton<DialogueSystem>
         StartCoroutine(TypeSentence(sentence));
     }
 
-    void Update()
-    {
-        if (inPlaying)
-        {
-            deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
-            CalculateFps();
-        }
-    }
-
-    void CalculateFps()
-    {
-        fps = 1.0f / deltaTime;
-    }
-
     IEnumerator TypeSentence(string sentence)
     {
         textBox.text = "";
-       
         yield return new WaitForSeconds(0.01f);
-
-        if (fps < 60)
-        {
-            textBox.text += sentence;
-            Debug.Log("Que computador tan lento");
-        }
-        else
-        {
-            foreach (char letter in sentence.ToCharArray())
-            {
-                textBox.text += letter;
-                yield return null;
-            }
-        }
-
-        yield return new WaitForSeconds(2.5f);
+        textBox.text += sentence;
+        yield return new WaitForSeconds(3f);
+        panelDialogue.SetActive(false);
     }
 
     public void EndDialogue()
     {
+        index = 0;
+        provicionalSounds.Clear();
         inPlaying = false;
-        fps = 0;
         sentences.Clear();
         panelDialogue.SetActive(false);
         newDialogue = null;
