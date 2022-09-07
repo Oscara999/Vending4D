@@ -16,4 +16,8 @@ public class MottisController : Singleton<MottisController>
     {
         anim.SetBool("Speaking",state);
     }
+    public void ResetArmBool(bool state)
+    {
+        anim.SetBool("Arm",state);
+    }
 }
