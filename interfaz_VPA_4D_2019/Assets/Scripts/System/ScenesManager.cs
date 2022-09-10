@@ -212,6 +212,12 @@ public class ScenesManager : Singleton<ScenesManager>
                 SoundManager.Instance.PlayNewSound("BackgroundGame");
                 //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
                 break;
+
+            case "NewMechanic":
+                SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
+                SoundManager.Instance.PlayNewSound("BackgroundGame");
+                //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
+                break;
         }
     }
 
@@ -230,7 +236,7 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         is_pause = !is_pause;
         SoundManager.Instance.PauseAllSounds(is_pause);
-        StatesManager.Instance.pausePanel.SetActive(is_pause);
+        StatesManager.Instance.ui.pausePanel.SetActive(is_pause);
 
         if (is_pause)
         {

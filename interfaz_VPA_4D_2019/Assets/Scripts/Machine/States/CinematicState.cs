@@ -105,7 +105,7 @@ public class CinematicState : State
                 break;
 
             case 4:
-                inFourthCinematic = true; 
+                inFourthCinematic = true;
                 break;
 
             case 5:
@@ -120,35 +120,35 @@ public class CinematicState : State
 
     IEnumerator FirstCinematic()
     {
-        StatesManager.Instance.timeLineRutine.Play(0);
+        SceneController.Instance.timeLineRutine.Play(0);
         StatesManager.Instance.skapeTask.ChangeSize(false);
         StatesManager.Instance.StateInCinematic(true);
 
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
         StatesManager.Instance.skapeTask.RestartSize(false);
 
-        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(0));
+        yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(0));
         ChangeState(2);
         StatesManager.Instance.StateInCinematic(false);
-        
+
         process.Add("1");
     }
 
     IEnumerator SecondCinematic()
     {
         StatesManager.Instance.StateInCinematic(true);
-        StatesManager.Instance.timeLineRutine.Play(1);
-        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(1));
-        
+        SceneController.Instance.timeLineRutine.Play(1);
+        yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(1));
+
         //start qte de temporizador de pago. mostrara precio. originalGameObject;
         if (SceneController.Instance != null)
         {
-            QTEManager.Instance.StartEvent(SceneController.Instance.QTE[0]);
+            SceneController.Instance.QTEManager.StartEvent(SceneController.Instance.QTE[0]);
 
             yield return new WaitForSeconds(5f);
             StatesManager.Instance.Recharge(1);
 
-            yield return new WaitUntil(() => !QTEManager.Instance.startEvent);
+            yield return new WaitUntil(() => !SceneController.Instance.QTEManager.startEvent);
         }
 
         if (StatesManager.Instance.PaymentMade)
@@ -170,15 +170,15 @@ public class CinematicState : State
     IEnumerator ThirdCinematic()
     {
         StatesManager.Instance.StateInCinematic(true);
-        StatesManager.Instance.timeLineRutine.Play(2);
-        
-        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(2));
+        SceneController.Instance.timeLineRutine.Play(2);
+
+        yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(2));
         StatesManager.Instance.skipState.exit = true;
         ChangeState(0);
 
         StatesManager.Instance.skapeTask.ChangeSize(true);
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
-        
+
         yield return new WaitForSeconds(5f);
         StatesManager.Instance.StateInCinematic(false);
         process.Add("3");
@@ -187,13 +187,13 @@ public class CinematicState : State
     IEnumerator FourthCinematic()
     {
         StatesManager.Instance.StateInCinematic(true);
-        StatesManager.Instance.timeLineRutine.Play(3);
-        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(3));
+        SceneController.Instance.timeLineRutine.Play(3);
+        yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(3));
         StatesManager.Instance.ledsController.ramdom = false;
 
         if (SceneController.Instance != null)
         {
-            QTEManager.Instance.StartEvent(SceneController.Instance.QTE[1]);
+            SceneController.Instance.QTEManager.StartEvent(SceneController.Instance.QTE[1]);
         }
         Debug.Log("next Part 1");
         process.Add("4");
@@ -201,13 +201,13 @@ public class CinematicState : State
 
     public IEnumerator SendResultsAcceptPlay()
     {
-        yield return new WaitUntil(() => !QTEManager.Instance.startEvent);
+        yield return new WaitUntil(() => !SceneController.Instance.QTEManager.startEvent);
         yield return new WaitUntil(() => SceneController.Instance.setBoolStartGame);
 
         StatesManager.Instance.ledsController.ramdom = true;
 
         yield return new WaitForSeconds(1f);
-        StatesManager.Instance.questPanel.SetActive(false);
+        StatesManager.Instance.ui.questPanel.SetActive(false);
 
         SoundManager.Instance.PlayNewSound("SelectedFinish");
 
@@ -229,8 +229,8 @@ public class CinematicState : State
     IEnumerator FivethCinematic()
     {
         StatesManager.Instance.StateInCinematic(true);
-        StatesManager.Instance.timeLineRutine.Play(4);
-        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(4));
+        SceneController.Instance.timeLineRutine.Play(4);
+        yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(4));
         StatesManager.Instance.skipState.isRulesTime = true;
         ChangeState(0);
         yield return new WaitForSeconds(2f);
@@ -242,8 +242,8 @@ public class CinematicState : State
     IEnumerator SixthCinematic()
     {
         StatesManager.Instance.StateInCinematic(true);
-        StatesManager.Instance.timeLineRutine.Play(5);
-        yield return new WaitUntil(() => !StatesManager.Instance.timeLineRutine.StatePlayable(5));
+        SceneController.Instance.timeLineRutine.Play(5);
+        yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(5));
         yield return new WaitForSeconds(2f);
         StatesManager.Instance.skapeTask.RestartSize(false);
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);

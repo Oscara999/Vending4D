@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8178831768890535316}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5477911701488351697
 MonoBehaviour:
@@ -47,9 +47,6 @@ MonoBehaviour:
   playerInput: {fileID: 1975470830729766027}
   HandModelBase: {fileID: 0}
   speed: 10
-  DesingCursor:
-  - {fileID: 0}
-  - {fileID: 0}
   enabledMovement: 1
   ScreenXy: {x: 0, y: 0}
   kindScene: 0
@@ -153,7 +150,6 @@ Transform:
   m_Children:
   - {fileID: 8178831768639153455}
   - {fileID: 8178831770624095051}
-  - {fileID: 8178831770293114051}
   - {fileID: 4468248496622241725}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -171,23 +167,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ledsController: {fileID: 8178831770624095050}
-  timeLineRutine: {fileID: 8178831770293114050}
   hands:
   - {fileID: 0}
   - {fileID: 0}
   skapeTask: {fileID: 0}
+  ui:
+    uIController: {fileID: 0}
+    canvas: {fileID: 0}
+    questPanel: {fileID: 0}
+    pausePanel: {fileID: 0}
+    rulesPanel: {fileID: 0}
+    valuePanel: {fileID: 0}
+    DesingCursor: []
+    coinsText: {fileID: 0}
+    eventUI: []
+    eventTimerText: {fileID: 0}
+    eventTimerImage: {fileID: 0}
   reposeState: {fileID: 8178831769025564153}
   cinematicState: {fileID: 8178831769065517429}
   skipState: {fileID: 8247565496963050370}
   gameState: {fileID: 8178831769806920505}
   currentState: {fileID: 8178831769025564153}
-  uIController: {fileID: 5477911701488351697}
-  canvas: {fileID: 0}
-  questPanel: {fileID: 0}
-  pausePanel: {fileID: 0}
-  rulesPanel: {fileID: 0}
-  valuePanel: {fileID: 0}
-  coinsText: {fileID: 0}
   inCinematic: 0
   isHereSomeOne: 0
   paymentMade: 0
@@ -338,50 +338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a79fa4e36a43346896aafa8abc60ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &8178831770293114049
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8178831770293114051}
-  - component: {fileID: 8178831770293114050}
-  m_Layer: 0
-  m_Name: TimeLineController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8178831770293114051
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8178831770293114049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8178831768890535316}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8178831770293114050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8178831770293114049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba7ffe7fbb9c4d748b8c2a8f7f5e4d2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playableDirectors: []
 --- !u!1 &8178831770624095049
 GameObject:
   m_ObjectHideFlags: 0

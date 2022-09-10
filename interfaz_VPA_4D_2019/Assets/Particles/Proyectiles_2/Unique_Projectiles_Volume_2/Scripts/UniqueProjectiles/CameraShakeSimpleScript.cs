@@ -13,7 +13,7 @@ public class CameraShakeSimpleScript : MonoBehaviour
 
     // Cinemachine Shake
     public CinemachineVirtualCamera VirtualCamera;
-    private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
+    public CinemachineBasicMultiChannelPerlin virtualCameraNoise;
 
     // Use this for initialization
     void Start()
@@ -32,6 +32,7 @@ public class CameraShakeSimpleScript : MonoBehaviour
             // If Camera Shake effect is still playing
             if (ShakeElapsedTime > 0)
             {
+                Debug.Log(1111);
                 // Set Cinemachine Camera Noise parameters
                 virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;
                 virtualCameraNoise.m_FrequencyGain = ShakeFrequency;

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 //[DefaultExecutionOrder(-1)]
 public class ManagerGame : Singleton<ManagerGame>
 {
+    public QTEManager QTEManager;
     public Slider sliderEnemyUI;
     public Image[] lifesUI;
     public GameObject[] GameUI;
@@ -17,7 +18,7 @@ public class ManagerGame : Singleton<ManagerGame>
     void Start()
     {
         StartCoroutine(StartGame());
-        StatesManager.Instance.uIController.kindScene = kindScene.Game;
+        StatesManager.Instance.ui.uIController.kindScene = kindScene.Game;
     }
 
     public void Update()

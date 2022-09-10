@@ -66,12 +66,12 @@ public class SkipState : State
 
     IEnumerator EnabledRules()
     {
-        StatesManager.Instance.rulesPanel.SetActive(true);
+        StatesManager.Instance.ui.rulesPanel.SetActive(true);
         videoPlayer.Play();
         yield return new WaitUntil(() => !videoPlayer.isPlaying);
 
         yield return new WaitForSeconds(1.5f);
-        StatesManager.Instance.rulesPanel.SetActive(false);
+        StatesManager.Instance.ui.rulesPanel.SetActive(false);
         StatesManager.Instance.InGame = true;
         StatesManager.Instance.IsHereSomeOne = false;
         exit = true;

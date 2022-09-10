@@ -8,9 +8,9 @@ public class StatesManager : Singleton<StatesManager>
 {
     [Header("Components Settings")]
     public LedsController ledsController;
-    public TimeLineRutine timeLineRutine;
     public GameObject[] hands;
     public Task skapeTask;
+    public UI ui;
 
     [Header("States")]
     public ReposeState reposeState;
@@ -18,19 +18,6 @@ public class StatesManager : Singleton<StatesManager>
     public SkipState skipState;
     public GameState gameState;
     public State currentState;
-
-    [Header(" UI Settings")]
-    public UIController uIController;
-    public Canvas canvas;
-    public GameObject questPanel;
-    public GameObject pausePanel;
-    public GameObject rulesPanel;
-
-
-    [SerializeField]
-    GameObject valuePanel;
-    [SerializeField]
-    TMP_Text coinsText;
 
     [Header("Stats Settings")]
     [SerializeField]
@@ -49,7 +36,6 @@ public class StatesManager : Singleton<StatesManager>
     public bool InCinematic { get => inCinematic; }
     public bool ChallengeAccepted { get => challengeAccepted; set => challengeAccepted = value; }
     public bool InGame { get => inGame; set => inGame = value; }
-    public bool ValuePanel { get => valuePanel.activeInHierarchy; }
     public bool PaymentMade { get => paymentMade; set => paymentMade = value; }
 
     void Start()
@@ -132,19 +118,11 @@ public class StatesManager : Singleton<StatesManager>
         Debug.Log(currentState.name);
     }
 
-    public void SetChangeTimeLine(GameObject container)
-    {
-        if (timeLineRutine != null)
-        {
-            timeLineRutine.SetCinematics(container);
-        }
-    }
-
     public IEnumerator ShowValuePanel(float waitTime)
     {
-        valuePanel.SetActive(true);
+        ui.valuePanel.SetActive(true);
         yield return new WaitForSeconds(waitTime);
-        valuePanel.SetActive(false);
+        ui.valuePanel.SetActive(false);
     }
 
     public void Segregation()
@@ -155,21 +133,38 @@ public class StatesManager : Singleton<StatesManager>
     {
         if (!inGame)
         {
-            if (!coinsText.gameObject.activeInHierarchy)
+            if (!ui.coinsText.gameObject.activeInHierarchy)
             {
-                coinsText.gameObject.SetActive(true);
+                ui.coinsText.gameObject.SetActive(true);
             }
         }
         else
         {
-            coinsText.gameObject.SetActive(false);
+            ui.coinsText.gameObject.SetActive(false);
         }
         
-        coinsText.text = "Coins:" + coins.ToString();
+        ui.coinsText.text = "Coins:" + coins.ToString();
     }
 
     public void Check(bool validation)
     {
         isHereSomeOne = validation;
     }
+}
+
+[System.Serializable]
+public class UI
+{
+    [Header(" UI Settings")]
+    public UIController uIController;
+    public Canvas canvas;
+    public GameObject questPanel;
+    public GameObject pausePanel;
+    public GameObject rulesPanel;
+    public GameObject valuePanel;
+    public GameObject[] DesingCursor;
+    public TMP_Text coinsText;
+    public GameObject[] eventUI;
+    public Text eventTimerText;
+    public Image eventTimerImage;
 }

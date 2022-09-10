@@ -162,7 +162,7 @@ public class Enemy : Singleton<Enemy>
 
     public void AttackGround()
     {
-        QTEManager.Instance.StartEvent(eventQTE);
+        ManagerGame.Instance.QTEManager.StartEvent(eventQTE);
         SoundManager.Instance.PlayNewSound(SoundManager.Instance.songs[0].name);
     }
 
@@ -342,7 +342,7 @@ public class Enemy : Singleton<Enemy>
 
         if (Vector3.Distance(transform.position, startPoint.transform.position) < 0.1f)
         {
-            StatesManager.Instance.uIController.CrossFireState(true);
+            StatesManager.Instance.ui.uIController.CrossFireState(true);
             isMove = false; 
         }
     }

@@ -19,8 +19,6 @@ public class UIController : MonoBehaviour
     float speed;
     Mouse virtualMouse;
     Mouse currentMouse;
-    [SerializeField]
-    GameObject[] DesingCursor;
 
     [Header("States")]
     public bool enabledMovement;
@@ -99,20 +97,20 @@ public class UIController : MonoBehaviour
         
         if (kindScene == kindScene.Menu)
         {
-            if (!DesingCursor[0].activeInHierarchy)
+            if (!StatesManager.Instance.ui.DesingCursor[0].activeInHierarchy)
             {
-                DesingCursor[0].SetActive(true);
-                DesingCursor[1].SetActive(false);
+                StatesManager.Instance.ui.DesingCursor[0].SetActive(true);
+                StatesManager.Instance.ui.DesingCursor[1].SetActive(false);
             }
 
             ScreenXy = positionReferenceCamera.WorldToScreenPoint(handPostition * speed);
         }
         else
         {
-            if (!DesingCursor[1].activeInHierarchy)
+            if (!StatesManager.Instance.ui.DesingCursor[1].activeInHierarchy)
             {
-                DesingCursor[0].SetActive(false);
-                DesingCursor[1].SetActive(true);
+                StatesManager.Instance.ui.DesingCursor[0].SetActive(false);
+                StatesManager.Instance.ui.DesingCursor[1].SetActive(true);
             }
             
             ray = Camera.main.ScreenPointToRay(crossFire.transform.position);

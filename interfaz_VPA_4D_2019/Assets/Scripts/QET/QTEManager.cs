@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QTEManager : Singleton<QTEManager>
+public class QTEManager : MonoBehaviour
 {
     [Header("Configuration")]
+    public UI ui;
     [HideInInspector]
     public bool startEvent;
     public QTEEvent eventData;
@@ -15,10 +16,10 @@ public class QTEManager : Singleton<QTEManager>
     public float smoothTimeUpdate;
     float currentTime;
 
-    public GameObject eventUIPanel;
-    public GameObject[] eventUI;
-    public Text eventTimerText;
-    public Image eventTimerImage;
+    private void Start()
+    {
+        ui = StatesManager.Instance.ui;
+    }
 
     protected void Update()
     {
@@ -56,9 +57,9 @@ public class QTEManager : Singleton<QTEManager>
         startEvent = true;
         while (currentTime > 0 && startEvent && !isEnded)
         {
-            if (eventTimerText != null)
+            if (ui.eventTimerText != null)
             {
-                eventTimerText.text = currentTime.ToString();
+                ui.eventTimerText.text = currentTime.ToString();
             }
 
             currentTime--;
@@ -75,11 +76,11 @@ public class QTEManager : Singleton<QTEManager>
     {
         isEnded = true;
 
-        if (eventUI != null)
+        if (ui.eventUI != null)
         {
-            for (int i = 0; i < eventUI.Length; i++)
+            for (int i = 0; i < ui.eventUI.Length; i++)
             {
-                eventUI[i].SetActive(false);
+                ui.eventUI[i].SetActive(false);
             }
         }
 
@@ -116,28 +117,28 @@ public class QTEManager : Singleton<QTEManager>
 
     void UISetup(int index)
     {
-        for (int i = 0; i < eventUI.Length; i++)
+        for (int i = 0; i < ui.eventUI.Length; i++)
         {
             if (i == index)
             {
-                eventUI[i].SetActive(true);
+                ui.eventUI[i].SetActive(true);
             }
             else
             {
-                eventUI[i].SetActive(false);
+                ui.eventUI[i].SetActive(false);
             }
         }
 
         switch (index)
         {
             case 0:
-                eventTimerText = eventUI[0].GetComponentInChildren<Text>();
-                eventTimerImage= eventUI[0].GetComponentInChildren<Image>();
+                ui.eventTimerText = ui.eventUI[0].GetComponentInChildren<Text>();
+                ui.eventTimerImage = ui.eventUI[0].GetComponentInChildren<Image>();
                 break;
 
             case 1:
-                eventTimerText = eventUI[1].GetComponentInChildren<Text>();
-                eventTimerImage = eventUI[1].GetComponentInChildren<Image>();
+                ui.eventTimerText = ui.eventUI[1].GetComponentInChildren<Text>();
+                ui.eventTimerImage = ui.eventUI[1].GetComponentInChildren<Image>();
                 break;
         }
     }
@@ -146,9 +147,9 @@ public class QTEManager : Singleton<QTEManager>
     {
         smoothTimeUpdate -= Time.unscaledDeltaTime;
 
-        if (eventTimerImage != null)
+        if (ui.eventTimerImage != null)
         {
-            eventTimerImage.fillAmount = smoothTimeUpdate / eventData.time;
+            ui.eventTimerImage.fillAmount = smoothTimeUpdate / eventData.time;
         }
     }
 
@@ -156,9 +157,9 @@ public class QTEManager : Singleton<QTEManager>
     {
         UISetup(index);
 
-        if (eventTimerImage != null)
+        if (ui.eventTimerImage != null)
         {
-            eventTimerImage.fillAmount = 1;
+            ui.eventTimerImage.fillAmount = 1;
         }
     }
 }

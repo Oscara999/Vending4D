@@ -24,9 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroduccionMottisTestOscar.unity
     guid: 9e3b7d16e3fa32c45a84d705624d3fd7
   - enabled: 1
-    path: Assets/Scenes/Test5.unity
-    guid: 9d26deb7a19714c479d067521e06d599
-  - enabled: 1
     path: Assets/Scenes/Introduccion_Mottis.unity
     guid: 6b54908f9dede3e4cb24c78fb655f48f
+  - enabled: 1
+    path: Assets/Scenes/NewMechanic.unity
+    guid: f319a15cd37b0e94185e152bb7876231
   m_configObjects: {}

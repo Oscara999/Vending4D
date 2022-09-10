@@ -25,6 +25,6 @@ public class EnemySelected : MonoBehaviour
     {
         Debug.Log("Selected");
         Enemy.Instance.DamageQTE(true);
-        QTEManager.Instance.SetResult(true);
+        ManagerGame.Instance.QTEManager.SetResult(true);
     }
 }

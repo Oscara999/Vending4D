@@ -5,15 +5,27 @@ using UnityEngine;
 public class SceneController : Singleton<SceneController>
 {
     public GameObject timeLines;
+    public QTEManager QTEManager;
     public QTEEvent[] QTE;
     public Dialogue[] dialogues;
     public bool setBoolStartGame;
+    public TimeLineRutine timeLineRutine;
 
     void Awake()
     {
         base.Awake();
-        StatesManager.Instance.SetChangeTimeLine(timeLines);
+        SetChangeTimeLine(timeLines);
     }
+
+
+    void SetChangeTimeLine(GameObject container)
+    {
+        if (timeLineRutine != null)
+        {
+            timeLineRutine.SetCinematics(container);
+        }
+    }
+
 
     public void StartResultsEvent()
     {
@@ -54,7 +66,7 @@ public class SceneController : Singleton<SceneController>
 
     public void StartQuestPanel(bool value)
     {
-        StatesManager.Instance.questPanel.SetActive(value);
+        StatesManager.Instance.ui.questPanel.SetActive(value);
     }
 
         public void StartShowPanel(float timeStart)
