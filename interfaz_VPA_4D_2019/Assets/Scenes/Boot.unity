@@ -4034,7 +4034,7 @@ PrefabInstance:
       objectReference: {fileID: 3753871724487664329}
     - target: {fileID: 1278497065, guid: 93685f976e4877a48a3d6d9e9479a77c, type: 3}
       propertyPath: mainLevel
-      value: IntroduccionMottisTestOscar
+      value: Introduccion_Mottis
       objectReference: {fileID: 0}
     - target: {fileID: 1278497065, guid: 93685f976e4877a48a3d6d9e9479a77c, type: 3}
       propertyPath: is_pause
@@ -4130,6 +4130,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1464854039}
+    - target: {fileID: 14818584910230598, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_PlaybackSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7341198610499263872, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4138,7 +4143,7 @@ PrefabInstance:
     - target: {fileID: 7341198610544027759, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50.286194
+      value: -50.28607
       objectReference: {fileID: 0}
     - target: {fileID: 7341198610877243909, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}

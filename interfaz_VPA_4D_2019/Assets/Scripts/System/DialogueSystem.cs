@@ -42,9 +42,12 @@ public class DialogueSystem : Singleton<DialogueSystem>
     {
         sentences.Clear();
 
-        for (int i = 0; i < newDialogue.sequences.Length; i++)
+        if (newDialogue.sounds.Count > 0)
         {
-            provicionalSounds.Add(newDialogue.sounds[i]);
+            for (int i = 0; i < newDialogue.sequences.Length; i++)
+            {
+                provicionalSounds.Add(newDialogue.sounds[i]);
+            }
         }
 
         foreach (string sentence in newDialogue.sequences)
@@ -63,8 +66,11 @@ public class DialogueSystem : Singleton<DialogueSystem>
             return;
         }
 
+        if (provicionalSounds.Count > 0)
+        {
+            SoundManager.Instance.PlayNewSound(provicionalSounds[index].name);
+        }
 
-        SoundManager.Instance.PlayNewSound(provicionalSounds[index].name);
         index++;
 
         ChangeStateBoxDialogue();

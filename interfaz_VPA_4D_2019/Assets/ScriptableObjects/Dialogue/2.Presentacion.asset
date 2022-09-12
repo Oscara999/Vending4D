@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b44cbe5b8d35434e85b1f8e158d7733, type: 3}
+  m_Name: 2.Presentacion
+  m_EditorClassIdentifier: 
+  sequences:
+  - " \xA1Hola!! mi nombre es Mottis, tengo algo genial para ti, qu\xE9 te parece
+    este\r\nproducto !Delicioso\xA1 \r\n"
+  - Y si te animas a pagar tengo una sorpresa 4D adicional para ti
+  - 'Y tan solo por el valor deeeee '
+  - "\xBFQuieres intentarlo?"
+  sounds: []

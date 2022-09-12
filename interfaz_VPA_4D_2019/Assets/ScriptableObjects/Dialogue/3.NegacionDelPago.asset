@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b44cbe5b8d35434e85b1f8e158d7733, type: 3}
+  m_Name: 3.NegacionDelPago
+  m_EditorClassIdentifier: 
+  sequences:
+  - "Bueno seguramente no est\xE1 en tu inter\xE9s, aqu\xED estar\xE9 de nuevo por
+    si decides \r\ndisfrutar de"
+  - "Este delicioso producto que adem\xE1s viene acompa\xF1ado de una maravillosa
+    aventura 4D\r "
+  - "Se despide Mottis , hasta la pr\xF3xima"
+  sounds: []
