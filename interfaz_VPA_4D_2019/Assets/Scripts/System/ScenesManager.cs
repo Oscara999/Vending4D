@@ -222,6 +222,15 @@ public class ScenesManager : Singleton<ScenesManager>
     }
 
     /// <summary>
+    /// Método que cambia configuracion a android.
+    /// </summary>
+    public void EditAndroidSystem()
+    {
+
+    }
+
+
+    /// <summary>
     /// Método generado por si existe algun error.
     /// </summary>
     public void LoadErrorScene()
