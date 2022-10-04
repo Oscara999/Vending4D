@@ -9,6 +9,9 @@ ModelImporter:
   - first:
       74: 445819222690364645
     second: Armature|Armature|Armature|Armature|Armature|Armature|Armature|Armature|
+  - first:
+      74: -7736531183636422624
+    second: Esqueleto|Esqueleto|Esqueleto|EsqueletoAction|Esqueleto|EsqueletoAction
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -101,7 +104,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
