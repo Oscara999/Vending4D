@@ -3,7 +3,23 @@ guid: 797fe3ba218d8ad48bbd9c8f524f5aca
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chips_Galleta
+    second: {fileID: 5457439008606432198, guid: 30b404c56a5699349a41631d79075ba3,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Galleta
+    second: {fileID: 2100000, guid: e8bccf8ae5649dd4b9461b37d52c55e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GalletaRelleno
+    second: {fileID: 2100000, guid: f37441a1e811624489c9f1c93f63198f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
