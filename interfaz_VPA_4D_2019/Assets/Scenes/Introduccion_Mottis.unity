@@ -4856,6 +4856,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Galleta--Premio01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 797fe3ba218d8ad48bbd9c8f524f5aca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 797fe3ba218d8ad48bbd9c8f524f5aca, type: 3}
 --- !u!4 &1274740293 stripped
@@ -5789,8 +5794,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569057531}
-  m_LocalRotation: {x: -0.14580834, y: -0.6919104, z: 0.14580834, w: -0.29646876}
-  m_LocalPosition: {x: -1064, y: 493, z: -43}
+  m_LocalRotation: {x: -0.038115025, y: 0.93035483, z: -0.12165707, w: -0.29646897}
+  m_LocalPosition: {x: 85, y: 44, z: 82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6086,6 +6091,8 @@ PlayableDirector:
     value: {fileID: 1104609331}
   - key: {fileID: 110006682389841763, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
     value: {fileID: 1104609333}
+  - key: {fileID: -7558115482845166953, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
+    value: {fileID: 7555209277850558296}
   m_ExposedReferences:
     m_References:
     - cbb190e3742558c4c92ae8e273c599bd: {fileID: 552162879}
@@ -18664,6 +18671,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3cb3e167b3c3d14892ab958ec4c1c5c, type: 3}
+--- !u!1 &7555209277850558296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7212540223002125393, guid: d3cb3e167b3c3d14892ab958ec4c1c5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7555209277850558295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7567565792589055552
 Transform:
   m_ObjectHideFlags: 0
