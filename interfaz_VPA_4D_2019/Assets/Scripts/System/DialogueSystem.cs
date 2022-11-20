@@ -22,15 +22,18 @@ public class DialogueSystem : Singleton<DialogueSystem>
         sentences = new Queue<string>();
     }
 
-    public void ChangeStateBoxDialogue(bool state)
+    public void ChangeStateBoxDialogue()
     {
-          panelDialogue.SetActive(state);
+        if (!panelDialogue.activeInHierarchy)
+        {
+            panelDialogue.SetActive(true);
+        }
     }
 
     public void StartNewDialogue(Dialogue dialogue)
     {
         newDialogue = dialogue;
-        ChangeStateBoxDialogue(true);
+        ChangeStateBoxDialogue();
         StartDialogue();
         inPlaying = true;
     }
@@ -70,6 +73,9 @@ public class DialogueSystem : Singleton<DialogueSystem>
 
         index++;
 
+        ChangeStateBoxDialogue();
+        
+
         string sentence = sentences.Dequeue();
 
         StopAllCoroutines();
@@ -82,6 +88,8 @@ public class DialogueSystem : Singleton<DialogueSystem>
         textBox.text = "";
         yield return new WaitForSeconds(0.01f);
         textBox.text += sentence;
+        yield return new WaitForSeconds(3f);
+        panelDialogue.SetActive(false);
     }
 
     public void EndDialogue()
@@ -90,7 +98,7 @@ public class DialogueSystem : Singleton<DialogueSystem>
         provicionalSounds.Clear();
         inPlaying = false;
         sentences.Clear();
-        ChangeStateBoxDialogue(false);
+        panelDialogue.SetActive(false);
         newDialogue = null;
     }
 }

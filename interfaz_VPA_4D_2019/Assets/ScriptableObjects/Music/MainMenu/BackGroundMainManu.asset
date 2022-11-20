@@ -16,7 +16,6 @@ MonoBehaviour:
   pitch: 1
   song: {fileID: 8300000, guid: 438c5704cfe372d4d8d42edde7769b21, type: 3}
   loop: 1
-  playOnAwake: 1
   mixerGroup: {fileID: 8936691807230622006, guid: d743c5bffc67c854eab99090a46a760c,
     type: 2}
   source: {fileID: 0}

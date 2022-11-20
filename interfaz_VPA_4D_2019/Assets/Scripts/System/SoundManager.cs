@@ -31,10 +31,9 @@ public class SoundManager : Singleton<SoundManager>
                 song.source = gameObject.AddComponent<AudioSource>();
                 provicionalLevelSound.Add(song);
                 song.source.clip = song.song;
-                song.source.loop = song.loop;
                 song.source.volume = song.volume;
                 song.source.pitch = song.pitch;
-                song.source.playOnAwake = song.playOnAwake;
+                song.source.loop = song.loop;
                 song.source.outputAudioMixerGroup = song.mixerGroup;
             }
         }
