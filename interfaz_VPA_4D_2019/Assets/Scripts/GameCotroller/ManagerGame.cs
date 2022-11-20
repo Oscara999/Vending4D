@@ -25,7 +25,7 @@ public class ManagerGame : Singleton<ManagerGame>
     {
         if (Player.Instance.IsActivate)
         {
-            HandsState();
+            //HandsState();
             DamagePlayerUI();
             DamageEnemyUI();
         }
@@ -53,7 +53,9 @@ public class ManagerGame : Singleton<ManagerGame>
 
     public void ChageRoud()
     {
-        if (round == 0 || round == 1)
+        Debug.Log(round);
+
+        if (round == 0 || round == 1 || round == 2)
         {
             round += 1;
             Enemy.Instance.SetOrderWaitPoints(round);
