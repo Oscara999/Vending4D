@@ -30,6 +30,7 @@ public class SoundManager : Singleton<SoundManager>
             {
                 song.source = gameObject.AddComponent<AudioSource>();
                 provicionalLevelSound.Add(song);
+                song.source.playOnAwake = song.playOnAwake;
                 song.source.clip = song.song;
                 song.source.volume = song.volume;
                 song.source.pitch = song.pitch;
