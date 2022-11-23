@@ -10,6 +10,7 @@ public class Sound : ScriptableObject
     public float pitch;
     public AudioClip song;
     public bool loop;
+    public bool playOnAwake;
     public AudioMixerGroup mixerGroup;
     public AudioSource source;
     public MusicLevel levelSound;
