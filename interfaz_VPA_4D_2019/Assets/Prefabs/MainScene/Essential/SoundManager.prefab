@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8377854326343486382}
   - component: {fileID: 390729616}
   m_Layer: 0
-  m_Name: ManagerSound
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,5 +74,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7c06213cc411a994e99a587570e39213, type: 2}
   - {fileID: 11400000, guid: 111b657fbbfb70645bf70199fa67f240, type: 2}
   - {fileID: 11400000, guid: 8c3017b14b7af6446a63dc1326d5daa4, type: 2}
+  - {fileID: 11400000, guid: eaa7feda78a92664bbf880349fa467ed, type: 2}
+  - {fileID: 11400000, guid: f34c49bd0d51ae84694afc17f0906d39, type: 2}
+  - {fileID: 11400000, guid: edb24e3b91a2d8748b12f67a1843c199, type: 2}
+  - {fileID: 11400000, guid: a5555bff9f42540429debb0adcf639f9, type: 2}
+  - {fileID: 11400000, guid: a6f12319978c122468338ece9ca93667, type: 2}
+  - {fileID: 11400000, guid: 75037bf5f14180a49a61d23e7708ff15, type: 2}
+  - {fileID: 11400000, guid: 5272e0f4f1a73d94f9770f45ea5b22a5, type: 2}
+  - {fileID: 11400000, guid: 60d1921194a141949bcb73de6ef788a8, type: 2}
+  - {fileID: 11400000, guid: 8d444accfff5b684cbb84e926617c81c, type: 2}
+  - {fileID: 11400000, guid: cf07b898ca6d4b246a47f35d13b0e1ef, type: 2}
+  - {fileID: 11400000, guid: 844571379fbc5ab43818d1dc08275b60, type: 2}
+  - {fileID: 11400000, guid: 89319fbb44be2634aabee73539f2176f, type: 2}
+  - {fileID: 11400000, guid: 6eb50588a9c59a34da203c889302fbd6, type: 2}
+  - {fileID: 11400000, guid: c857b4b4058778543a454de3b4315d68, type: 2}
   provicionalLevelSound: []
   pauseSoundProvicional: []
