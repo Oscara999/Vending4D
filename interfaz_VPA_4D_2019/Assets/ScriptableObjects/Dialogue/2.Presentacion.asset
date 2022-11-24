@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: 2.Presentacion
   m_EditorClassIdentifier: 
   sequences:
-  - " \xA1Hola!! mi nombre es Mottis, tengo algo genial para ti, qu\xE9 te parece
-    este\r\nproducto !Delicioso\xA1 \r\n"
-  - Y si te animas a pagar tengo una sorpresa 4D adicional para ti
-  - 'Y tan solo por el valor deeeee '
-  - "\xBFQuieres intentarlo?"
-  sounds: []
+  - 'Me presento mi nombre es mottis '
+  - "con mi habilidad e amasado este esquicito snak y preparado una aventura 4D,
+    sorprendente, que deso ense\xF1arte"
+  - 'animate a vivir esta aventura, y llevarte este delicioso snak de mi mundo, que
+    te lo dejo en '
+  sounds:
+  - {fileID: 11400000, guid: edb24e3b91a2d8748b12f67a1843c199, type: 2}
+  - {fileID: 11400000, guid: 60d1921194a141949bcb73de6ef788a8, type: 2}
+  - {fileID: 11400000, guid: 75037bf5f14180a49a61d23e7708ff15, type: 2}

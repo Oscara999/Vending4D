@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: 1.Introduccion
   m_EditorClassIdentifier: 
   sequences:
-  - "!Ooh bienvenidos!!\r"
-  - "ac\xE9rcate!!\r"
-  - "\xA1Aqu\xED estoy!!\r"
-  - "Tengo un producto especial solo para ti.\r"
+  - "!Hey hey!\r"
+  - "Hey hey, espera ven aqui, y mira algo genial que tengo para ti  !!\r"
+  - 'Me presento mi nombre es mottis '
+  - quiero decirte que mi mundo es muy especial, y que hay una sorpresa, con un premio
+    que puedes ganar, si te atreves a jugar.
   sounds:
   - {fileID: 11400000, guid: eaa7feda78a92664bbf880349fa467ed, type: 2}
   - {fileID: 11400000, guid: f34c49bd0d51ae84694afc17f0906d39, type: 2}
-  - {fileID: 11400000, guid: a6f12319978c122468338ece9ca93667, type: 2}
-  - {fileID: 11400000, guid: 75037bf5f14180a49a61d23e7708ff15, type: 2}
+  - {fileID: 11400000, guid: edb24e3b91a2d8748b12f67a1843c199, type: 2}
+  - {fileID: 11400000, guid: a5555bff9f42540429debb0adcf639f9, type: 2}
