@@ -9477,6 +9477,14 @@ PlayableDirector:
     value: {fileID: 721615972}
   - key: {fileID: -7208694657593891217, guid: 15ca31a1ef944be49ab052073d399452, type: 2}
     value: {fileID: 2086234550}
+  - key: {fileID: 8705101078795623981, guid: 15ca31a1ef944be49ab052073d399452, type: 2}
+    value: {fileID: 1104609333}
+  - key: {fileID: 3920382877159108894, guid: 15ca31a1ef944be49ab052073d399452, type: 2}
+    value: {fileID: 1104609333}
+  - key: {fileID: -5477927732087977230, guid: 15ca31a1ef944be49ab052073d399452, type: 2}
+    value: {fileID: 1104609331}
+  - key: {fileID: -8353813659143120636, guid: 15ca31a1ef944be49ab052073d399452, type: 2}
+    value: {fileID: 1104609333}
   m_ExposedReferences:
     m_References:
     - 8b5390ba3e3825d479a1992b44ad4a20: {fileID: 0}
@@ -10002,6 +10010,14 @@ PlayableDirector:
     value: {fileID: 724221108}
   - key: {fileID: -7208694657593891217, guid: f67ab5f11dd80d94aa06884887da3bb9, type: 2}
     value: {fileID: 2144308091}
+  - key: {fileID: 2979559401689430573, guid: f67ab5f11dd80d94aa06884887da3bb9, type: 2}
+    value: {fileID: 1104609333}
+  - key: {fileID: 2702377116312833150, guid: f67ab5f11dd80d94aa06884887da3bb9, type: 2}
+    value: {fileID: 1104609333}
+  - key: {fileID: 1721578051507100044, guid: f67ab5f11dd80d94aa06884887da3bb9, type: 2}
+    value: {fileID: 1104609333}
+  - key: {fileID: -2801249053907539632, guid: f67ab5f11dd80d94aa06884887da3bb9, type: 2}
+    value: {fileID: 1104609331}
   m_ExposedReferences:
     m_References:
     - aa4abe9ce0d7869438c3ad18ac00a27e: {fileID: 0}
