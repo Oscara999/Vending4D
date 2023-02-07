@@ -15,11 +15,9 @@ MonoBehaviour:
   sequences:
   - "!Hey hey!\r"
   - "Hey hey, espera ven aqui, y mira algo genial que tengo para ti  !!\r"
-  - 'Me presento mi nombre es mottis '
   - quiero decirte que mi mundo es muy especial, y que hay una sorpresa, con un premio
     que puedes ganar, si te atreves a jugar.
   sounds:
-  - {fileID: 11400000, guid: eaa7feda78a92664bbf880349fa467ed, type: 2}
-  - {fileID: 11400000, guid: f34c49bd0d51ae84694afc17f0906d39, type: 2}
-  - {fileID: 11400000, guid: edb24e3b91a2d8748b12f67a1843c199, type: 2}
-  - {fileID: 11400000, guid: a5555bff9f42540429debb0adcf639f9, type: 2}
+  - {fileID: 11400000, guid: f6c5710d63f450645b416ba35aaa5f4b, type: 2}
+  - {fileID: 11400000, guid: 70b46d4e7e2f0914aaeb43a655a3b3f5, type: 2}
+  - {fileID: 11400000, guid: 052a14156ce2cf846b7e5f5dce4927c4, type: 2}

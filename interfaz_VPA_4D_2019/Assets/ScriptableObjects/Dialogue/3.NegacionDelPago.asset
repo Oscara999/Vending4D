@@ -19,6 +19,6 @@ MonoBehaviour:
     mundo
   - Hasta la vista Baby
   sounds:
-  - {fileID: 11400000, guid: 6eb50588a9c59a34da203c889302fbd6, type: 2}
-  - {fileID: 11400000, guid: 5272e0f4f1a73d94f9770f45ea5b22a5, type: 2}
-  - {fileID: 11400000, guid: 8d444accfff5b684cbb84e926617c81c, type: 2}
+  - {fileID: 11400000, guid: 46871a8a903040d408d18c0fd07a5194, type: 2}
+  - {fileID: 11400000, guid: 3baa150eee606cd4790ac5e8acf1f157, type: 2}
+  - {fileID: 11400000, guid: e61ab781c340ea44a9dd715877416942, type: 2}
