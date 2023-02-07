@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 539644442fc414a41a44712f0917ca66, type: 3}
-  m_Name: Hey-Hey_-ven-aqui
+  m_Name: "Hey Cari\xF1o, aqui esta, toma"
   m_EditorClassIdentifier: 
   volume: 1
   pitch: 1
-  song: {fileID: 8300000, guid: 28c1fe5cf555e17448800f9af40c33ed, type: 3}
+  song: {fileID: 8300000, guid: 77c7eed516d3c844bb96e4fdf8d48bfd, type: 3}
   loop: 0
+  playOnAwake: 0
   mixerGroup: {fileID: 1277096097096229523, guid: 77db26e13d9344142b0e082540295131,
     type: 2}
   source: {fileID: 0}

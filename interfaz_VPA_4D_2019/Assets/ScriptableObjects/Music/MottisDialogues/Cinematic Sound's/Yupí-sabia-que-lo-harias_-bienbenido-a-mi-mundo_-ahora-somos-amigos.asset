@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 539644442fc414a41a44712f0917ca66, type: 3}
-  m_Name: Ahora-que-vas-jugar_-quiero-presentarte-a-alguie_-entra-abril
+  m_Name: "Yup\xED-sabia-que-lo-harias_-bienbenido-a-mi-mundo_-ahora-somos-amigos"
   m_EditorClassIdentifier: 
   volume: 1
   pitch: 1
-  song: {fileID: 8300000, guid: 5882f7d6baff60b4f8012f0a8e83e97e, type: 3}
+  song: {fileID: 8300000, guid: f869af9aecd4b3345bd02a03fd0f5c69, type: 3}
   loop: 0
+  playOnAwake: 0
   mixerGroup: {fileID: 1277096097096229523, guid: 77db26e13d9344142b0e082540295131,
     type: 2}
   source: {fileID: 0}

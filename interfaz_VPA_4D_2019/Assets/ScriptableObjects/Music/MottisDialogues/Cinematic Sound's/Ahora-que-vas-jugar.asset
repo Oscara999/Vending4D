@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 539644442fc414a41a44712f0917ca66, type: 3}
-  m_Name: Quiero-decirte-que-mi-mundo-es-muy-especial
+  m_Name: Ahora-que-vas-jugar
   m_EditorClassIdentifier: 
   volume: 1
   pitch: 1
-  song: {fileID: 8300000, guid: 452bfdca8957c02479c6c07d168699ed, type: 3}
+  song: {fileID: 8300000, guid: 333b38219acb63d44ab4d41caa4a10be, type: 3}
   loop: 0
+  playOnAwake: 0
   mixerGroup: {fileID: 1277096097096229523, guid: 77db26e13d9344142b0e082540295131,
     type: 2}
   source: {fileID: 0}
