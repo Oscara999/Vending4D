@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 445819222690364645
-    second: Defeat
+    second: Mottis Forjando
   - first:
       74: -203655887218126122
     second: Defeat
@@ -75,7 +75,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Defeat
+      name: Mottis Forjando
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
