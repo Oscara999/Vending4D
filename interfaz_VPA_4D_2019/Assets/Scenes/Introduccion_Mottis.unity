@@ -5494,12 +5494,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 793719258}
---- !u!95 &1472952274 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1472952274, guid: d3cb3e167b3c3d14892ab958ec4c1c5c,
-    type: 3}
-  m_PrefabInstance: {fileID: 7555209277850558295}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1478552352
 GameObject:
   m_ObjectHideFlags: 3
@@ -6077,8 +6071,6 @@ PlayableDirector:
     value: {fileID: 2118878810}
   - key: {fileID: 4689777412477253135, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
     value: {fileID: 2118878810}
-  - key: {fileID: 3683002823685907731, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
-    value: {fileID: 1472952274}
   - key: {fileID: 2011894423781922601, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
     value: {fileID: 1104609333}
   - key: {fileID: -4948767757190651024, guid: 1c3fd14108a14cb41aaf4de3d17449f2, type: 2}
@@ -18625,10 +18617,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543450652543259367}
     m_Modifications:
+    - target: {fileID: 2118878810, guid: d3cb3e167b3c3d14892ab958ec4c1c5c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7212540223002125393, guid: d3cb3e167b3c3d14892ab958ec4c1c5c,
         type: 3}
       propertyPath: m_Name
-      value: Defeat
+      value: MottisHide
       objectReference: {fileID: 0}
     - target: {fileID: 8021974929047191275, guid: d3cb3e167b3c3d14892ab958ec4c1c5c,
         type: 3}
