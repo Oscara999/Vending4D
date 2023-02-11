@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MottisController : Singleton<MottisController>
+public class MottisController : MonoBehaviour
 {
     Animator anim;
     
@@ -12,12 +12,17 @@ public class MottisController : Singleton<MottisController>
         anim = GetComponent<Animator>();    
     }
 
-    public void ResetSpeakBool(bool state)
+    public void SetSpeakingBool(bool state)
     {
-        anim.SetBool("Speaking",state);
+        anim.SetBool("IsTalking", state);
     }
-    public void ResetArmBool(bool state)
+    public void SetIndex(int index)
     {
-        anim.SetBool("Arm",state);
+        anim.SetInteger("Index", index);
+    }
+
+    public void SetBlinkBool(bool state)
+    {
+        anim.SetBool("IsBlinking", state);
     }
 }

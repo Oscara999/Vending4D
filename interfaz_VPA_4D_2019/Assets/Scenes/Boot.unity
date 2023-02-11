@@ -20178,7 +20178,7 @@ PrefabInstance:
     - target: {fileID: 14818584910230598, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
       propertyPath: m_PlaybackSpeed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3134905515209854233, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
@@ -20198,7 +20198,7 @@ PrefabInstance:
     - target: {fileID: 7341198610544027759, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50.286133
+      value: -50.28607
       objectReference: {fileID: 0}
     - target: {fileID: 7341198610544027759, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
