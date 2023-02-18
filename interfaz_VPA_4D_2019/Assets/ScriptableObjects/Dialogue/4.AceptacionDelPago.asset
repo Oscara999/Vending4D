@@ -19,4 +19,9 @@ MonoBehaviour:
   - Compite en una experiencia 4D inolvidable, que si logras vencer
   - "Podr\xE1s llevar este super premio adicional. \r"
   - "\xBFHacemos un trato?"
-  sounds: []
+  sounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

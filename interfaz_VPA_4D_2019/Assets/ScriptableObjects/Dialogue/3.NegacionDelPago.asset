@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 3.NegacionDelPago
   m_EditorClassIdentifier: 
   sequences:
-  - Que!! enscerio no quieres hacerlo, si me esforce tanto haciendolo, que lastima,
-    te pierdes de conocer mi mundo y todas las cosas sorprendentes de el
-  - Bueno que se puede hacer, tan ilucionado que estaba, de que conocieras mi maravilloso
+  - "\xA1Que!! Enseri\xF3 no quieres hacerlo, si me esforc\xE9 tanto haci\xE9ndolo,
+    que lastima, te pierdes de conocer mi mundo y todas las cosas sorprendentes de
+    \xE9l."
+  - Bueno que se puede hacer, tan ilusionado que estaba, de que conocieras mi maravilloso
     mundo
-  - Hasta la vista Baby
+  - Hasta la vista Baby.
   sounds:
   - {fileID: 11400000, guid: 46871a8a903040d408d18c0fd07a5194, type: 2}
   - {fileID: 11400000, guid: 3baa150eee606cd4790ac5e8acf1f157, type: 2}

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 2.Presentacion
   m_EditorClassIdentifier: 
   sequences:
-  - 'Me presento mi nombre es mottis '
-  - "con mi habilidad e amasado este esquicito snak y preparado una aventura 4D,
+  - 'Me presento mi nombre es Mottis '
+  - "Con mi habilidad e amasado este esquicito snak y preparado una aventura 4D,
     sorprendente, que deso ense\xF1arte"
-  - 'animate a vivir esta aventura, y llevarte este delicioso snak de mi mundo, que
+  - 'Animate a vivir esta aventura, y llevarte este delicioso snak de mi mundo, que
     te lo dejo en '
   sounds:
   - {fileID: 11400000, guid: 7d1f3cf9317dca04aa5f2eba79859a31, type: 2}

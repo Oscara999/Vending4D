@@ -17,4 +17,8 @@ MonoBehaviour:
   - "Pero de igual forma \xA1!Felicidades!!, aqu\xED tengo tu compra "
   - "Aqu\xED estar\xE9 esperando por si te animas a jugar y desafiar tus habilidades\r"
   - "Se despide su servidor Mottis \xA1\xA1Adi\xF3s!! "
-  sounds: []
+  sounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

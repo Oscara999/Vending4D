@@ -19,4 +19,9 @@ MonoBehaviour:
   - "Pero te advierto que deber\xE1s ser muy \xE1gil e intr\xE9pido para vencer."
   - "\xA1\xA1Aqu\xED les presento aaaah Abriiiiil!!"
   - Iniciemos nuestra experiencia 4D
-  sounds: []
+  sounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
