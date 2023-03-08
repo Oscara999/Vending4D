@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,87 +13,104 @@ public class MottisController : MonoBehaviour
     void Start()
     {
         bodyAnim = GetComponent<Animator>();
+        //CallAngry();
     }
 
-    public void Call()
+    #region CallsEmotions
+    public void CallAngry()
     {
         StartCoroutine(StartAngry());
     }
 
+    public void CallSad()
+    {
+        StartCoroutine(StartSad());
+    }
 
+    public void CallHappy()
+    {
+        StartCoroutine(StartHappy());
+    }
+    #endregion
+
+    #region Expresions Events
     private IEnumerator StartAngry()
     {
         yield return new WaitForSeconds(2f);
         bodyAnim.SetTrigger("Angry");
-        bodyAnim.SetBool("IsTalking", true);
-        bodyAnim.SetBool("IsStress", true);
+        SetSpeakingBool(true);
+        SetIsStress(true);
         tailAnim.SetBool("Angry", true);
 
         yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("Molesto 1") &&
             bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
 
-        bodyAnim.SetTrigger("Angry");
-
-        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("Molesto 1") &&
-    bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
-
-        bodyAnim.SetBool("IsStress", false);
-        bodyAnim.SetBool("IsTalking", false);
+        SetSpeakingBool(false);
+        SetIsStress(false);
         tailAnim.SetBool("Angry", false);
 
         yield return new WaitForSeconds(3f);
         StartCoroutine(StartHappy());
-
-
     }
 
     private IEnumerator StartHappy()
     {
         yield return new WaitForSeconds(2f);
-        bodyAnim.SetBool("IsHappy",true);
-        bodyAnim.SetBool("IsTalking", true);
+        
+        SetHappy(true);
         tailAnim.SetBool("Happy", true);
 
-        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("Molesto 1") &&
+        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("HappyIdle") &&
             bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
 
-        bodyAnim.SetTrigger("Angry");
-
-        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("Molesto 1") &&
-    bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
-
-        bodyAnim.SetBool("IsStress", false);
-        bodyAnim.SetBool("IsTalking", false);
-        tailAnim.SetBool("Angry", false);
+        SetHappy(false);
+        tailAnim.SetBool("Happy", false);
 
 
         yield return new WaitForSeconds(3f);
-        StartCoroutine(StartHappy());
-
+        StartCoroutine(StartSad());
     }
-
-
-    private IEnumerator StarSad()
+    
+    private IEnumerator StartSad()
     {
         yield return new WaitForSeconds(2f);
-        bodyAnim.SetTrigger("Angry");
-        bodyAnim.SetBool("IsTalking", true);
-        bodyAnim.SetBool("IsStress", true);
-        tailAnim.SetBool("Angry", true);
 
-        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("Molesto 1") &&
+        SetSad(true);
+        tailAnim.SetBool("Sad", true);
+
+        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("SadIdle") &&
             bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
 
-        bodyAnim.SetTrigger("Angry");
+        SetSad(false);
+        tailAnim.SetBool("Sad", false);
+    }
 
-        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("Molesto 1") &&
-    bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
+    #endregion
 
-        bodyAnim.SetBool("IsStress", false);
-        bodyAnim.SetBool("IsTalking", false);
-        tailAnim.SetBool("Angry", false);
+    #region Bools
 
-        yield return new WaitForSeconds(3f);
+    public void ShowPricePanel()
+    {
+        StatesManager.Instance?.ShowValuePanel(5f);
+    }
+
+    public void SetHappy(bool state)
+    {
+        bodyAnim.SetBool("IsHappy", state);
+    }
+    public void SetSad(bool state)
+    {
+        bodyAnim.SetBool("IsSad", state);
+    }
+
+    public void SetShowProduct(bool state)
+    {
+        bodyAnim.SetBool("IsShowing", state);
+    }
+
+    public void SetIsStress(bool state)
+    {
+        bodyAnim.SetBool("IsStress", state);
     }
 
     public void SetSpeakingBool(bool state)
@@ -110,6 +128,12 @@ public class MottisController : MonoBehaviour
     {
         bodyAnim.SetInteger("Index", index);
     }
+
+    public void SetBlinkBool(bool state)
+    {
+        bodyAnim.SetBool("IsBlinking", state);
+    }
+
     public void TailAngry(bool state)
     {
         tailAnim.SetBool("Angry", state);
@@ -125,8 +149,5 @@ public class MottisController : MonoBehaviour
         tailAnim.SetBool("Sad", state);
     }
 
-    public void SetBlinkBool(bool state)
-    {
-        bodyAnim.SetBool("IsBlinking", state);
-    }
+    #endregion
 }
