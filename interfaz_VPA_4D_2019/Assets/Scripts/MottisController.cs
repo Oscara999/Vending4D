@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class MottisController : MonoBehaviour
 {
-    [SerializeField]Transform camera;
+    [SerializeField] Transform camera;
     Animator bodyAnim;
     [SerializeField] Animator tailAnim;
 
+    [Header("States")]
+    public bool isHappy;
+    
     // Start is called before the first frame update
     void Start()
     {
         bodyAnim = GetComponent<Animator>();
-        //CallAngry();
     }
 
     #region CallsEmotions
@@ -27,8 +29,14 @@ public class MottisController : MonoBehaviour
         StartCoroutine(StartSad());
     }
 
+    public void EndHappy()
+    {
+        isHappy = false;
+    }
+
     public void CallHappy()
     {
+        isHappy = true;
         StartCoroutine(StartHappy());
     }
     #endregion
@@ -48,27 +56,19 @@ public class MottisController : MonoBehaviour
         SetSpeakingBool(false);
         SetIsStress(false);
         tailAnim.SetBool("Angry", false);
-
-        yield return new WaitForSeconds(3f);
-        StartCoroutine(StartHappy());
     }
 
     private IEnumerator StartHappy()
     {
-        yield return new WaitForSeconds(2f);
-        
         SetHappy(true);
         tailAnim.SetBool("Happy", true);
 
-        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("HappyIdle") &&
-            bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
+        yield return new WaitUntil(()=> !isHappy);
+        //yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("HappyIdle") &&
+        //    bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
 
         SetHappy(false);
         tailAnim.SetBool("Happy", false);
-
-
-        yield return new WaitForSeconds(3f);
-        StartCoroutine(StartSad());
     }
     
     private IEnumerator StartSad()
@@ -91,7 +91,7 @@ public class MottisController : MonoBehaviour
 
     public void ShowPricePanel()
     {
-        StatesManager.Instance?.ShowValuePanel(5f);
+        StartCoroutine(StatesManager.Instance?.ShowValuePanel(5f));
     }
 
     public void SetHappy(bool state)

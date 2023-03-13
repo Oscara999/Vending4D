@@ -20644,6 +20644,11 @@ PrefabInstance:
       propertyPath: ui.DesingCursor.Array.data[1]
       value: 
       objectReference: {fileID: 438927}
+    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: isHereSomeOne
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8178831769025564153, guid: f21a82641291618438f32bdd555fe9bf,
         type: 3}
       propertyPath: demoPanel
