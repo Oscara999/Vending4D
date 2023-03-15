@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MottisController : MonoBehaviour
+public class MottisController : Singleton<MottisController>
 {
     [SerializeField] Transform camera;
     Animator bodyAnim;
