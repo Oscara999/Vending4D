@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "5.Confirmaci\xF3nDelReto"
   m_EditorClassIdentifier: 
   sequences:
-  - Y ahora que vas a jugar quiero presentarte a alguien
+  - Y ahora que vas a jugar quiero presentarte a alguien.
   - '!!Y aqui esta!! al fin llego te presento a !Abril!'
   sounds:
   - {fileID: 11400000, guid: c22cc6eaa76198f498a3c1dfaaf7f9cd, type: 2}
