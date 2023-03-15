@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 870.9092, y: -328.98297, z: 8.792175}
+  m_FollowOffset: {x: 838.2178, y: -341.0559, z: -27.67203}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -8575,8 +8575,6 @@ PlayableDirector:
     value: {fileID: 1569057537}
   - key: {fileID: -7208694657593891217, guid: f3e46bf43f3fb294296eefb4f304fce6, type: 2}
     value: {fileID: 1415920725}
-  - key: {fileID: 4880383868708547159, guid: f3e46bf43f3fb294296eefb4f304fce6, type: 2}
-    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 3f87e822c9a24694a8e031828cb057c9: {fileID: 0}
@@ -8780,6 +8778,17 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1104609333}
+          m_MethodName: SetSmile
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
@@ -13905,8 +13914,8 @@ PlayableDirector:
     value: {fileID: 724221108}
   - key: {fileID: -7208694657593891217, guid: f67ab5f11dd80d94aa06884887da3bb9, type: 2}
     value: {fileID: 2144308091}
-  - key: {fileID: 1721578051507100044, guid: f67ab5f11dd80d94aa06884887da3bb9, type: 2}
-    value: {fileID: 1067222635}
+  - key: {fileID: 886736898289611596, guid: f67ab5f11dd80d94aa06884887da3bb9, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - aa4abe9ce0d7869438c3ad18ac00a27e: {fileID: 0}
@@ -13934,6 +13943,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c5fc8c4d627b8cc418ad66e18bdd7c21, type: 2}
     - {fileID: 11400000, guid: 7acd9ce9a8e16524eaa81b0882ac6304, type: 2}
     - {fileID: 11400000, guid: c6007b251af3e6e4ea694a1e276a7366, type: 2}
+    - {fileID: 11400000, guid: dd8eafa5ed41f604283e902c4ba3c983, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -13965,6 +13975,41 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1104609333}
           m_MethodName: SetHappy
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1067222635}
+          m_MethodName: set_applyRootMotion
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1067222635}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: BackFlip
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1067222635}
+          m_MethodName: set_applyRootMotion
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -15905,6 +15950,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1067222635, guid: 07e24da6f17b08a408b1d0bdd071c722, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1104609333, guid: 07e24da6f17b08a408b1d0bdd071c722, type: 3}
       propertyPath: camera
       value: 

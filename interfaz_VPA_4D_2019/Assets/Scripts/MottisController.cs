@@ -94,10 +94,16 @@ public class MottisController : Singleton<MottisController>
         StartCoroutine(StatesManager.Instance?.ShowValuePanel(5f));
     }
 
+    public void SetSmile(bool state)
+    {
+        bodyAnim.SetBool("IsSmile", state);
+    }
+
     public void SetHappy(bool state)
     {
         bodyAnim.SetBool("IsHappy", state);
     }
+
     public void SetSad(bool state)
     {
         bodyAnim.SetBool("IsSad", state);
