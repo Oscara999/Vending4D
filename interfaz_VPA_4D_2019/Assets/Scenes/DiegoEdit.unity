@@ -264,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588696261336462, guid: f920ead74e9fc3a4eb4a731b577291b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4441688097859436, guid: f920ead74e9fc3a4eb4a731b577291b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -284,7 +284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4441688097859436, guid: f920ead74e9fc3a4eb4a731b577291b4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.42261827
       objectReference: {fileID: 0}
     - target: {fileID: 4441688097859436, guid: f920ead74e9fc3a4eb4a731b577291b4, type: 3}
       propertyPath: m_LocalRotation.z
@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4441688097859436, guid: f920ead74e9fc3a4eb4a731b577291b4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9063079
       objectReference: {fileID: 0}
     - target: {fileID: 4441688097859436, guid: f920ead74e9fc3a4eb4a731b577291b4, type: 3}
       propertyPath: m_RootOrder
@@ -7618,6 +7618,12 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1294407330176552926}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1098160702 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95475270400139190, guid: f920ead74e9fc3a4eb4a731b577291b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 27124289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104609332 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8497940125186059198, guid: 07e24da6f17b08a408b1d0bdd071c722,
@@ -9687,7 +9693,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569057531}
-  m_LocalRotation: {x: -0.05345851, y: 0.938878, z: -0.1706236, w: -0.29417324}
+  m_LocalRotation: {x: -0.053419128, y: 0.93818635, z: -0.1704979, w: -0.2981353}
   m_LocalPosition: {x: 85, y: 50.8, z: 82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -12751,6 +12757,10 @@ PlayableDirector:
     value: {fileID: 837002650}
   - key: {fileID: -7208694657593891217, guid: 12b05b63144164c4285076e2ec55d1f9, type: 2}
     value: {fileID: 1874060176}
+  - key: {fileID: -4869554776055397882, guid: 12b05b63144164c4285076e2ec55d1f9, type: 2}
+    value: {fileID: 1098160702}
+  - key: {fileID: -2668331531606483615, guid: 12b05b63144164c4285076e2ec55d1f9, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - ed68302c393b178468c354c853f81e98: {fileID: 0}
