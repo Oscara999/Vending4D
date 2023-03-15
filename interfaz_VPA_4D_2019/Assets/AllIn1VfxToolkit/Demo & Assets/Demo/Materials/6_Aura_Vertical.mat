@@ -19,6 +19,8 @@ Texture2D:
   m_TextureFormat: 4
   m_MipCount: 1
   m_IsReadable: 1
+  m_IgnoreMasterTextureLimit: 0
+  m_IsPreProcessed: 0
   m_StreamingMipmaps: 0
   m_StreamingMipmapsPriority: 0
   m_AlphaIsTransparency: 0
@@ -202,6 +204,9 @@ Material:
     - _ScreenUvSh2DistScale: 1
     - _ScreenUvSh3DistScale: 1
     - _ScreenUvShDistScale: 1
+    - _Sh1BlendOffset: 0
+    - _Sh2BlendOffset: 0
+    - _Sh3BlendOffset: 0
     - _ShadowAmount: 0.4
     - _ShadowStepMax: 1
     - _ShadowStepMin: 0
@@ -216,6 +221,8 @@ Material:
     - _Shape2DistortAmount: 0.5
     - _Shape2DistortXSpeed: 0.1
     - _Shape2DistortYSpeed: 0.1
+    - _Shape2RotationOffset: 0
+    - _Shape2RotationSpeed: 0
     - _Shape2XSpeed: 0
     - _Shape2YSpeed: 0
     - _Shape3AlphaWeight: 2
@@ -225,6 +232,8 @@ Material:
     - _Shape3DistortAmount: 0.25
     - _Shape3DistortXSpeed: 0.34
     - _Shape3DistortYSpeed: 0.1
+    - _Shape3RotationOffset: 0
+    - _Shape3RotationSpeed: 0
     - _Shape3XSpeed: -0.1
     - _Shape3YSpeed: -0.8
     - _ShapeAlphaWeight: 1
@@ -234,6 +243,8 @@ Material:
     - _ShapeDistortAmount: 0.62
     - _ShapeDistortXSpeed: 0
     - _ShapeDistortYSpeed: -0.35
+    - _ShapeRotationOffset: 0
+    - _ShapeRotationSpeed: 0
     - _ShapeXSpeed: 0.05
     - _ShapeYSpeed: -0.4
     - _SoftFactor: 0.5
