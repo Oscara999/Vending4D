@@ -154,10 +154,12 @@ public class CinematicState : State
         if (StatesManager.Instance.PaymentMade)
         {
             SoundManager.Instance.PlayNewSound("SelectedFinish");
+            MottisController.Instance.SetHappy(false);
             ChangeState(4);
         }
         else
         {
+            MottisController.Instance.SetHappy(false);
             ChangeState(3);
         }
 
