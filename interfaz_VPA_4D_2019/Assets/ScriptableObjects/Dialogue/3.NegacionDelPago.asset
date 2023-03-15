@@ -18,8 +18,10 @@ MonoBehaviour:
     \xE9l."
   - Bueno que se puede hacer, tan ilusionado que estaba, de que conocieras mi maravilloso
     mundo
-  - Hasta la vista Baby.
+  - Hey y recuerda que aqui estare esperando para que conozcas mi mundo.
+  - Hasta la vista.
   sounds:
   - {fileID: 11400000, guid: 46871a8a903040d408d18c0fd07a5194, type: 2}
   - {fileID: 11400000, guid: 3baa150eee606cd4790ac5e8acf1f157, type: 2}
+  - {fileID: 11400000, guid: 73cf99e216810b143bcdddc75fbf6d16, type: 2}
   - {fileID: 11400000, guid: e61ab781c340ea44a9dd715877416942, type: 2}

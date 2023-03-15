@@ -13,15 +13,8 @@ MonoBehaviour:
   m_Name: "5.Confirmaci\xF3nDelReto"
   m_EditorClassIdentifier: 
   sequences:
-  - "\xA1\xA1Felicidades espero que tus habilidades sean suficientes para superar
-    este desaf\xEDo!!"
-  - "En contra del tiempo deber\xE1s derrotar a mi mascota Abril"
-  - "Pero te advierto que deber\xE1s ser muy \xE1gil e intr\xE9pido para vencer."
-  - "\xA1\xA1Aqu\xED les presento aaaah Abriiiiil!!"
-  - Iniciemos nuestra experiencia 4D
+  - Y ahora que vas a jugar quiero presentarte a alguien
+  - '!!Y aqui esta!! al fin llego te presento a !Abril!'
   sounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c22cc6eaa76198f498a3c1dfaaf7f9cd, type: 2}
+  - {fileID: 11400000, guid: 74be32b82085c03409d0a94efb3bde0b, type: 2}
