@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class MottisController : Singleton<MottisController>
 {
-    [SerializeField] Transform camera;
-    Animator bodyAnim;
-    [SerializeField] Animator tailAnim;
+    public Transform camera;
+    public Animator bodyAnim;
+    public Animator tailAnim;
 
     [Header("States")]
     public bool isHappy;

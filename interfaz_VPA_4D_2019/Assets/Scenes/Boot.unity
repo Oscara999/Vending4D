@@ -3910,6 +3910,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
+      propertyPath: songs.Array.size
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
+      propertyPath: songs.Array.data[36]
+      value: 
+      objectReference: {fileID: 11400000, guid: f2b1886b45338124da51efd46952417c,
+        type: 2}
     - target: {fileID: 5520455910809952965, guid: 4e58b512f103446499b15d7d5aaf606e,
         type: 3}
       propertyPath: m_Name
@@ -4124,7 +4133,7 @@ PrefabInstance:
     - target: {fileID: 7341198610544027759, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50.286377
+      value: -50.286316
       objectReference: {fileID: 0}
     - target: {fileID: 7341198610544027759, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
