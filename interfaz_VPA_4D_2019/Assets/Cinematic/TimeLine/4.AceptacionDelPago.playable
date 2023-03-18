@@ -135,15 +135,15 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
+    m_Start: 0.55
     m_ClipIn: 0
-    m_Asset: {fileID: -5456673928129348888}
-    m_Duration: 23.551224489795914
+    m_Asset: {fileID: -996366468083179617}
+    m_Duration: 23.482312925170067
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6897509945193286143}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.4666666666666666
+    m_BlendInDuration: 22.5
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -202,18 +202,18 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: PlanoAmplio
+    m_DisplayName: CM vcam11
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: -1031159147856871426}
-    m_Duration: 1.4666666666666666
+    m_Asset: {fileID: 2439766796900650796}
+    m_Duration: 23.05
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6897509945193286143}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 1.4666666666666666
+    m_BlendOutDuration: 22.5
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -271,7 +271,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Standar
+    m_DisplayName: CM vcam14
   m_Markers:
     m_Objects: []
 --- !u!114 &-6121615195176316697
@@ -324,21 +324,6 @@ MonoBehaviour:
   m_bufferingTime: 0.1
   m_ClipProperties:
     volume: 1
---- !u!114 &-5456673928129348888
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
-  m_EditorClassIdentifier: 
-  VirtualCamera:
-    exposedName: 28282a42f2aae694ba19415504912021
-    defaultValue: {fileID: 0}
 --- !u!114 &-5161477703853062666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,7 +404,7 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 7acd9ce9a8e16524eaa81b0882ac6304, type: 2}
---- !u!114 &-1031159147856871426
+--- !u!114 &-996366468083179617
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -429,10 +414,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
-  m_Name: CinemachineShot
+  m_Name: CinemachineShot(Clone)(Clone)
   m_EditorClassIdentifier: 
   VirtualCamera:
-    exposedName: ab13a4d5e014ad240a9aa0d4af37b7f2
+    exposedName: e9455a42f212ada44bc7ae122838f7ad
     defaultValue: {fileID: 0}
 --- !u!114 &-64756102683971217
 MonoBehaviour:
@@ -746,7 +731,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -821,6 +824,21 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: bd510ea1bb743934f966b757c7999968, type: 2}
+--- !u!114 &2439766796900650796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  VirtualCamera:
+    exposedName: 5e9907e5d192f2a49ae932135d502dd0
+    defaultValue: {fileID: 0}
 --- !u!114 &3017628561027994019
 MonoBehaviour:
   m_ObjectHideFlags: 1
