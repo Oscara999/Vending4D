@@ -202,7 +202,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam11
+    m_DisplayName: PlanoAmplio
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
