@@ -152,9 +152,10 @@ public class CinematicState : State
             StatesManager.Instance.Recharge(1);
 
             yield return new WaitUntil(() => !SceneController.Instance.QTEManager.startEvent);
+            MottisController.Instance.SetHappy(false);
+
         }
-        
-        MottisController.Instance.SetHappy(false);
+
 
         if (StatesManager.Instance.PaymentMade)
         {

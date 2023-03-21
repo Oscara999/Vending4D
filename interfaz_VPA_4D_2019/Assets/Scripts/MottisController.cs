@@ -96,6 +96,7 @@ public class MottisController : Singleton<MottisController>
 
     public void SetSmile(bool state)
     {
+        Debug.Log("sssss");
         bodyAnim.SetBool("IsSmile", state);
     }
 
