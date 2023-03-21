@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Time: 4.983333333333333
   m_Retroactive: 0
   m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: ef6942e9d822af946b1f4c123da9309b, type: 2}
+  m_Asset: {fileID: 0}
 --- !u!114 &-7208694657593891217
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Time: 1.9833333333333334
   m_Retroactive: 0
   m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: df9fcc9584740ee46aa84535f604755c, type: 2}
+  m_Asset: {fileID: 0}
 --- !u!114 &3326980626488296217
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Time: 3.15
   m_Retroactive: 0
   m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: 8b39976a47f3ee443a7c7617d5b5c81a, type: 2}
+  m_Asset: {fileID: 0}
 --- !u!114 &8579539732487081263
 MonoBehaviour:
   m_ObjectHideFlags: 1

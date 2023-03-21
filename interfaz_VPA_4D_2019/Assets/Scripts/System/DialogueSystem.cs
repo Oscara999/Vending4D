@@ -65,7 +65,7 @@ public class DialogueSystem : Singleton<DialogueSystem>
 
         if (provicionalSounds.Count > 0)
         {
-            SoundManager.Instance.PlayNewSound(provicionalSounds[index].name);
+            SoundManager.Instance?.PlayNewSound(provicionalSounds[index].name);
         }
 
         index++;
@@ -82,8 +82,6 @@ public class DialogueSystem : Singleton<DialogueSystem>
         textBox.text = "";
         yield return new WaitForSeconds(0.01f);
         textBox.text += sentence;
-        yield return new WaitForSeconds(3f);
-        panelDialogue.SetActive(false);
     }
 
     public void EndDialogue()

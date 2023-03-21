@@ -195,7 +195,7 @@ public class ScenesManager : Singleton<ScenesManager>
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;
 
-            case "IntroduccionMottisTestOscar":
+            case "DiegoEdit":
                 SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName));
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;

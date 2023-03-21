@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequences:
   - "!Hey hey!\r"
-  - "Hey hey, espera ven aqui, y mira algo genial que tengo para ti  !!\r"
-  - quiero decirte que mi mundo es muy especial, y que hay una sorpresa, con un premio
+  - "!!Hey hey, espera ven aqui, y mira algo genial que tengo para ti!!\r"
+  - Quiero decirte que mi mundo es muy especial, y que hay una sorpresa, con un premio
     que puedes ganar, si te atreves a jugar.
   sounds:
   - {fileID: 11400000, guid: f6c5710d63f450645b416ba35aaa5f4b, type: 2}

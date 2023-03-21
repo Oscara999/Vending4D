@@ -24,7 +24,7 @@ public class Enemy : Singleton<Enemy>
     public List<GameObject> spawns = new List<GameObject>();
 
     List<int> orderwaitPoints = new List<int>();
-    int index;
+    public int index;
     int destPoint;
     float rotation;
     float horizon;
@@ -273,7 +273,15 @@ public class Enemy : Singleton<Enemy>
     void NextPointFly()
     {
         index = (index + 1) % orderwaitPoints.Count;
-        destPoint = orderwaitPoints[index];
+
+        if (index != 0)
+        {
+            destPoint = orderwaitPoints[index];
+        }
+        else
+        {
+            Enemy.Instance.LevelUp();
+        }
     }
 
     public void MoveGround()
@@ -343,7 +351,12 @@ public class Enemy : Singleton<Enemy>
         if (Vector3.Distance(transform.position, startPoint.transform.position) < 0.1f)
         {
             StatesManager.Instance.ui.uIController.CrossFireState(true);
-            isMove = false; 
+            isMove = false;
+            
+            if (ManagerGame.Instance.round == 3)     
+            {
+                ManagerGame.Instance.FinishGame();
+            }
         }
     }
 

@@ -22,7 +22,7 @@ public class TimeLineRutine : MonoBehaviour
     public bool StatePlayable(int index)
     {
         if (playableDirectors[index].state == PlayState.Playing 
-            && playableDirectors[index].state != PlayState.Paused )
+            && playableDirectors[index].state != PlayState.Paused)
         {
             return true;
         }

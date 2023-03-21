@@ -18,15 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Test3.unity
     guid: 1712aa1fcc738cd4d945bf256f70763c
   - enabled: 1
-    path: Assets/Scenes/TestMenu.unity
-    guid: bf3f888823d64fe49a447c4b210e8922
-  - enabled: 1
-    path: Assets/Scenes/IntroduccionMottisTestOscar.unity
-    guid: 9e3b7d16e3fa32c45a84d705624d3fd7
-  - enabled: 1
     path: Assets/Scenes/Introduccion_Mottis.unity
     guid: 6b54908f9dede3e4cb24c78fb655f48f
   - enabled: 1
     path: Assets/Scenes/NewMechanic.unity
     guid: f319a15cd37b0e94185e152bb7876231
+  - enabled: 1
+    path: Assets/Scenes/DiegoEdit.unity
+    guid: 019a6d2254645434dbdd0ec41ad479e1
   m_configObjects: {}

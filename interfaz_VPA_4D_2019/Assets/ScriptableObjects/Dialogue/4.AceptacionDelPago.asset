@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: 4.AceptacionDelPago
   m_EditorClassIdentifier: 
   sequences:
-  - "\xA1! Oh genial \xA1! veo que te animaste a pagar por este delicioso producto\r"
-  - "\xBFPero qu\xE9 tal si antes de recibirlo deseas desafiar tus habilidades para
-    mejorarlo eh? \t"
-  - Compite en una experiencia 4D inolvidable, que si logras vencer
-  - "Podr\xE1s llevar este super premio adicional. \r"
-  - "\xBFHacemos un trato?"
-  sounds: []
+  - "\xA1! Yupi \xA1! Sabia que lo harias bienvenido a mi mundo."
+  - 'Ahora somos amigos! '
+  - Ahora que vas a llevar este Snak, que tal si te adentras un poco mas?
+  - Animate a vivir esta aventura y a llevarte una sorpresa con una  premio que puedes
+    ganar si te atrevez a jugar.
+  - Pero ten en cuenta que deberas vencer en contra del tiempo.
+  sounds:
+  - {fileID: 11400000, guid: 1b2d563750f02ad4f91f53785f0ab020, type: 2}
+  - {fileID: 11400000, guid: 595e7c2f849b7084a97a222876551fba, type: 2}
+  - {fileID: 11400000, guid: 528e48606c65505458630f685a3bd631, type: 2}
+  - {fileID: 11400000, guid: 14c40bd6b19cdd94ca4b5ecc29c68ed7, type: 2}
+  - {fileID: 11400000, guid: 71b5895ddfa14b949a26a69429992c50, type: 2}

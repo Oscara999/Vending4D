@@ -144,12 +144,18 @@ public class CinematicState : State
         if (SceneController.Instance != null)
         {
             SceneController.Instance.QTEManager.StartEvent(SceneController.Instance.QTE[0]);
-
+           
             yield return new WaitForSeconds(5f);
+            Debug.Log("aqui");
+            MottisController.Instance.bodyAnim.SetTrigger("HearSecret");
+
             StatesManager.Instance.Recharge(1);
 
             yield return new WaitUntil(() => !SceneController.Instance.QTEManager.startEvent);
+            MottisController.Instance.SetHappy(false);
+
         }
+
 
         if (StatesManager.Instance.PaymentMade)
         {
