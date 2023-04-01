@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class MottisController : Singleton<MottisController>
 {
-    public Transform camera;
     public Animator bodyAnim;
     public Animator tailAnim;
 
     [Header("States")]
     public bool isHappy;
-    
+    public bool isAngry;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,7 @@ public class MottisController : Singleton<MottisController>
     #region CallsEmotions
     public void CallAngry()
     {
+        isAngry = true;
         StartCoroutine(StartAngry());
     }
 
@@ -29,46 +30,48 @@ public class MottisController : Singleton<MottisController>
         StartCoroutine(StartSad());
     }
 
-    public void EndHappy()
-    {
-        isHappy = false;
-    }
-
     public void CallHappy()
     {
         isHappy = true;
         StartCoroutine(StartHappy());
     }
+    public void EndAngry()
+    {
+        isAngry = false;
+    }
+
+    public void EndHappy()
+    {
+        isHappy = false;
+    }
+
+
+    public void ShowPricePanel()
+    {
+        StartCoroutine(StatesManager.Instance?.ShowValuePanel(5f));
+    }
+
     #endregion
 
     #region Expresions Events
     private IEnumerator StartAngry()
     {
-        yield return new WaitForSeconds(2f);
-        bodyAnim.SetTrigger("Angry");
-        SetSpeakingBool(true);
+        SetAngry(true);
         SetIsStress(true);
-        tailAnim.SetBool("Angry", true);
 
-        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("Molesto 1") &&
-            bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
+        yield return new WaitUntil(() => !isAngry);
 
-        SetSpeakingBool(false);
+        SetAngry(false);
         SetIsStress(false);
-        tailAnim.SetBool("Angry", false);
     }
 
     private IEnumerator StartHappy()
     {
         SetHappy(true);
-        tailAnim.SetBool("Happy", true);
 
         yield return new WaitUntil(()=> !isHappy);
-        //yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("HappyIdle") &&
-        //    bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
 
         SetHappy(false);
-        tailAnim.SetBool("Happy", false);
     }
     
     private IEnumerator StartSad()
@@ -89,20 +92,20 @@ public class MottisController : Singleton<MottisController>
 
     #region Bools
 
-    public void ShowPricePanel()
-    {
-        StartCoroutine(StatesManager.Instance?.ShowValuePanel(5f));
-    }
-
     public void SetSmile(bool state)
     {
-        Debug.Log("sssss");
         bodyAnim.SetBool("IsSmile", state);
     }
 
     public void SetHappy(bool state)
     {
         bodyAnim.SetBool("IsHappy", state);
+        tailAnim.SetBool("Happy", state);
+    }
+
+    public void SetAngry(bool state)
+    {
+        bodyAnim.SetTrigger("Angry");
     }
 
     public void SetSad(bool state)
@@ -118,11 +121,11 @@ public class MottisController : Singleton<MottisController>
     public void SetIsStress(bool state)
     {
         bodyAnim.SetBool("IsStress", state);
+        tailAnim.SetBool("Angry", state);
     }
 
     public void SetSpeakingBool(bool state)
     {
-        Debug.Log("Speaking " + state);
         bodyAnim.SetBool("IsTalking", state);
     }
 

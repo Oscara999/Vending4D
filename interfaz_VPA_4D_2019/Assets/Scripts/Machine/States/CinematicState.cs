@@ -19,11 +19,10 @@ public class CinematicState : State
     bool inFivethCinematic;
     [SerializeField]
     bool inSixthCinematic;
-    public List<string> process = new List<string>();
+
     public override State Tick()
     {
-        if (StatesManager.Instance.InCinematic
-            || ScenesManager.Instance.isLoad)
+        if (StatesManager.Instance.InCinematic)
             return this;
 
         if (stateOff)
@@ -130,8 +129,6 @@ public class CinematicState : State
         yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(0));
         ChangeState(2);
         StatesManager.Instance.StateInCinematic(false);
-
-        process.Add("1");
     }
 
     IEnumerator SecondCinematic()
@@ -140,22 +137,21 @@ public class CinematicState : State
         SceneController.Instance.timeLineRutine.Play(1);
         yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(1));
 
-        //start qte de temporizador de pago. mostrara precio. originalGameObject;
+        //start qte de temporizador de pago.
+        //mostrara precio. originalGameObject
+        //Decidir si recargar escena nueva o continuar el proceso de venta;
         if (SceneController.Instance != null)
         {
             SceneController.Instance.QTEManager.StartEvent(SceneController.Instance.QTE[0]);
            
             yield return new WaitForSeconds(5f);
-            Debug.Log("aqui");
             MottisController.Instance.bodyAnim.SetTrigger("HearSecret");
-
-            StatesManager.Instance.Recharge(1);
+            
+            Debug.Log("aqui");
+            //StatesManager.Instance.Recharge(1);
 
             yield return new WaitUntil(() => !SceneController.Instance.QTEManager.startEvent);
-            MottisController.Instance.SetHappy(false);
-
         }
-
 
         if (StatesManager.Instance.PaymentMade)
         {
@@ -166,10 +162,10 @@ public class CinematicState : State
         {
             ChangeState(3);
         }
-
+        
+        MottisController.Instance.SetHappy(false);
+        MottisController.Instance.SetSmile(false);
         StatesManager.Instance.StateInCinematic(false);
-        process.Add("2");
-
     }
 
     //Skip to main state
@@ -187,7 +183,6 @@ public class CinematicState : State
 
         yield return new WaitForSeconds(5f);
         StatesManager.Instance.StateInCinematic(false);
-        process.Add("3");
     }
 
     IEnumerator FourthCinematic()
@@ -202,7 +197,6 @@ public class CinematicState : State
             SceneController.Instance.QTEManager.StartEvent(SceneController.Instance.QTE[1]);
         }
         Debug.Log("next Part 1");
-        process.Add("4");
     }
 
     public IEnumerator SendResultsAcceptPlay()
@@ -227,7 +221,6 @@ public class CinematicState : State
         {
             ChangeState(6);
         }
-        process.Add("4.2");
 
         StatesManager.Instance.StateInCinematic(false);
     }
@@ -241,7 +234,6 @@ public class CinematicState : State
         ChangeState(0);
         yield return new WaitForSeconds(2f);
         StatesManager.Instance.StateInCinematic(false);
-        process.Add("5");
     }
 
     //Skip to main state
@@ -256,7 +248,6 @@ public class CinematicState : State
         StatesManager.Instance.skipState.exit = true;
         ChangeState(0);
         StatesManager.Instance.StateInCinematic(false);
-        process.Add("6");
     }
 
     protected override void ExitState()

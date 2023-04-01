@@ -132,7 +132,6 @@ public class ManagerGame : Singleton<ManagerGame>
         //GameUI[2].SetActive(true);
         inProcess = false;
         StatesManager.Instance.currentState = StatesManager.Instance.reposeState;
-        ScenesManager.Instance.isLoad = true;
         ScenesManager.Instance.LoadLevel("Introduccion_Mottis");
     }
 }

@@ -35,8 +35,6 @@ public class ScenesManager : Singleton<ScenesManager>
     /// Variable que define si el juego esta en ejecucion.
     /// </summary>
     [SerializeField] private bool is_pause;
-    public bool isLoad;
-    public bool isUnLoad;
 
     /// <summary>
     /// Varirable que almacena el nombre de la scen principal a carga.
@@ -48,7 +46,7 @@ public class ScenesManager : Singleton<ScenesManager>
     /// Propiedad que retorna el nombre de la escena que se encuentra en ejecución.
     /// </summary>
     /// <value>Nombre de la escena.</value>
-    public string CurrentLevelName { get { return _currentLevelName; } }
+    public string CurrentLevelName { get { return _currentLevelName; } set { _currentLevelName = value; } }
 
     /// <summary>
     /// Propiedad que retorna el estado de ejecución (T&F). 
@@ -86,7 +84,6 @@ public class ScenesManager : Singleton<ScenesManager>
             }
         }
 
-        isLoad = true;
         LoadLevel(mainLevel);
     }
 
@@ -113,7 +110,6 @@ public class ScenesManager : Singleton<ScenesManager>
         if (_loadOperations.Contains(ao))
             _loadOperations.Remove(ao);
 
-        isUnLoad = false;
         Debug.Log("[GameManager] Escena descargada completamente");
     }
 
@@ -123,9 +119,6 @@ public class ScenesManager : Singleton<ScenesManager>
     /// <param name="levelName">Nombre de la escena que se desea cargar.</param>
     public void LoadLevel(string levelName)
     {
-        if (!isLoad)
-            return;
-
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
 
         if (ao == null)
@@ -147,7 +140,6 @@ public class ScenesManager : Singleton<ScenesManager>
     /// <param name="levelName">Nombre de la escena que se desea descargar.</param>
     public void UnLoadLevel(string levelName)
     {
-        isUnLoad = true;
         AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName);
         ao.completed += OnUnLoadOperationComplete;
     }
@@ -222,11 +214,22 @@ public class ScenesManager : Singleton<ScenesManager>
     }
 
     /// <summary>
-    /// Método que cambia configuracion a android.
+    /// Método que recarga Escena de Mottis
     /// </summary>
-    public void EditAndroidSystem()
+    public void ChangeNewScene()
     {
 
+        UnLoadLevel("Introduccion_Mottis");
+
+        LoadLevel("DiegoEdit");
+
+        //if (_lastLevelName == "Introduccion_Mottis")
+        //{
+        //}
+        //else
+        //{
+        //    LoadLevel("Introduccion_Mottis");
+        //}
     }
 
 
@@ -275,7 +278,6 @@ public class ScenesManager : Singleton<ScenesManager>
             ao.allowSceneActivation = true;
             yield return new WaitForSeconds(2f);
             loadingPanel.SetActive(false);
-            isLoad = false;
         }
     }
 }

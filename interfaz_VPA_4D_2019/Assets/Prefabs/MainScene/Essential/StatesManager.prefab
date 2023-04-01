@@ -172,15 +172,19 @@ MonoBehaviour:
   - {fileID: 0}
   skapeTask: {fileID: 0}
   ui:
-    uIController: {fileID: 0}
+    uIController: {fileID: 5477911701488351697}
     canvas: {fileID: 0}
     questPanel: {fileID: 0}
     pausePanel: {fileID: 0}
     rulesPanel: {fileID: 0}
     valuePanel: {fileID: 0}
-    DesingCursor: []
+    DesingCursor:
+    - {fileID: 0}
+    - {fileID: 0}
     coinsText: {fileID: 0}
-    eventUI: []
+    eventUI:
+    - {fileID: 0}
+    - {fileID: 0}
     eventTimerText: {fileID: 0}
     eventTimerImage: {fileID: 0}
   reposeState: {fileID: 8178831769025564153}

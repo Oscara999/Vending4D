@@ -49,5 +49,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  loadingPanel: {fileID: 0}
   is_pause: 0
-  mainLevel: IntroduccionMottisTestOscar
+  isLoad: 0
+  isUnLoad: 0
+  mainLevel: Introduccion_Mottis

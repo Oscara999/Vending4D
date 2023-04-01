@@ -111,7 +111,6 @@ public class StatesManager : Singleton<StatesManager>
         
         if (currentState.name == "GameState")
         {
-            ScenesManager.Instance.isLoad = true;
             ScenesManager.Instance.LoadLevel("Test3");
         }
 

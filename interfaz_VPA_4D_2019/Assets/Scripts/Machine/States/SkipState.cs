@@ -37,6 +37,7 @@ public class SkipState : State
         if (StatesManager.Instance.InGame)
         {
             StatesManager.Instance.ledsController.ramdom = false;
+            StatesManager.Instance.IsHereSomeOne = false;
             nextState = StatesManager.Instance.gameState;
             ScenesManager.Instance.LoadLevel("Test3");
         }
@@ -45,23 +46,17 @@ public class SkipState : State
             StatesManager.Instance.IsHereSomeOne = false;
             StatesManager.Instance.ledsController.ramdom = true;
             nextState = StatesManager.Instance.reposeState;
-            //SceneManager.LoadScene("Boot");
-            //StartCoroutine(ExitLoad());
-            //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Boot"));
-            //ScenesManager.Instance.UnLoadLevel("IntroduccionMottisTestOscar");
+            StartCoroutine(ExitLoad());
         }
-
         exit = false;
     }
 
     IEnumerator ExitLoad()
     {
-        yield return new WaitForSeconds(2f);
-        yield return new WaitUntil(() => !ScenesManager.Instance.isUnLoad);
-        ScenesManager.Instance.isLoad = true;
-        yield return new WaitForSeconds(10f);
-        ScenesManager.Instance.LoadLevel("Introduccion_Mottis"); 
-        Debug.Log(222220);
+        ScenesManager.Instance.UnLoadLevel("Introduccion_Mottis");
+        yield return new WaitForSeconds(1f);
+        ScenesManager.Instance.CurrentLevelName = string.Empty;
+        ScenesManager.Instance.LoadLevel("Introduccion_Mottis");
     }
 
     IEnumerator EnabledRules()
