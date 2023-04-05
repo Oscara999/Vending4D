@@ -41,12 +41,13 @@ public class StatesManager : Singleton<StatesManager>
     void Start()
     {
         //BaseDataManager.Instance.Load();
+        //StartCoroutine(test());
        // Cursor.visible = false;
     }
 
     IEnumerator test()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         isHereSomeOne = true;
         Debug.Log("Is there someone");
     }
@@ -130,11 +131,19 @@ public class StatesManager : Singleton<StatesManager>
     }
     public void CoinsValidation()
     {
-        if (!inGame)
+        if (currentState != reposeState)
         {
-            if (!ui.coinsText.gameObject.activeInHierarchy)
+            if (coins > 0)
             {
-                ui.coinsText.gameObject.SetActive(true);
+                if (!ui.coinsText.gameObject.activeInHierarchy)
+                {
+                    ui.coinsText.gameObject.SetActive(true);
+                    ui.coinsText.text = "Coins:" + coins.ToString();
+                }
+            }
+            else
+            {
+                ui.coinsText.gameObject.SetActive(false);
             }
         }
         else
@@ -142,7 +151,6 @@ public class StatesManager : Singleton<StatesManager>
             ui.coinsText.gameObject.SetActive(false);
         }
         
-        ui.coinsText.text = "Coins:" + coins.ToString();
     }
 
     public void Check(bool validation)

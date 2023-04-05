@@ -148,7 +148,7 @@ public class CinematicState : State
             MottisController.Instance.bodyAnim.SetTrigger("HearSecret");
             
             Debug.Log("aqui");
-            //StatesManager.Instance.Recharge(1);
+            StatesManager.Instance.Recharge(1);
 
             yield return new WaitUntil(() => !SceneController.Instance.QTEManager.startEvent);
         }
