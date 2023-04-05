@@ -39,24 +39,24 @@ public class SkipState : State
             StatesManager.Instance.ledsController.ramdom = false;
             StatesManager.Instance.IsHereSomeOne = false;
             nextState = StatesManager.Instance.gameState;
-            ScenesManager.Instance.LoadLevel("Test3");
+            StartCoroutine(ExitLoad("Introduccion_Mottis", "Test3"));
         }
         else
         {
             StatesManager.Instance.IsHereSomeOne = false;
             StatesManager.Instance.ledsController.ramdom = true;
             nextState = StatesManager.Instance.reposeState;
-            StartCoroutine(ExitLoad());
+            StartCoroutine(ExitLoad("Introduccion_Mottis", "Introduccion_Mottis"));
         }
         exit = false;
     }
 
-    IEnumerator ExitLoad()
+    IEnumerator ExitLoad(string lastSceneName , string newSceneName)
     {
-        ScenesManager.Instance.UnLoadLevel("Introduccion_Mottis");
+        ScenesManager.Instance.UnLoadLevel(lastSceneName);
         yield return new WaitForSeconds(1f);
         ScenesManager.Instance.CurrentLevelName = string.Empty;
-        ScenesManager.Instance.LoadLevel("Introduccion_Mottis");
+        ScenesManager.Instance.LoadLevel(newSceneName);
     }
 
     IEnumerator EnabledRules()

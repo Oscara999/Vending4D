@@ -109,12 +109,6 @@ public class StatesManager : Singleton<StatesManager>
     public void SwitchToNextState(State state)
     {
         currentState = state;
-        
-        if (currentState.name == "GameState")
-        {
-            ScenesManager.Instance.LoadLevel("Test3");
-        }
-
         Debug.Log(currentState.name);
     }
 
