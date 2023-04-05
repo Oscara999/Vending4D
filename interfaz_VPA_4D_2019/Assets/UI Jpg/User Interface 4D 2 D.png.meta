@@ -1,0 +1,971 @@
+fileFormatVersion: 2
+guid: 10b28868ff1f89b4eb29c2d7fb0f1299
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8136519874961982460
+    second: User Interface 4D 2 D_0
+  - first:
+      213: -8876322048779956009
+    second: User Interface 4D 2 D_1
+  - first:
+      213: -128416390859703252
+    second: User Interface 4D 2 D_2
+  - first:
+      213: -5351949726714638581
+    second: User Interface 4D 2 D_3
+  - first:
+      213: -4597285760607277265
+    second: User Interface 4D 2 D_4
+  - first:
+      213: -7791047625034509056
+    second: User Interface 4D 2 D_5
+  - first:
+      213: -2710341148231254038
+    second: User Interface 4D 2 D_6
+  - first:
+      213: -2213721825444976037
+    second: User Interface 4D 2 D_7
+  - first:
+      213: -8326470571771742707
+    second: User Interface 4D 2 D_8
+  - first:
+      213: -8912967282017626785
+    second: User Interface 4D 2 D_9
+  - first:
+      213: 4968322480505432519
+    second: User Interface 4D 2 D_10
+  - first:
+      213: 1728304723684168698
+    second: User Interface 4D 2 D_11
+  - first:
+      213: 1023849337336259033
+    second: User Interface 4D 2 D_12
+  - first:
+      213: 8619174684545281775
+    second: User Interface 4D 2 D_13
+  - first:
+      213: 4128801970585611944
+    second: User Interface 4D 2 D_14
+  - first:
+      213: -499434972818406917
+    second: User Interface 4D 2 D_15
+  - first:
+      213: -6389507007718036422
+    second: User Interface 4D 2 D_16
+  - first:
+      213: 7215128806706186452
+    second: User Interface 4D 2 D_17
+  - first:
+      213: -6135093266616813691
+    second: User Interface 4D 2 D_18
+  - first:
+      213: 8584036144030378090
+    second: User Interface 4D 2 D_19
+  - first:
+      213: -3228095103278333381
+    second: User Interface 4D 2 D_20
+  - first:
+      213: -5676207781222365082
+    second: User Interface 4D 2 D_21
+  - first:
+      213: 8535456405041242973
+    second: User Interface 4D 2 D_22
+  - first:
+      213: 6346517851707818194
+    second: User Interface 4D 2 D_23
+  - first:
+      213: 5192158666543709708
+    second: User Interface 4D 2 D_24
+  - first:
+      213: 5380473062944663848
+    second: User Interface 4D 2 D_25
+  - first:
+      213: -2628506271002537910
+    second: User Interface 4D 2 D_26
+  - first:
+      213: -987573045733936606
+    second: User Interface 4D 2 D_27
+  - first:
+      213: -3095982877418538247
+    second: User Interface 4D 2 D_28
+  - first:
+      213: 2511271014913229029
+    second: User Interface 4D 2 D_29
+  - first:
+      213: 2470625125791121040
+    second: User Interface 4D 2 D_30
+  - first:
+      213: -1767549028360546592
+    second: User Interface 4D 2 D_31
+  - first:
+      213: 4577426049109843525
+    second: User Interface 4D 2 D_32
+  - first:
+      213: -376211915334390662
+    second: User Interface 4D 2 D_33
+  - first:
+      213: 2208981788269983112
+    second: User Interface 4D 2 D_34
+  - first:
+      213: 2413950196385415661
+    second: User Interface 4D 2 D_35
+  - first:
+      213: -7869211345362867441
+    second: User Interface 4D 2 D_36
+  - first:
+      213: -8697281379421093519
+    second: User Interface 4D 2 D_37
+  - first:
+      213: 3133139214991712432
+    second: User Interface 4D 2 D_38
+  - first:
+      213: -6527813310384393643
+    second: User Interface 4D 2 D_39
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_0
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 2975
+        width: 1716
+        height: 1355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c3cf86846451f80800000000000000
+      internalID: -8136519874961982460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_1
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 3227
+        width: 995
+        height: 1136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0d08a1028f0d480800000000000000
+      internalID: -8876322048779956009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_2
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 3192
+        width: 994
+        height: 1138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c387f09f5c73ef0800000000000000
+      internalID: -128416390859703252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_3
+      rect:
+        serializedVersion: 2
+        x: 4199
+        y: 3192
+        width: 991
+        height: 1171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0fcc63541e0ab5b0800000000000000
+      internalID: -5351949726714638581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_4
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 3182
+        width: 1024
+        height: 1098
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2faa0c45f82330c0800000000000000
+      internalID: -4597285760607277265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2693
+        width: 203
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005daa9b673a0e390800000000000000
+      internalID: -7791047625034509056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_6
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 2693
+        width: 204
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef3d8fe51fe26ad0800000000000000
+      internalID: -2710341148231254038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_7
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 2634
+        width: 87
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5aa2d28ab74741e0800000000000000
+      internalID: -2213721825444976037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_8
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 2639
+        width: 88
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d063dc8612f627c80800000000000000
+      internalID: -8326470571771742707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_9
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 2708
+        width: 2321
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5519acda77ce4480800000000000000
+      internalID: -8912967282017626785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_10
+      rect:
+        serializedVersion: 2
+        x: 4286
+        y: 2505
+        width: 386
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c92d1409f603f440800000000000000
+      internalID: 4968322480505432519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_11
+      rect:
+        serializedVersion: 2
+        x: 4757
+        y: 2501
+        width: 386
+        height: 355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af313de3dfb2cf710800000000000000
+      internalID: 1728304723684168698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_12
+      rect:
+        serializedVersion: 2
+        x: 5406
+        y: 2288
+        width: 703
+        height: 700
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d162773c81753e00800000000000000
+      internalID: 1023849337336259033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_13
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 2527
+        width: 2274
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee6c5195b57d9770800000000000000
+      internalID: 8619174684545281775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1877
+        width: 579
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae20b454837c4930800000000000000
+      internalID: 4128801970585611944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_16
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 2017
+        width: 323
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ce813ca39e357a0800000000000000
+      internalID: -6389507007718036422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_18
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 1996
+        width: 379
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587f96bdd25cbdaa0800000000000000
+      internalID: -6135093266616813691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_19
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 2020
+        width: 317
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a686b00946f902770800000000000000
+      internalID: 8584036144030378090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_20
+      rect:
+        serializedVersion: 2
+        x: 2244
+        y: 1846
+        width: 587
+        height: 586
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32cae35b908333d0800000000000000
+      internalID: -3228095103278333381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_21
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 1996
+        width: 2183
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668cee8c81f0a31b0800000000000000
+      internalID: -5676207781222365082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_22
+      rect:
+        serializedVersion: 2
+        x: 5419
+        y: 1542
+        width: 680
+        height: 692
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53e05aa068047670800000000000000
+      internalID: 8535456405041242973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_23
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 2147
+        width: 62
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d048bf5c5c531850800000000000000
+      internalID: 6346517851707818194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_26
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1225
+        width: 587
+        height: 586
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40d103197ba58bd0800000000000000
+      internalID: -2628506271002537910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_27
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 1244
+        width: 568
+        height: 564
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 222374b1c8f6b42f0800000000000000
+      internalID: -987573045733936606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_28
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1244
+        width: 568
+        height: 564
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fab6c8e9fbd805d0800000000000000
+      internalID: -3095982877418538247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_29
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1348
+        width: 145
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e043aacea3d9d220800000000000000
+      internalID: 2511271014913229029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_30
+      rect:
+        serializedVersion: 2
+        x: 2345
+        y: 1253
+        width: 479
+        height: 378
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09e3fe3467c694220800000000000000
+      internalID: 2470625125791121040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_31
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 1620
+        width: 2169
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e69b7906876877e0800000000000000
+      internalID: -1767549028360546592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_33
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 1250
+        width: 2169
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c693a914d67caf0800000000000000
+      internalID: -376211915334390662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_34
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 359
+        width: 1825
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885b3259b31e7ae10800000000000000
+      internalID: 2208981788269983112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_35
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 319
+        width: 644
+        height: 699
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de18909f9e2108120800000000000000
+      internalID: 2413950196385415661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_36
+      rect:
+        serializedVersion: 2
+        x: 3352
+        y: 723
+        width: 1781
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b2c2969f1fac290800000000000000
+      internalID: -7869211345362867441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_37
+      rect:
+        serializedVersion: 2
+        x: 3145
+        y: 266
+        width: 272
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1718cf36aac0d4780800000000000000
+      internalID: -8697281379421093519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_38
+      rect:
+        serializedVersion: 2
+        x: 3625
+        y: 284
+        width: 583
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b06d6514852b7b20800000000000000
+      internalID: 3133139214991712432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: User Interface 4D 2 D_39
+      rect:
+        serializedVersion: 2
+        x: 4490
+        y: 0
+        width: 574
+        height: 585
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552b87a416c8865a0800000000000000
+      internalID: -6527813310384393643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7999a8375cc00714cbf2c4cdb9be571c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
