@@ -30,6 +30,8 @@ public class StatesManager : Singleton<StatesManager>
     bool challengeAccepted;
     [SerializeField]
     bool inGame;
+
+    public bool showing;
     public int coins;
 
     public bool IsHereSomeOne { get => isHereSomeOne; set => isHereSomeOne = value; }
@@ -41,7 +43,7 @@ public class StatesManager : Singleton<StatesManager>
     void Start()
     {
         //BaseDataManager.Instance.Load();
-        //StartCoroutine(test());
+        StartCoroutine(test());
        // Cursor.visible = false;
     }
 
@@ -101,7 +103,7 @@ public class StatesManager : Singleton<StatesManager>
         }
         else
         {
-            Debug.Log("Don't have any coin");
+            Debug.Log("Don't have coins");
             return paymentMade = false;
         }
     }
@@ -112,10 +114,10 @@ public class StatesManager : Singleton<StatesManager>
         Debug.Log(currentState.name);
     }
 
-    public IEnumerator ShowValuePanel(float waitTime)
+    public IEnumerator ShowValuePanel()
     {
         ui.valuePanel.SetActive(true);
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitUntil(()=> !showing);
         ui.valuePanel.SetActive(false);
     }
 
@@ -123,6 +125,7 @@ public class StatesManager : Singleton<StatesManager>
     {
 
     }
+
     public void CoinsValidation()
     {
         if (currentState != reposeState)

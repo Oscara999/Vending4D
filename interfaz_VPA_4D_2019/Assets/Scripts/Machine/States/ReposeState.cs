@@ -56,11 +56,11 @@ public class ReposeState : State
                 switch (currentVideoIndex)
                 {
                     case 0:
-                        StartCoroutine(StatesManager.Instance.ShowValuePanel(5f));
+                        StartCoroutine(StatesManager.Instance.ShowValuePanel());
                         break;
 
                     case 1:
-                        StartCoroutine(StatesManager.Instance.ShowValuePanel(3f));
+                        StartCoroutine(StatesManager.Instance.ShowValuePanel());
                         break;
                 }
             }

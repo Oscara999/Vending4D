@@ -25,7 +25,7 @@ public class ManagerGame : Singleton<ManagerGame>
     {
         if (Player.Instance.IsActivate)
         {
-            HandsState();
+            //HandsState();
             DamagePlayerUI();
             DamageEnemyUI();
         }
@@ -129,9 +129,11 @@ public class ManagerGame : Singleton<ManagerGame>
         Enemy.Instance.ChageStateAnimation();
         Player.Instance.StateController();
         Player.Instance.gameObject.SetActive(false);
+        StopAllCoroutines();
         //GameUI[2].SetActive(true);
         inProcess = false;
-        StatesManager.Instance.currentState = StatesManager.Instance.reposeState;
-        ScenesManager.Instance.LoadLevel("Introduccion_Mottis");
+        StatesManager.Instance.InGame = false;
+        StatesManager.Instance.skipState.exit = true;
+        StatesManager.Instance.currentState = StatesManager.Instance.skipState;
     }
 }

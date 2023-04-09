@@ -70,9 +70,9 @@ public class SceneController : Singleton<SceneController>
     }
 
         public void StartShowPanel(float timeStart)
-    {
-      StartCoroutine(StatesManager.Instance.ShowValuePanel(timeStart));
-    }
+        {
+          StartCoroutine(StatesManager.Instance.ShowValuePanel());
+        }
 
     public void StartDialogue(int index)
     {
