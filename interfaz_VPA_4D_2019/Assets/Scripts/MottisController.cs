@@ -11,6 +11,7 @@ public class MottisController : Singleton<MottisController>
     [Header("States")]
     public bool isHappy;
     public bool isAngry;
+    public bool isSad;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class MottisController : Singleton<MottisController>
 
     public void CallSad()
     {
+        isSad = true;
         StartCoroutine(StartSad());
     }
 
@@ -45,10 +47,14 @@ public class MottisController : Singleton<MottisController>
         isHappy = false;
     }
 
+    public void EndSad()
+    {
+        isSad = false;
+    }
 
     public void ShowPricePanel()
     {
-        StartCoroutine(StatesManager.Instance?.ShowValuePanel(5f));
+        StartCoroutine(StatesManager.Instance?.ShowValuePanel());
     }
 
     #endregion
@@ -68,24 +74,19 @@ public class MottisController : Singleton<MottisController>
     private IEnumerator StartHappy()
     {
         SetHappy(true);
-
+        
         yield return new WaitUntil(()=> !isHappy);
-
+        
         SetHappy(false);
     }
-    
+
     private IEnumerator StartSad()
     {
-        yield return new WaitForSeconds(2f);
-
         SetSad(true);
-        tailAnim.SetBool("Sad", true);
 
-        yield return new WaitUntil(() => bodyAnim.GetCurrentAnimatorStateInfo(1).IsName("SadIdle") &&
-            bodyAnim.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f);
+        yield return new WaitUntil(() => !isSad);
 
         SetSad(false);
-        tailAnim.SetBool("Sad", false);
     }
 
     #endregion
@@ -111,6 +112,7 @@ public class MottisController : Singleton<MottisController>
     public void SetSad(bool state)
     {
         bodyAnim.SetBool("IsSad", state);
+        tailAnim.SetBool("Sad", state);
     }
 
     public void SetShowProduct(bool state)

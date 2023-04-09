@@ -48,11 +48,13 @@ public class SkipState : State
             nextState = StatesManager.Instance.reposeState;
             StartCoroutine(ExitLoad("Introduccion_Mottis", "Introduccion_Mottis"));
         }
+        SoundManager.Instance.PauseAllSounds(true);
         exit = false;
     }
 
     IEnumerator ExitLoad(string lastSceneName , string newSceneName)
     {
+        yield return new WaitForSeconds(1.5f);
         ScenesManager.Instance.UnLoadLevel(lastSceneName);
         yield return new WaitForSeconds(1f);
         ScenesManager.Instance.CurrentLevelName = string.Empty;
