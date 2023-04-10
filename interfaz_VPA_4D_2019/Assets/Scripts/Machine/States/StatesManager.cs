@@ -49,7 +49,7 @@ public class StatesManager : Singleton<StatesManager>
 
     IEnumerator test()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         isHereSomeOne = true;
         Debug.Log("Is there someone");
     }
