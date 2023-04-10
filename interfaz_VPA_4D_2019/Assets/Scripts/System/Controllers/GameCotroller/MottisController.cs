@@ -54,6 +54,7 @@ public class MottisController : Singleton<MottisController>
 
     public void ShowPricePanel()
     {
+        StatesManager.Instance.showing = true;
         StartCoroutine(StatesManager.Instance?.ShowValuePanel());
     }
 
