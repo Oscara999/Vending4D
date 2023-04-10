@@ -69,10 +69,11 @@ public class SceneController : Singleton<SceneController>
         StatesManager.Instance.ui.questPanel.SetActive(value);
     }
 
-        public void StartShowPanel(float timeStart)
-        {
-          StartCoroutine(StatesManager.Instance.ShowValuePanel());
-        }
+    public void StartShowPanel(float timeStart)
+    {
+        StatesManager.Instance.showing = true; 
+        StartCoroutine(StatesManager.Instance.ShowValuePanel());
+    }
 
     public void StartDialogue(int index)
     {
