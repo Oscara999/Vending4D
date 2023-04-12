@@ -72,7 +72,7 @@ public class QTEManager : MonoBehaviour
         }
     }
 
-    protected void doFinally()
+    public void doFinally()
     {
         isEnded = true;
 
@@ -83,6 +83,9 @@ public class QTEManager : MonoBehaviour
                 ui.eventUI[i].SetActive(false);
             }
         }
+
+        if (eventData == null)
+            return;
 
         if (eventData.onEnd != null)
         {

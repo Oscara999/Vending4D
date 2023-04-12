@@ -556,9 +556,25 @@
             "id": "c68f571b-a688-481e-ba08-3824fb2f66c4",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "InsertCoin",
                     "type": "Button",
                     "id": "3471392a-a06a-41a5-8d42-cf530b6ced9c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "ccb30979-fba6-47eb-8ebd-fe51e4e80233",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "a71aee34-d56d-440f-816e-7ed4fa375776",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -568,11 +584,44 @@
                 {
                     "name": "",
                     "id": "d40c692a-e1ad-49c0-89f7-8076e9ffb607",
-                    "path": "",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "InsertCoin",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b569b78b-510b-455d-9914-07cd2b7eeb66",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac89c6f8-cd8e-4408-8c68-3008aeccfb2c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca870601-32dc-4bc5-a6df-8b267e68da18",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
