@@ -132,7 +132,6 @@ public class ManagerGame : Singleton<ManagerGame>
         StopAllCoroutines();
         //GameUI[2].SetActive(true);
         inProcess = false;
-        StatesManager.Instance.InGame = false;
         StatesManager.Instance.skipState.exit = true;
         StatesManager.Instance.currentState = StatesManager.Instance.skipState;
     }

@@ -15,8 +15,8 @@ public class SceneController : Singleton<SceneController>
     {
         base.Awake();
         SetChangeTimeLine(timeLines);
+        StatesManager.Instance.ui.uIController.kindScene = kindScene.Menu;
     }
-
 
     void SetChangeTimeLine(GameObject container)
     {
@@ -71,7 +71,7 @@ public class SceneController : Singleton<SceneController>
 
     public void StartShowPanel(float timeStart)
     {
-        StatesManager.Instance.showing = true; 
+        StatesManager.Instance.isShowing = true; 
         StartCoroutine(StatesManager.Instance.ShowValuePanel());
     }
 
