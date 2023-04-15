@@ -9,6 +9,7 @@ public class StatesManager : Singleton<StatesManager>
     [Header("Components Settings")]
     public LedsController ledsController;
     public GameObject[] hands;
+    public GamePadCursor inputActions;
     public Task skapeTask;
     public UI ui;
 
@@ -23,22 +24,34 @@ public class StatesManager : Singleton<StatesManager>
     [SerializeField]
     bool inCinematic;
     [SerializeField]
+    bool inGame;
+    [SerializeField]
     bool isHereSomeOne;
     [SerializeField]
     bool paymentMade;
     [SerializeField]
     bool challengeAccepted;
-    [SerializeField]
-    bool inGame;
 
-    public bool showing;
+
+    public bool isShowing;
     public int coins;
 
     public bool IsHereSomeOne { get => isHereSomeOne; set => isHereSomeOne = value; }
-    public bool InCinematic { get => inCinematic; }
+    public bool InCinematic { get => inCinematic; set => inCinematic = value; }
     public bool ChallengeAccepted { get => challengeAccepted; set => challengeAccepted = value; }
     public bool InGame { get => inGame; set => inGame = value; }
     public bool PaymentMade { get => paymentMade; set => paymentMade = value; }
+
+    void OnEnable()
+    {
+        inputActions = new GamePadCursor();
+        inputActions.Enable();
+    }
+
+    void OnDisable()
+    {
+        inputActions.Disable();
+    }
 
     void Start()
     {
@@ -57,11 +70,39 @@ public class StatesManager : Singleton<StatesManager>
     void Update()
     {
         CoinsValidation();
+        ControlSystem();
     }
 
-    public void StateInCinematic(bool value)
+    void ControlSystem()
     {
-        inCinematic = value;
+        //Si se preciona action InsertCoin recargaremos 1 coin
+        if (inputActions.Player.InsertCoin.triggered)
+        {
+            Recharge(1);
+        }
+
+        if (inputActions.Player.Menu.triggered)
+        {
+            ScenesManager.Instance.Pause();
+        }
+
+        if (inputActions.Player.Restart.triggered)
+        {
+            RestartMachine();
+        }
+    }
+    public void RestartMachine()
+    {
+        if (!InGame)
+        {
+            currentState.ExitState();
+            SceneController.Instance.QTEManager.eventData = null;
+            SceneController.Instance.QTEManager.doFinally();
+            DialogueSystem.Instance.EndDialogue(); 
+        }
+
+        skipState.exit = true;
+        currentState = skipState;
     }
 
     void FixedUpdate()
@@ -117,7 +158,7 @@ public class StatesManager : Singleton<StatesManager>
     public IEnumerator ShowValuePanel()
     {
         ui.valuePanel.SetActive(true);
-        yield return new WaitUntil(()=> !showing);
+        yield return new WaitUntil(()=> !isShowing);
         ui.valuePanel.SetActive(false);
     }
 
@@ -135,8 +176,9 @@ public class StatesManager : Singleton<StatesManager>
                 if (!ui.coinsText.gameObject.activeInHierarchy)
                 {
                     ui.coinsText.gameObject.SetActive(true);
-                    ui.coinsText.text = "Coins:" + coins.ToString();
                 }
+                
+                ui.coinsText.text = "Coins:" + coins.ToString();
             }
             else
             {

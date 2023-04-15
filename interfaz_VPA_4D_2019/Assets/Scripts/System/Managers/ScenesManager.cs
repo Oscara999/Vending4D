@@ -248,7 +248,16 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         is_pause = !is_pause;
         SoundManager.Instance.PauseAllSounds(is_pause);
-        StatesManager.Instance.ui.pausePanel.SetActive(is_pause);
+
+        if (StatesManager.Instance.InGame)
+        {
+            StatesManager.Instance.ui.pausePanel.SetActive(is_pause);
+        }
+        else
+        {
+            Debug.Log("Menu de opciones activado");
+        }
+
 
         if (is_pause)
         {
