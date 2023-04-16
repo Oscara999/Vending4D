@@ -22,9 +22,6 @@ public class CinematicState : State
 
     public override State Tick()
     {
-        if (StatesManager.Instance.InCinematic)
-            return this;
-
         if (stateOff)
         {
             StopAllCoroutines();
@@ -121,19 +118,16 @@ public class CinematicState : State
     {
         SceneController.Instance.timeLineRutine.Play(0);
         StatesManager.Instance.skapeTask.ChangeSize(false);
-        StatesManager.Instance.StateInCinematic(true);
 
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
         StatesManager.Instance.skapeTask.RestartSize(false);
 
         yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(0));
         ChangeState(2);
-        StatesManager.Instance.StateInCinematic(false);
     }
 
     IEnumerator SecondCinematic()
     {
-        StatesManager.Instance.StateInCinematic(true);
         SceneController.Instance.timeLineRutine.Play(1);
         yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(1));
 
@@ -143,12 +137,9 @@ public class CinematicState : State
         if (SceneController.Instance != null)
         {
             SceneController.Instance.QTEManager.StartEvent(SceneController.Instance.QTE[0]);
-           
+
             yield return new WaitForSeconds(5f);
             MottisController.Instance.bodyAnim.SetTrigger("HearSecret");
-            
-            Debug.Log("aqui");
-            //StatesManager.Instance.Recharge(1);
 
             yield return new WaitUntil(() => !SceneController.Instance.QTEManager.startEvent);
         }
@@ -165,13 +156,12 @@ public class CinematicState : State
         
         MottisController.Instance.SetHappy(false);
         MottisController.Instance.SetSmile(false);
-        StatesManager.Instance.StateInCinematic(false);
+        StatesManager.Instance.isShowing = false;
     }
 
     //Skip to main state
     IEnumerator ThirdCinematic()
     {
-        StatesManager.Instance.StateInCinematic(true);
         SceneController.Instance.timeLineRutine.Play(2);
 
         yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(2));
@@ -182,12 +172,10 @@ public class CinematicState : State
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
 
         yield return new WaitForSeconds(5f);
-        StatesManager.Instance.StateInCinematic(false);
     }
 
     IEnumerator FourthCinematic()
     {
-        StatesManager.Instance.StateInCinematic(true);
         SceneController.Instance.timeLineRutine.Play(3);
         yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(3));
         StatesManager.Instance.ledsController.ramdom = false;
@@ -222,24 +210,21 @@ public class CinematicState : State
             ChangeState(6);
         }
 
-        StatesManager.Instance.StateInCinematic(false);
     }
 
     IEnumerator FivethCinematic()
     {
-        StatesManager.Instance.StateInCinematic(true);
         SceneController.Instance.timeLineRutine.Play(4);
         yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(4));
         StatesManager.Instance.skipState.isRulesTime = true;
+        StatesManager.Instance.InCinematic = false;
         ChangeState(0);
         yield return new WaitForSeconds(2f);
-        StatesManager.Instance.StateInCinematic(false);
     }
 
     //Skip to main state
     IEnumerator SixthCinematic()
     {
-        StatesManager.Instance.StateInCinematic(true);
         SceneController.Instance.timeLineRutine.Play(5);
         yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(5));
         yield return new WaitForSeconds(2f);
@@ -247,16 +232,14 @@ public class CinematicState : State
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
         StatesManager.Instance.skipState.exit = true;
         ChangeState(0);
-        StatesManager.Instance.StateInCinematic(false);
     }
 
-    protected override void ExitState()
+    public override void ExitState()
     {
         StopAllCoroutines();
         stateOff = false;
         StatesManager.Instance.PaymentMade = false;
         StatesManager.Instance.ChallengeAccepted = false;
         SceneController.Instance.setBoolStartGame = false;
-        StatesManager.Instance.StateInCinematic(false);
     }
 }

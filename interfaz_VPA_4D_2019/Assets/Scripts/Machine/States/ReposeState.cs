@@ -12,8 +12,6 @@ public class ReposeState : State
 
     void StartMachine()
     {
-        //ScenesManager.Instance.isLoad = true;
-        //ScenesManager.Instance.LoadLevel("IntroduccionMottisTestOscar"); 
         StatesManager.Instance.ledsController.ramdom = true;
         currentVideoIndex = 0;
         videoPlayer.clip = videos[currentVideoIndex];
@@ -52,17 +50,6 @@ public class ReposeState : State
             else
             {
                 currentVideoIndex++;
-
-                switch (currentVideoIndex)
-                {
-                    case 0:
-                        StartCoroutine(StatesManager.Instance.ShowValuePanel(5f));
-                        break;
-
-                    case 1:
-                        StartCoroutine(StatesManager.Instance.ShowValuePanel(3f));
-                        break;
-                }
             }
 
             videoPlayer.clip = videos[currentVideoIndex];
@@ -70,12 +57,13 @@ public class ReposeState : State
         }
     }
 
-    protected override void ExitState()
+    public override void ExitState()
     {
         cinematicState.ChangeState(1);
-        demoPanel.SetActive(false);
+        demoPanel.SetActive(false); 
         videoPlayer.Stop();
         SoundManager.Instance.PlayNewSound("BackGroundMainManu");
         StopAllCoroutines();
+        StatesManager.Instance.InCinematic = true;
     }
 }

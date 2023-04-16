@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5520455910809952987}
-  - component: {fileID: 8377854326343486382}
   - component: {fileID: 390729616}
   m_Layer: 0
   m_Name: SoundManager
@@ -32,14 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &8377854326343486382
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5520455910809952965}
-  m_Enabled: 1
 --- !u!114 &390729616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,5 +84,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c72ed123806643e43b2080afe8abd2f0, type: 2}
   - {fileID: 11400000, guid: 73cf99e216810b143bcdddc75fbf6d16, type: 2}
   - {fileID: 11400000, guid: c9c3d1d2a12942d42b52fa5079c762fd, type: 2}
+  - {fileID: 11400000, guid: f2b1886b45338124da51efd46952417c, type: 2}
   provicionalLevelSound: []
   pauseSoundProvicional: []

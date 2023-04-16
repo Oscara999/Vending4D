@@ -5,5 +5,5 @@ using UnityEngine;
 public abstract class State : MonoBehaviour
 {
     public abstract State Tick();
-    protected abstract void ExitState();
+    public abstract void ExitState();
 }

@@ -32,7 +32,6 @@ public class CameraShakeSimpleScript : MonoBehaviour
             // If Camera Shake effect is still playing
             if (ShakeElapsedTime > 0)
             {
-                Debug.Log(1111);
                 // Set Cinemachine Camera Noise parameters
                 virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;
                 virtualCameraNoise.m_FrequencyGain = ShakeFrequency;

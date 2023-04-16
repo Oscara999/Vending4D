@@ -18,7 +18,7 @@ MonoBehaviour:
   - "Aqu\xED estar\xE9 esperando por si te animas a jugar y desafiar tus habilidades\r"
   - "Se despide su servidor Mottis \xA1\xA1Adi\xF3s!! "
   sounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3baa150eee606cd4790ac5e8acf1f157, type: 2}
+  - {fileID: 11400000, guid: c72ed123806643e43b2080afe8abd2f0, type: 2}
+  - {fileID: 11400000, guid: 73cf99e216810b143bcdddc75fbf6d16, type: 2}
+  - {fileID: 11400000, guid: c9c3d1d2a12942d42b52fa5079c762fd, type: 2}
