@@ -591,6 +591,22 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Damage"",
+                    ""type"": ""Button"",
+                    ""id"": ""5bf200d0-545c-494a-b793-4646a7ada82a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Test"",
+                    ""type"": ""Button"",
+                    ""id"": ""07e929fe-00d7-4453-9dea-5acdd37c3e4d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -635,6 +651,28 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""916a2cab-82b6-4055-aaa9-f6c9c51320dc"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Damage"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""975197dd-d673-4997-a28d-7de6fcb1ab9e"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Test"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -732,6 +770,8 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
         m_Player_InsertCoin = m_Player.FindAction("InsertCoin", throwIfNotFound: true);
         m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
         m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
+        m_Player_Damage = m_Player.FindAction("Damage", throwIfNotFound: true);
+        m_Player_Test = m_Player.FindAction("Test", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -889,6 +929,8 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_InsertCoin;
     private readonly InputAction m_Player_Menu;
     private readonly InputAction m_Player_Restart;
+    private readonly InputAction m_Player_Damage;
+    private readonly InputAction m_Player_Test;
     public struct PlayerActions
     {
         private @GamePadCursor m_Wrapper;
@@ -896,6 +938,8 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
         public InputAction @InsertCoin => m_Wrapper.m_Player_InsertCoin;
         public InputAction @Menu => m_Wrapper.m_Player_Menu;
         public InputAction @Restart => m_Wrapper.m_Player_Restart;
+        public InputAction @Damage => m_Wrapper.m_Player_Damage;
+        public InputAction @Test => m_Wrapper.m_Player_Test;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -914,6 +958,12 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                 @Restart.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
                 @Restart.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
                 @Restart.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
+                @Damage.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDamage;
+                @Damage.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDamage;
+                @Damage.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDamage;
+                @Test.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTest;
+                @Test.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTest;
+                @Test.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTest;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -927,6 +977,12 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                 @Restart.started += instance.OnRestart;
                 @Restart.performed += instance.OnRestart;
                 @Restart.canceled += instance.OnRestart;
+                @Damage.started += instance.OnDamage;
+                @Damage.performed += instance.OnDamage;
+                @Damage.canceled += instance.OnDamage;
+                @Test.started += instance.OnTest;
+                @Test.performed += instance.OnTest;
+                @Test.canceled += instance.OnTest;
             }
         }
     }
@@ -1003,5 +1059,7 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
         void OnInsertCoin(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
         void OnRestart(InputAction.CallbackContext context);
+        void OnDamage(InputAction.CallbackContext context);
+        void OnTest(InputAction.CallbackContext context);
     }
 }
