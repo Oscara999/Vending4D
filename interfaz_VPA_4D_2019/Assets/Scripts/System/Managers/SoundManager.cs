@@ -48,6 +48,7 @@ public class SoundManager : Singleton<SoundManager>
         }
 
         provicionalLevelSound.Clear();
+        pauseSoundProvicional.Clear();
     }
 
     public void SetVolume(float volume)
