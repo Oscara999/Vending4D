@@ -11047,6 +11047,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1104609333}
+          m_MethodName: SetSmile
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1104609333}
@@ -15393,11 +15404,11 @@ PlayableDirector:
     value: {fileID: 2126856953}
   m_ExposedReferences:
     m_References:
-    - f4f6ecb4d1bc13b4bab3ba7ef0a705a4: {fileID: 361475643}
+    - f4f6ecb4d1bc13b4bab3ba7ef0a705a4: {fileID: 721615973}
     - ed68302c393b178468c354c853f81e98: {fileID: 0}
     - db95e5aaf09df0e48a7ca4ab07b5189e: {fileID: 0}
     - 16a4e38467aa00949aff1c80202f84bc: {fileID: 0}
-    - 2163d8c4360b7e745bb0069d2bc1dbe7: {fileID: 0}
+    - 2163d8c4360b7e745bb0069d2bc1dbe7: {fileID: 361475643}
     - eae7ac2f4d80ff04abae9aa1f03ee0d4: {fileID: 0}
     - ac741ff061573604695f2ffafdf16324: {fileID: 0}
     - db5ce3967b36ec54fb4b605a44bb2187: {fileID: 0}
@@ -16203,8 +16214,6 @@ PlayableDirector:
     value: {fileID: 1569057537}
   - key: {fileID: -7208694657593891217, guid: 15ca31a1ef944be49ab052073d399452, type: 2}
     value: {fileID: 2086234550}
-  - key: {fileID: -3005988490462733090, guid: 15ca31a1ef944be49ab052073d399452, type: 2}
-    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 0e37e7cf55c4a9c4c9ea672e35984f37: {fileID: 361475643}
@@ -20754,7 +20763,7 @@ PrefabInstance:
     - target: {fileID: 8497940125186059198, guid: 07e24da6f17b08a408b1d0bdd071c722,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9125822444218659076, guid: 07e24da6f17b08a408b1d0bdd071c722,
         type: 3}

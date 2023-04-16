@@ -173,15 +173,6 @@ public class ScenesManager : Singleton<ScenesManager>
 
         switch (CurrentLevelName)
         {
-            case "TestMenu":
-                SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
-                break;
-
-            case "Test5":
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName));
-                SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
-                break;
-
             case "Introduccion_Mottis":
                 SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName)); 
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
@@ -199,12 +190,6 @@ public class ScenesManager : Singleton<ScenesManager>
                 //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
                 break;
 
-            case "Test4":
-                SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
-                SoundManager.Instance.PlayNewSound("BackgroundGame");
-                //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
-                break;
-
             case "NewMechanic":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
                 SoundManager.Instance.PlayNewSound("BackgroundGame");
@@ -212,26 +197,6 @@ public class ScenesManager : Singleton<ScenesManager>
                 break;
         }
     }
-
-    /// <summary>
-    /// Método que recarga Escena de Mottis
-    /// </summary>
-    public void ChangeNewScene()
-    {
-
-        UnLoadLevel("Introduccion_Mottis");
-
-        LoadLevel("DiegoEdit");
-
-        //if (_lastLevelName == "Introduccion_Mottis")
-        //{
-        //}
-        //else
-        //{
-        //    LoadLevel("Introduccion_Mottis");
-        //}
-    }
-
 
     /// <summary>
     /// Método generado por si existe algun error.
