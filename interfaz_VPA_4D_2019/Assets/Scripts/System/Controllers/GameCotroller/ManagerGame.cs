@@ -96,33 +96,20 @@ public class ManagerGame : Singleton<ManagerGame>
         switch (Player.Instance.lifes)
         {
             case 0:
-                lifesUI[0].gameObject.SetActive(false);
-                lifesUI[1].gameObject.SetActive(false);
-                lifesUI[2].gameObject.SetActive(false);
-
+                lifesUI[0].gameObject.GetComponent<Animator>().SetBool("Damage", true);
                 FinishGame();
                 break;
             case 1:
-                lifesUI[0].gameObject.SetActive(true);
-                lifesUI[1].gameObject.SetActive(false);
-                lifesUI[2].gameObject.SetActive(false);
+                lifesUI[1].gameObject.GetComponent<Animator>().SetBool("Damage", true);
                 break;
             case 2:
-                lifesUI[0].gameObject.SetActive(true);
-                lifesUI[1].gameObject.SetActive(true);
-                lifesUI[2].gameObject.SetActive(false);
-                break;
-            case 3:
-                lifesUI[0].gameObject.SetActive(true);
-                lifesUI[1].gameObject.SetActive(true);
-                lifesUI[2].gameObject.SetActive(true);
+                lifesUI[2].gameObject.GetComponent<Animator>().SetBool("Damage", true);
                 break;
         }
     }
 
     public void FinishGame()
     {
-        Debug.Log(112121);
         //StatesManager.Instance.uIController.CrossFireState(false);
         sliderEnemyUI.gameObject.SetActive(false);
         Enemy.Instance.IsActivate = false;
