@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DiegoEdit.unity
     guid: 019a6d2254645434dbdd0ec41ad479e1
   - enabled: 1
+    path: Assets/Scenes/Introduccion_Mottis1.unity
+    guid: 43b568b40283ee0498fa2dc9b294272c
+  - enabled: 1
     path: Assets/Scenes/Introduccion_Mottis.unity
     guid: aeace3fd778acf342becb6bfbe40ace8
   m_configObjects: {}

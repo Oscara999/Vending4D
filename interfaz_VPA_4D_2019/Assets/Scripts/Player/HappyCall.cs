@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResetRootMotion : StateMachineBehaviour
+public class HappyCall : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.applyRootMotion = true;
+        animator.SetBool("IsHappy",true);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -16,9 +16,10 @@ public class ResetRootMotion : StateMachineBehaviour
     //    
     //}
 
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.applyRootMotion = false;
+        animator.SetBool("IsHappy", false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
