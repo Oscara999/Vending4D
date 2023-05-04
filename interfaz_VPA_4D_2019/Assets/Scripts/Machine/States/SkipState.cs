@@ -50,7 +50,7 @@ public class SkipState : State
                 StatesManager.Instance.ledsController.ramdom = true;
                 nextState = StatesManager.Instance.reposeState;
                 StopAllCoroutines();
-                StartCoroutine(ExitLoad("Introduccion_Mottis", "Introduccion_Mottis"));
+                StartCoroutine(ExitLoad("Introduccion_Mottis1", "Introduccion_Mottis1"));
             }
             else
             {
@@ -60,7 +60,7 @@ public class SkipState : State
                 StatesManager.Instance.IsHereSomeOne = false;
                 nextState = StatesManager.Instance.gameState;
                 StopAllCoroutines();
-                StartCoroutine(ExitLoad("Introduccion_Mottis", "Test3"));
+                StartCoroutine(ExitLoad("Introduccion_Mottis1", "Test3"));
             }
         }
         else
@@ -70,7 +70,7 @@ public class SkipState : State
             StopAllCoroutines(); 
             StatesManager.Instance.InGame = false;
             Debug.Log("RestartFromGame");
-            StartCoroutine(ExitLoad("Test3", "Introduccion_Mottis"));
+            StartCoroutine(ExitLoad("Test3", "Introduccion_Mottis1"));
         }
 
         StatesManager.Instance.isShowing = false;
