@@ -3,7 +3,17 @@ guid: faba67d3550650842969e47647b030cd
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caja-Regalo
+    second: {fileID: 2100000, guid: 1efd52de12684644e9efe4665de5be6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Listones
+    second: {fileID: 2100000, guid: b594bcb656ec95d45b6fbabc0b379078, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -81,7 +91,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 2
+    globalScale: 200
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

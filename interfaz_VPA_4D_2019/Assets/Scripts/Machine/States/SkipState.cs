@@ -99,10 +99,11 @@ public class SkipState : State
         videoPlayer.Play();
         yield return new WaitUntil(() => !videoPlayer.isPlaying);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         StatesManager.Instance.ui.rulesPanel.SetActive(false);
         StatesManager.Instance.IsHereSomeOne = false;
         StatesManager.Instance.gameState.startGame = true;
+        yield return new WaitForSeconds(2f);
         exit = true;
     }
 }
