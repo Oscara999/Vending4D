@@ -62,7 +62,7 @@ public class QTEManager : MonoBehaviour
                 ui.eventTimerText.text = currentTime.ToString();
             }
 
-            currentTime--;
+            currentTime -= 10 * Time.deltaTime;
             yield return new WaitForSecondsRealtime(1f);
         }
 

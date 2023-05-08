@@ -15,9 +15,9 @@ MonoBehaviour:
   sequences:
   - "\xA1! Yupi \xA1! Sabia que lo harias bienvenido a mi mundo."
   - 'Ahora somos amigos! '
-  - Ahora que vas a llevar este Snak, que tal si te adentras un poco mas?
+  - "Ahora que vas a llevar este Snack, \xBFqu\xE9 tal si te adentras un poco m\xE1s?"
   - Animate a vivir esta aventura y a llevarte una sorpresa con una  premio que puedes
-    ganar si te atrevez a jugar.
+    ganar si te atreves a jugar.
   - Pero ten en cuenta que deberas vencer en contra del tiempo.
   sounds:
   - {fileID: 11400000, guid: 1b2d563750f02ad4f91f53785f0ab020, type: 2}
