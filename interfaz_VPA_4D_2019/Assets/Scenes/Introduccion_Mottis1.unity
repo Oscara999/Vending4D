@@ -10661,7 +10661,7 @@ PrefabInstance:
     - target: {fileID: 6271241949191652176, guid: 739d19610906a434a8d67ca770434aca,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6271241949191652176, guid: 739d19610906a434a8d67ca770434aca,
         type: 3}
@@ -11206,7 +11206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &964051725
 Transform:
   m_ObjectHideFlags: 0
@@ -14374,6 +14374,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: f4ee72dcaa556414abf201adffb9df8e, type: 2}
     - {fileID: 11400000, guid: 259746880ec0a8a4184d6e43bfe68f25, type: 2}
     - {fileID: 11400000, guid: 29737a168c5c9d14bbaae694a5ea6d7b, type: 2}
+    - {fileID: 11400000, guid: 7bd26b6338874b046bf2bbed303cd6aa, type: 2}
+    - {fileID: 11400000, guid: 8fe437b6b82569c4b9e3006053f0c80c, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -14679,6 +14681,32 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1104609333}
+          m_MethodName: TailSad
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1294407330176552927}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -15297,7 +15325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1548951332
 Transform:
   m_ObjectHideFlags: 0
@@ -19207,7 +19235,7 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1800765051}
+        - m_Target: {fileID: 1904648573}
           m_MethodName: SetJump
           m_Mode: 6
           m_Arguments:
@@ -22343,7 +22371,7 @@ PrefabInstance:
     - target: {fileID: 8497940125186059198, guid: 07e24da6f17b08a408b1d0bdd071c722,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9125822444218659076, guid: 07e24da6f17b08a408b1d0bdd071c722,
         type: 3}
@@ -22403,17 +22431,17 @@ PrefabInstance:
     - target: {fileID: 9125822444218659076, guid: 07e24da6f17b08a408b1d0bdd071c722,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9125822444218659076, guid: 07e24da6f17b08a408b1d0bdd071c722,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9125822444218659076, guid: 07e24da6f17b08a408b1d0bdd071c722,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.5
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07e24da6f17b08a408b1d0bdd071c722, type: 3}
