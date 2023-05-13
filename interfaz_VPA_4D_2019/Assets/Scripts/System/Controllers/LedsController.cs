@@ -10,7 +10,6 @@ public class LedsController : MonoBehaviour
     public float nextTimeToSwitch;
     public Image referenceImage;
     public Color newColor;
-    public Image loadingPanel;
     float timer;
 
     void FixedUpdate()
@@ -19,11 +18,6 @@ public class LedsController : MonoBehaviour
             return;
 
         referenceImage.color = newColor;
-
-        if (loadingPanel.gameObject.activeInHierarchy)
-        {
-            loadingPanel.color = newColor;
-        }
 
         if (ramdom)
         {
