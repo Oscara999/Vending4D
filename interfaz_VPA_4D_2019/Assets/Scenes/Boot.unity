@@ -4089,35 +4089,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1464854039}
-    - target: {fileID: 362695392, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
-      propertyPath: normalPanelImage
-      value: 
-      objectReference: {fileID: 3965947170216050198, guid: 826956a5e6ffa5e45921a5d875d5f573,
-        type: 3}
-    - target: {fileID: 362695392, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
-      propertyPath: selectedPanelImage
-      value: 
-      objectReference: {fileID: 5231014111442961432, guid: 826956a5e6ffa5e45921a5d875d5f573,
-        type: 3}
     - target: {fileID: 1373352510, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1464854039}
-    - target: {fileID: 1373352513, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
-      propertyPath: selectedPanelImage
-      value: 
-      objectReference: {fileID: 1387003463735613204, guid: 826956a5e6ffa5e45921a5d875d5f573,
-        type: 3}
-    - target: {fileID: 1373352513, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
-      propertyPath: normalPanelImage
-      value: 
-      objectReference: {fileID: 3965947170216050198, guid: 826956a5e6ffa5e45921a5d875d5f573,
-        type: 3}
-    - target: {fileID: 7341198610384285497, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -18.12854
-      objectReference: {fileID: 0}
     - target: {fileID: 7341198611391413490, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4227,6 +4202,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354756469161707048, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354756470005270438, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354756470005270438, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
