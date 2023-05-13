@@ -173,7 +173,7 @@ public class ScenesManager : Singleton<ScenesManager>
 
         switch (CurrentLevelName)
         {
-            case "Introduccion_Mottis":
+            case "Introduccion_Mottis1":
                 SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName)); 
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
                 break;

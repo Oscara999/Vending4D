@@ -214,6 +214,7 @@ public class CinematicState : State
 
     IEnumerator FivethCinematic()
     {
+        yield return new WaitForSeconds(1f);
         SceneController.Instance.timeLineRutine.Play(4);
         yield return new WaitUntil(() => !SceneController.Instance.timeLineRutine.StatePlayable(4));
         StatesManager.Instance.skipState.isRulesTime = true;

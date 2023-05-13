@@ -61,9 +61,8 @@ public class QTEManager : MonoBehaviour
             {
                 ui.eventTimerText.text = currentTime.ToString();
             }
-
-            currentTime--;
-            yield return new WaitForSecondsRealtime(1f);
+                currentTime --;
+                yield return new WaitForSeconds(1f);
         }
 
         if (!isEnded)

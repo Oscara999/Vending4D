@@ -4012,6 +4012,10 @@ PrefabInstance:
       propertyPath: loadingPanel
       value: 
       objectReference: {fileID: 723812719}
+    - target: {fileID: 1278497065, guid: 93685f976e4877a48a3d6d9e9479a77c, type: 3}
+      propertyPath: mainLevel
+      value: Introduccion_Mottis1
+      objectReference: {fileID: 0}
     - target: {fileID: 3468857121131270867, guid: 93685f976e4877a48a3d6d9e9479a77c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4198,6 +4202,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354756469161707048, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354756470005270438, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354756470005270438, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354756470515436538, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}

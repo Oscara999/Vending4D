@@ -90,6 +90,21 @@ public class StatesManager : Singleton<StatesManager>
         {
             RestartMachine();
         }
+
+        if (inputActions.Player.Damage.triggered)
+        {
+            if (!InGame)
+                return;
+
+            Enemy.Instance.GetDamage(25);
+        }
+
+        if (inputActions.Player.Test.triggered)
+        {
+            InCinematic = false;
+            RestartMachine();
+        }
+
     }
     public void RestartMachine()
     {
@@ -99,6 +114,11 @@ public class StatesManager : Singleton<StatesManager>
             SceneController.Instance.QTEManager.eventData = null;
             SceneController.Instance.QTEManager.doFinally();
             DialogueSystem.Instance.EndDialogue(); 
+        }
+        else
+        {
+            ManagerGame.Instance.QTEManager.eventData = null;
+            ManagerGame.Instance.QTEManager.doFinally();
         }
 
         skipState.exit = true;

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AprilCinematic : MonoBehaviour
 {
-    [SerializeField]
     Animator aprilAnim;
     Rigidbody aprilRyg;
     
@@ -35,10 +34,6 @@ public class AprilCinematic : MonoBehaviour
                 aprilRyg.useGravity = false;
                 aprilRyg.isKinematic = true;
             }
-        }
-        else
-        {
-            Debug.Log("ssss");
         }
     }
 

@@ -62,7 +62,13 @@ public class ManagerGame : Singleton<ManagerGame>
 
     IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(5f);
+
+        StatesManager.Instance.skapeTask.ChangeSize(false);
+        yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
+
+        StatesManager.Instance.skapeTask.RestartSize(false);
+        yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
+
         //Debug.Log("1");
         Player.Instance.StateController();
         //Debug.Log("2");
