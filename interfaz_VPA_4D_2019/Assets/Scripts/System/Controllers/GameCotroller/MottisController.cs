@@ -37,6 +37,7 @@ public class MottisController : Singleton<MottisController>
         isHappy = true;
         StartCoroutine(StartHappy());
     }
+
     public void EndAngry()
     {
         isAngry = false;
@@ -84,6 +85,7 @@ public class MottisController : Singleton<MottisController>
     private IEnumerator StartSad()
     {
         SetSad(true);
+	tailAnim.SetBool("Sad", true);
 
         yield return new WaitUntil(() => !isSad);
 
@@ -113,7 +115,6 @@ public class MottisController : Singleton<MottisController>
     public void SetSad(bool state)
     {
         bodyAnim.SetBool("IsSad", state);
-        tailAnim.SetBool("Sad", state);
     }
 
     public void SetShowProduct(bool state)

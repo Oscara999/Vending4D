@@ -8,11 +8,11 @@ public class GameState : State
 
     public override State Tick()
     {
-        if (startGame)
-        {
-            StartCoroutine(StartMachine());
-            startGame = false;
-        }
+        //if (startGame)
+        //{
+        //    StartCoroutine(StartMachine());
+        //    startGame = false;
+        //}
 
         //if (ManagerGame.Instance == null)
         //    return this;
