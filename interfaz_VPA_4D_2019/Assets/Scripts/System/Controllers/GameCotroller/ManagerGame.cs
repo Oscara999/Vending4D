@@ -3,22 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Timeline;
 
 //[DefaultExecutionOrder(-1)]
 public class ManagerGame : Singleton<ManagerGame>
 {
     public QTEManager QTEManager;
-    public Slider sliderEnemyUI;
-    public Image[] lifesUI;
-    public GameObject[] GameUI;
     public Timer timer;
     public int round;
     bool inProcess;
+    public GameObject timeLines;
+    public TimeLineRutine timeLineRutine;
 
     void Start()
     {
+        SetChangeTimeLine(timeLines);
         StartCoroutine(StartGame());
         StatesManager.Instance.ui.uIController.kindScene = kindScene.Game;
+    }
+    void SetChangeTimeLine(GameObject container)
+    {
+        if (timeLineRutine != null)
+        {
+            timeLineRutine.SetCinematics(container);
+        }
     }
 
     public void Update()
@@ -62,12 +70,16 @@ public class ManagerGame : Singleton<ManagerGame>
 
     IEnumerator StartGame()
     {
+        timeLineRutine.Play(0);
 
         StatesManager.Instance.skapeTask.ChangeSize(false);
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
 
         StatesManager.Instance.skapeTask.RestartSize(false);
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
+        yield return new WaitUntil(() => !timeLineRutine.StatePlayable(0));
+
+        StatesManager.Instance.ui.GamePanel.SetActive(true);
 
         //Debug.Log("1");
         Player.Instance.StateController();
@@ -80,7 +92,6 @@ public class ManagerGame : Singleton<ManagerGame>
 
     public void PauseGame()
     {
-        GameUI[0].SetActive(!GameUI[0].activeInHierarchy);
         ScenesManager.Instance.Pause();
     }
 
@@ -88,12 +99,12 @@ public class ManagerGame : Singleton<ManagerGame>
     {
         if (Enemy.Instance.healt.health > 0)
         {
-            sliderEnemyUI.gameObject.SetActive(true);
-            sliderEnemyUI.value = Enemy.Instance.healt.health;
+            StatesManager.Instance.ui.sliderEnemyUI.gameObject.SetActive(true);
+            StatesManager.Instance.ui.sliderEnemyUI.value = Enemy.Instance.healt.health;
         }
         else
         {
-            sliderEnemyUI.gameObject.SetActive(false);
+            StatesManager.Instance.ui.sliderEnemyUI.gameObject.SetActive(false);
         }
     }
 
@@ -102,14 +113,14 @@ public class ManagerGame : Singleton<ManagerGame>
         switch (Player.Instance.lifes)
         {
             case 0:
-                lifesUI[0].gameObject.GetComponent<Animator>().SetBool("Damage", true);
+                StatesManager.Instance.ui.lifesUI[0].gameObject.GetComponent<Animator>().SetBool("Damage", true);
                 FinishGame();
                 break;
             case 1:
-                lifesUI[1].gameObject.GetComponent<Animator>().SetBool("Damage", true);
+                StatesManager.Instance.ui.lifesUI[1].gameObject.GetComponent<Animator>().SetBool("Damage", true);
                 break;
             case 2:
-                lifesUI[2].gameObject.GetComponent<Animator>().SetBool("Damage", true);
+                StatesManager.Instance.ui.lifesUI[2].gameObject.GetComponent<Animator>().SetBool("Damage", true);
                 break;
         }
     }
@@ -117,7 +128,7 @@ public class ManagerGame : Singleton<ManagerGame>
     public void FinishGame()
     {
         //StatesManager.Instance.uIController.CrossFireState(false);
-        sliderEnemyUI.gameObject.SetActive(false);
+        StatesManager.Instance.ui.sliderEnemyUI.gameObject.SetActive(false);
         Enemy.Instance.IsActivate = false;
         Enemy.Instance.ChageStateAnimation();
         Player.Instance.StateController();

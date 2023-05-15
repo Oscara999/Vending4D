@@ -15,7 +15,6 @@ public class Enemy : Singleton<Enemy>
     public ObjectPooling pooling;
     public GameObject pointToScreen;
     public GameObject muzzle;
-    public GameObject lifeObject;
     public Ray ray;
     public float speedGround;
     public float[] speedFly;
@@ -197,7 +196,7 @@ public class Enemy : Singleton<Enemy>
         if (healt.health > 0)
         {
             animator.SetTrigger("GetDamage");
-            lifeObject.GetComponent<Animator>().SetTrigger("Damage");
+            StatesManager.Instance.ui.lifeEnemyObject.GetComponent<Animator>().SetTrigger("Damage");
             healt.TakeDamage(value);
             Debug.Log("Damage");
         }

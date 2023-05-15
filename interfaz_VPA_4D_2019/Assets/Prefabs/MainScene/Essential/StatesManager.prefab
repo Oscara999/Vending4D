@@ -174,10 +174,6 @@ MonoBehaviour:
   ui:
     uIController: {fileID: 5477911701488351697}
     canvas: {fileID: 0}
-    questPanel: {fileID: 0}
-    pausePanel: {fileID: 0}
-    rulesPanel: {fileID: 0}
-    valuePanel: {fileID: 0}
     DesingCursor:
     - {fileID: 0}
     - {fileID: 0}
@@ -187,16 +183,28 @@ MonoBehaviour:
     - {fileID: 0}
     eventTimerText: {fileID: 0}
     eventTimerImage: {fileID: 0}
+    questPanel: {fileID: 0}
+    pausePanel: {fileID: 0}
+    rulesPanel: {fileID: 0}
+    valuePanel: {fileID: 0}
+    lifeEnemyObject: {fileID: 0}
+    GamePanel: {fileID: 0}
+    sliderEnemyUI: {fileID: 0}
+    lifesUI:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   reposeState: {fileID: 8178831769025564153}
   cinematicState: {fileID: 8178831769065517429}
   skipState: {fileID: 8247565496963050370}
   gameState: {fileID: 8178831769806920505}
   currentState: {fileID: 8178831769025564153}
   inCinematic: 0
+  inGame: 0
   isHereSomeOne: 0
   paymentMade: 0
   challengeAccepted: 0
-  inGame: 0
+  isShowing: 0
   coins: 0
 --- !u!1 &8178831769025564152
 GameObject:
@@ -298,7 +306,6 @@ MonoBehaviour:
   inFourthCinematic: 0
   inFivethCinematic: 0
   inSixthCinematic: 0
-  process: []
 --- !u!1 &8178831769806920504
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a79fa4e36a43346896aafa8abc60ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGame: 0
 --- !u!1 &8178831770624095049
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +398,6 @@ MonoBehaviour:
   nextTimeToSwitch: 0.8
   referenceImage: {fileID: 0}
   newColor: {r: 1, g: 0.13725491, b: 0, a: 1}
-  loadingPanel: {fileID: 0}
 --- !u!1 &8888531121766711525
 GameObject:
   m_ObjectHideFlags: 0
