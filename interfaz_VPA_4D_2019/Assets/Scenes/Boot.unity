@@ -403,6 +403,14 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5520455910595652938}
   m_PrefabAsset: {fileID: 0}
+--- !u!81 &390729616
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390729615}
+  m_Enabled: 1
 --- !u!1 &418177512
 GameObject:
   m_ObjectHideFlags: 0
