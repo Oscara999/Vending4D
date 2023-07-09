@@ -47,6 +47,7 @@ public class EnemyAttack : StateMachineBehaviour
     {
         boss.muzzle.SetActive(false);
         boss.isAttack = false;
+        animator.SetBool("Attack", false);
         boss.ChageStateAnimation();
     }
 }

@@ -909,7 +909,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 2056056930}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248094617
 GameObject:
@@ -994,7 +994,7 @@ GameObject:
   m_Layer: 0
   m_Name: PointStart
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1040,7 +1040,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 2056056930}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &325692559 stripped
 GameObject:
@@ -2828,7 +2828,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 2056056930}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &827338704
 PrefabInstance:
@@ -5281,13 +5281,14 @@ GameObject:
   - component: {fileID: 921745118}
   - component: {fileID: 921745114}
   - component: {fileID: 921745113}
+  - component: {fileID: 921745115}
   m_Layer: 0
   m_Name: TigerDragonBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &921745112
 Transform:
   m_ObjectHideFlags: 0
@@ -5335,6 +5336,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   lifes: 3
+--- !u!114 &921745115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921745111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f3b294c36e66f4e91323af93ba82ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  "tama\xF1o": 0
 --- !u!114 &921745116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5347,35 +5362,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcc839f7ccd61e4395396c5efbb1b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fx_Sound:
-  - {fileID: 11400000, guid: 5556d3b7c9f558c41a7be49a141ff6c6, type: 2}
-  - {fileID: 11400000, guid: 68e2b9a4571b35048a4478d920157a62, type: 2}
-  orderWaitPoints1: 01000000020000000100000000000000
-  orderWaitPoints2: 06000000020000000100000000000000
-  orderWaitPoints3: 01000000020000000600000005000000040000000300000000000000
   state: 0
-  healt: {fileID: 921745114}
-  footsteps: {fileID: 921745118}
-  enemySelected: {fileID: 921745113}
-  pooling: {fileID: 0}
-  pointToScreen: {fileID: 1028250989}
-  muzzle: {fileID: 6968162399976310865}
-  speedGround: 4
+  speedGround: 8.5
+  maxDistanceAttackGround: 0.1
   speedFly:
   - 4.5
   - 7.5
   - 9
+  isInvulnerable: 0
   isAttack: 0
   isMove: 0
-  isInvulnerable: 0
-  spawns: []
-  index: 0
   isActive: 0
+  powers:
+  - {fileID: 4207619259868558542, guid: 4e164747715c23e4ca112ca690476e94, type: 3}
+  - {fileID: 4207619259868558542, guid: 9143bb31af5304544bdfe93f8485b948, type: 3}
+  - {fileID: 4207619259868558542, guid: 20feddf3058173a4fb4a1aa04baf16e1, type: 3}
   animator: {fileID: 1354145043}
+  pointToScreen: {fileID: 1028250989}
+  muzzle: {fileID: 6968162399976310865}
+  healt: {fileID: 921745114}
+  footsteps: {fileID: 921745118}
+  enemySelected: {fileID: 921745113}
+  pooling: {fileID: 0}
+  fx_Sound:
+  - {fileID: 11400000, guid: 5556d3b7c9f558c41a7be49a141ff6c6, type: 2}
+  - {fileID: 11400000, guid: 68e2b9a4571b35048a4478d920157a62, type: 2}
   eventQTE: {fileID: 47149338}
+  startPoint: {fileID: 270696766}
+  startPointGround: {fileID: 1070015781}
+  spawnPoint: {fileID: 6968162399976310864}
+  attackPoint: {fileID: 1532934071}
+  body: {fileID: 1344794257}
+  bodyRenderer: {fileID: 1358390227}
   phaseMaterials:
   - {fileID: 2100000, guid: 4f10eeb8cf16d7544861715c8d6c7d9e, type: 2}
   - {fileID: 2100000, guid: 2c8bd9d3dc7795044b445b11bf4c933e, type: 2}
+  orderWaitPoints1: 01000000020000000100000000000000
+  orderWaitPoints2: 06000000020000000100000000000000
+  orderWaitPoints3: 01000000020000000600000005000000040000000300000000000000
+  spawns: []
+  orderwaitPoints: 
   waitPoints:
   - {fileID: 1979038343}
   - {fileID: 2048842953}
@@ -5384,16 +5410,6 @@ MonoBehaviour:
   - {fileID: 1056775175}
   - {fileID: 1951938855}
   - {fileID: 287075009}
-  powers:
-  - {fileID: 4207619259868558542, guid: 4e164747715c23e4ca112ca690476e94, type: 3}
-  - {fileID: 4207619259868558542, guid: 9143bb31af5304544bdfe93f8485b948, type: 3}
-  - {fileID: 4207619259868558542, guid: 20feddf3058173a4fb4a1aa04baf16e1, type: 3}
-  startPoint: {fileID: 270696766}
-  startPointGround: {fileID: 1070015781}
-  spawnPoint: {fileID: 6968162399976310864}
-  attackPoint: {fileID: 1532934071}
-  body: {fileID: 1344794257}
-  bodyRenderer: {fileID: 1358390227}
 --- !u!114 &921745118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5916,7 +5932,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 2056056930}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1070015781
 GameObject:
@@ -5930,7 +5946,7 @@ GameObject:
   m_Layer: 0
   m_Name: PointStartG
   m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5942,11 +5958,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070015781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.73, z: 19.853226}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 0, y: 1.45, z: 31.49}
+  m_LocalScale: {x: 1.2000002, y: 1.2, z: 1.2000002}
   m_Children: []
   m_Father: {fileID: 2056056930}
-  m_RootOrder: 1
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1114030712 stripped
 Transform:
@@ -7583,13 +7599,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532934071}
-  m_LocalRotation: {x: 0, y: -0.006370322, z: 0, w: 0.99997973}
-  m_LocalPosition: {x: 0, y: -2.73, z: 8.06}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2, z: 8.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2056056930}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: -0.73, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551572120
 GameObject:
   m_ObjectHideFlags: 0
@@ -8191,7 +8207,7 @@ GameObject:
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10983,7 +10999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1796227038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11050,35 +11066,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abcc839f7ccd61e4395396c5efbb1b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fx_Sound:
-  - {fileID: 11400000, guid: 5556d3b7c9f558c41a7be49a141ff6c6, type: 2}
-  - {fileID: 11400000, guid: 68e2b9a4571b35048a4478d920157a62, type: 2}
-  orderWaitPoints1: 01000000020000000100000000000000
-  orderWaitPoints2: 06000000020000000100000000000000
-  orderWaitPoints3: 01000000020000000600000005000000040000000300000000000000
   state: 0
-  healt: {fileID: 1796227039}
-  footsteps: {fileID: 1796227040}
-  enemySelected: {fileID: 1796227038}
-  pooling: {fileID: 0}
-  pointToScreen: {fileID: 1028250989}
-  muzzle: {fileID: 895928651}
   speedGround: 4
+  maxDistanceAttackGround: 0
   speedFly:
   - 4.5
   - 7.5
   - 9
+  isInvulnerable: 0
   isAttack: 0
   isMove: 0
-  isInvulnerable: 0
-  spawns: []
-  index: 0
   isActive: 0
+  powers:
+  - {fileID: 4207619259868558542, guid: 4e164747715c23e4ca112ca690476e94, type: 3}
+  - {fileID: 4207619259868558542, guid: 9143bb31af5304544bdfe93f8485b948, type: 3}
+  - {fileID: 4207619259868558542, guid: 20feddf3058173a4fb4a1aa04baf16e1, type: 3}
   animator: {fileID: 895928650}
+  pointToScreen: {fileID: 1028250989}
+  muzzle: {fileID: 895928651}
+  healt: {fileID: 1796227039}
+  footsteps: {fileID: 1796227040}
+  enemySelected: {fileID: 1796227038}
+  pooling: {fileID: 0}
+  fx_Sound:
+  - {fileID: 11400000, guid: 5556d3b7c9f558c41a7be49a141ff6c6, type: 2}
+  - {fileID: 11400000, guid: 68e2b9a4571b35048a4478d920157a62, type: 2}
   eventQTE: {fileID: 1934531588}
+  startPoint: {fileID: 270696766}
+  startPointGround: {fileID: 1070015781}
+  spawnPoint: {fileID: 895928649}
+  attackPoint: {fileID: 1532934071}
+  body: {fileID: 895928648}
+  bodyRenderer: {fileID: 895928646}
   phaseMaterials:
   - {fileID: 2100000, guid: 4f10eeb8cf16d7544861715c8d6c7d9e, type: 2}
   - {fileID: 2100000, guid: 2c8bd9d3dc7795044b445b11bf4c933e, type: 2}
+  orderWaitPoints1: 01000000020000000100000000000000
+  orderWaitPoints2: 06000000020000000100000000000000
+  orderWaitPoints3: 01000000020000000600000005000000040000000300000000000000
+  spawns: []
+  orderwaitPoints: 
   waitPoints:
   - {fileID: 1979038343}
   - {fileID: 2048842953}
@@ -11087,16 +11114,6 @@ MonoBehaviour:
   - {fileID: 1056775175}
   - {fileID: 1951938855}
   - {fileID: 287075009}
-  powers:
-  - {fileID: 4207619259868558542, guid: 4e164747715c23e4ca112ca690476e94, type: 3}
-  - {fileID: 4207619259868558542, guid: 9143bb31af5304544bdfe93f8485b948, type: 3}
-  - {fileID: 4207619259868558542, guid: 20feddf3058173a4fb4a1aa04baf16e1, type: 3}
-  startPoint: {fileID: 270696766}
-  startPointGround: {fileID: 1070015781}
-  spawnPoint: {fileID: 895928649}
-  attackPoint: {fileID: 1532934071}
-  body: {fileID: 895928648}
-  bodyRenderer: {fileID: 895928646}
 --- !u!4 &1796227042
 Transform:
   m_ObjectHideFlags: 0
@@ -11106,7 +11123,7 @@ Transform:
   m_GameObject: {fileID: 1796227037}
   m_LocalRotation: {x: 0.28407347, y: 0.013042717, z: -0.0038648767, w: -0.958706}
   m_LocalPosition: {x: -2.2120152, y: 9.678916, z: 38.91008}
-  m_LocalScale: {x: 2.4057, y: 2.4057002, z: 2.4057007}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children:
   - {fileID: 1484024414}
   - {fileID: 895928647}
@@ -11980,22 +11997,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Events:
     m_Signals:
-    - {fileID: 11400000, guid: 259746880ec0a8a4184d6e43bfe68f25, type: 2}
     - {fileID: 11400000, guid: a0778b44bbe0a454ba8b52c766054f62, type: 2}
+    - {fileID: 11400000, guid: 81b49977026229146ae6b38200cafff3, type: 2}
     m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1936140947}
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 921745111}
@@ -12008,6 +12012,19 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 1
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 921745111}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1951938855
 GameObject:
@@ -12037,7 +12054,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 2056056930}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1961535969
 PrefabInstance:
@@ -12162,7 +12179,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 2056056930}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1982299029
 GameObject:
@@ -12704,7 +12721,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 2056056930}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2050667811
 PrefabInstance:
@@ -12795,7 +12812,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 270696767}
-  - {fileID: 1070015782}
   - {fileID: 1979038344}
   - {fileID: 2048842954}
   - {fileID: 820042262}
@@ -12803,6 +12819,7 @@ Transform:
   - {fileID: 1056775176}
   - {fileID: 1951938856}
   - {fileID: 287075010}
+  - {fileID: 1070015782}
   - {fileID: 1532934072}
   m_Father: {fileID: 0}
   m_RootOrder: 2
