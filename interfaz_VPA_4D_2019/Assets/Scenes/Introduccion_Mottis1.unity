@@ -5111,7 +5111,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: c869acf0f32d55340b4dd39f39cc49f3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c321f61dbce61d8479cc21cfa56b8cc9, type: 2}
+      objectReference: {fileID: 2100000, guid: be42f1bbe95db324abda3cabea8347fc, type: 2}
     - target: {fileID: 9500000, guid: c869acf0f32d55340b4dd39f39cc49f3, type: 3}
       propertyPath: m_Controller
       value: 
@@ -16058,9 +16058,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.94
+  near clip plane: 0.1
   far clip plane: 5000
-  field of view: 39
+  field of view: 65.04
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -16085,8 +16085,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569057531}
-  m_LocalRotation: {x: -0.026264153, y: -0, z: -0, w: 0.99965507}
-  m_LocalPosition: {x: 0.0000000044703, y: -0.40999997, z: -1.789}
+  m_LocalRotation: {x: -0, y: -0.9542561, z: -0, w: 0.29899064}
+  m_LocalPosition: {x: 116.3, y: 42, z: 133.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1404939111}
@@ -18730,7 +18730,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: c869acf0f32d55340b4dd39f39cc49f3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c321f61dbce61d8479cc21cfa56b8cc9, type: 2}
+      objectReference: {fileID: 2100000, guid: be42f1bbe95db324abda3cabea8347fc, type: 2}
     - target: {fileID: 9500000, guid: c869acf0f32d55340b4dd39f39cc49f3, type: 3}
       propertyPath: m_Controller
       value: 

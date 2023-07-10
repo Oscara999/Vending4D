@@ -23,6 +23,7 @@ public class Enemy : Singleton<Enemy>
 
     [Header("Enemy Settup")]
     [SerializeField] Animator animator;
+    [SerializeField] Animator eyesAnimator;
     public Ray ray;
     public GameObject pointToScreen;
     public GameObject muzzle;
@@ -82,7 +83,6 @@ public class Enemy : Singleton<Enemy>
 
     void FixedUpdate()
     {
-        //Debug.Log(Vector3.Distance(transform.position, startPointGround.transform.position));
         SetAnimation();
     }
 
@@ -134,48 +134,6 @@ public class Enemy : Singleton<Enemy>
             default:
                 break;
         }
-
-        //if (state == EnemyState.PATROL)
-        //{
-        //    isInvulnerable = false;
-        //    footsteps.stepDistance = .35f;
-        //}
-
-        //else if (state == EnemyState.LEVELUP)
-        //{
-        //    StartCoroutine(footsteps.ChangeSound(true, 3.5f));
-        //    isInvulnerable = true;
-        //    footsteps.stepDistance = .35f;
-        //}
-
-        //else if (state == EnemyState.ATTACK)
-        //{
-        //    footsteps.stepDistance = .40f;
-        //}
-
-        //else if (state == EnemyState.QTE)
-        //{
-        //    footsteps.stepDistance = 20f;
-        //}
-
-        //else if (state == EnemyState.DAMAGE)
-        //{
-        //    isInvulnerable = true;
-        //    footsteps.stepDistance = .41f;
-        //}
-
-        //else if (state == EnemyState.GROUND)
-        //{
-        //    isInvulnerable = true;
-        //    footsteps.stepDistance = 0.45f;
-        //}
-
-        //else if (state == EnemyState.MOVE)
-        //{
-        //    isInvulnerable = true;
-        //    StartCoroutine(footsteps.ChangeSound(false, .1f));
-        //    footsteps.stepDistance = 0.35f;
-        //}
     }
 
     public void SetOrderWaitPoints(int round)
@@ -187,19 +145,19 @@ public class Enemy : Singleton<Enemy>
         {
             case 0 : 
                 orderwaitPoints = orderWaitPoints1;
-                healt.RestoreLife();
                 break;
 
             case 1 :
                 orderwaitPoints = orderWaitPoints2;
-                healt.RestoreLife();
                 break;
 
             case 2:
                 orderwaitPoints = orderWaitPoints3;
-                healt.RestoreLife();
                 break;
         }
+
+        healt.RestoreLife();
+
     }
 
     public void AttackFly()
@@ -225,6 +183,18 @@ public class Enemy : Singleton<Enemy>
     public void LevelUp()
     {
         animator.SetTrigger("LevelUp");
+    }
+
+    public void SlowMode(bool state)
+    {
+        if (state)
+        {
+            eyesAnimator.SetBool("Slow", true);
+        }
+        else
+        {
+            eyesAnimator.SetBool("Slow", false);
+        }
     }
 
     public void DamageQTE(bool state)
