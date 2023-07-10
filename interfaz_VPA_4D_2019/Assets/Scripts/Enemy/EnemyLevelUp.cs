@@ -39,10 +39,12 @@ public class EnemyLevelUp : StateMachineBehaviour
 
         if (boss.isMove)
         {
+            Debug.Log("esperando a caer al piso");
             Enemy.Instance.GoToPointStart();
         }
         else
         {
+            Debug.Log("callo al piso");
             animator.SetBool("InGround", true);
         }
     }

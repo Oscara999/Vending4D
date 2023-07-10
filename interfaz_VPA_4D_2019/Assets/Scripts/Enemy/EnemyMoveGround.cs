@@ -9,8 +9,8 @@ public class EnemyMoveGround : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss = Enemy.Instance;
-        boss.ChageStateAnimation();
         boss.state = EnemyState.GROUND;
+        boss.ChageStateAnimation();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

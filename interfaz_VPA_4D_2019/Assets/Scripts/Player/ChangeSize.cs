@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MottisSize : MonoBehaviour
+public class ChangeSize : MonoBehaviour
 {
     public float speed;
     public float tamaño;
 
     public void StartChangeSize()
     {
-        StartCoroutine(ChangeSize());
+        StartCoroutine(IsChangingSize());
     }
 
-    IEnumerator ChangeSize()
+    IEnumerator IsChangingSize()
     {
         while (transform.localScale.x < tamaño)
         {

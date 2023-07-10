@@ -224,13 +224,21 @@ public class UI
     [Header(" UI Settings")]
     public UIController uIController;
     public Canvas canvas;
-    public GameObject questPanel;
-    public GameObject pausePanel;
-    public GameObject rulesPanel;
-    public GameObject valuePanel;
     public GameObject[] DesingCursor;
     public TMP_Text coinsText;
     public GameObject[] eventUI;
     public Text eventTimerText;
     public Image eventTimerImage;
+
+    [Header(" UI Mottis Presentation")]
+    public GameObject questPanel;
+    public GameObject pausePanel;
+    public GameObject rulesPanel;
+    public GameObject valuePanel;
+
+    [Header(" UI Game")]
+    public GameObject lifeEnemyObject;
+    public GameObject GamePanel;
+    public Slider sliderEnemyUI;
+    public Image[] lifesUI;
 }
