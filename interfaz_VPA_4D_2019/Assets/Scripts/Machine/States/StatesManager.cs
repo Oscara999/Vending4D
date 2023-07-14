@@ -10,10 +10,12 @@ public class StatesManager : Singleton<StatesManager>
     public LedsController ledsController;
     public GameObject[] hands;
     public GamePadCursor inputActions;
+    public UIController leapMotionMovementController;
     public Task skapeTask;
     public UI ui;
 
     [Header("States")]
+    public KindScene kindScene;
     public ReposeState reposeState;
     public CinematicState cinematicState;
     public SkipState skipState;
@@ -222,13 +224,14 @@ public class StatesManager : Singleton<StatesManager>
 public class UI
 {
     [Header(" UI Settings")]
-    public UIController uIController;
     public Canvas canvas;
     public GameObject[] DesingCursor;
     public TMP_Text coinsText;
-    public GameObject[] eventUI;
+    public GameObject eventUI;
     public Text eventTimerText;
     public Image eventTimerImage;
+    public GameObject crossFire;
+    public GameObject PointOnScreen;
 
     [Header(" UI Mottis Presentation")]
     public GameObject questPanel;
@@ -237,8 +240,9 @@ public class UI
     public GameObject valuePanel;
 
     [Header(" UI Game")]
+    public Text timerPanel;
     public GameObject lifeEnemyObject;
-    public GameObject GamePanel;
+    public GameObject gamePanel;
     public Slider sliderEnemyUI;
     public Image[] lifesUI;
 }

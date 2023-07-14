@@ -48,7 +48,7 @@ public class QTEManager : MonoBehaviour
         isCorrect = false;
         currentTime = eventData.time;
         smoothTimeUpdate = currentTime;
-        setupGUI(eventData.index);
+        setupGUI();
         StartCoroutine(countDown());
     }
 
@@ -77,10 +77,7 @@ public class QTEManager : MonoBehaviour
 
         if (ui.eventUI != null)
         {
-            for (int i = 0; i < ui.eventUI.Length; i++)
-            {
-                ui.eventUI[i].SetActive(false);
-            }
+            ui.eventUI.SetActive(false);
         }
 
         if (eventData == null)
@@ -117,34 +114,6 @@ public class QTEManager : MonoBehaviour
         }
     }
 
-    void UISetup(int index)
-    {
-        for (int i = 0; i < ui.eventUI.Length; i++)
-        {
-            if (i == index)
-            {
-                ui.eventUI[i].SetActive(true);
-            }
-            else
-            {
-                ui.eventUI[i].SetActive(false);
-            }
-        }
-
-        switch (index)
-        {
-            case 0:
-                ui.eventTimerText = ui.eventUI[0].GetComponentInChildren<Text>();
-                ui.eventTimerImage = ui.eventUI[0].GetComponentInChildren<Image>();
-                break;
-
-            case 1:
-                ui.eventTimerText = ui.eventUI[1].GetComponentInChildren<Text>();
-                ui.eventTimerImage = ui.eventUI[1].GetComponentInChildren<Image>();
-                break;
-        }
-    }
-
     protected void updateTimer()
     {
         smoothTimeUpdate -= Time.unscaledDeltaTime;
@@ -155,10 +124,8 @@ public class QTEManager : MonoBehaviour
         }
     }
 
-    protected void setupGUI(int index)
+    protected void setupGUI()
     {
-        UISetup(index);
-
         if (ui.eventTimerImage != null)
         {
             ui.eventTimerImage.fillAmount = 1;

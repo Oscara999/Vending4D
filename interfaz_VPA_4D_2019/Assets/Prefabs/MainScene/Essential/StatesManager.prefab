@@ -49,8 +49,6 @@ MonoBehaviour:
   speed: 10
   enabledMovement: 1
   ScreenXy: {x: 0, y: 0}
-  kindScene: 0
-  crossFire: {fileID: 0}
   positionReferenceCamera: {fileID: 0}
   currentTime: 0
   smoothTimeUpdate: 0
@@ -170,19 +168,19 @@ MonoBehaviour:
   hands:
   - {fileID: 0}
   - {fileID: 0}
+  leapMotionMovementController: {fileID: 5477911701488351697}
   skapeTask: {fileID: 0}
   ui:
-    uIController: {fileID: 5477911701488351697}
     canvas: {fileID: 0}
     DesingCursor:
     - {fileID: 0}
     - {fileID: 0}
     coinsText: {fileID: 0}
-    eventUI:
-    - {fileID: 0}
-    - {fileID: 0}
+    eventUI: {fileID: 0}
     eventTimerText: {fileID: 0}
     eventTimerImage: {fileID: 0}
+    crossFire: {fileID: 0}
+    PointOnScreen: {fileID: 0}
     questPanel: {fileID: 0}
     pausePanel: {fileID: 0}
     rulesPanel: {fileID: 0}
@@ -194,6 +192,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+  kindScene: 0
   reposeState: {fileID: 8178831769025564153}
   cinematicState: {fileID: 8178831769065517429}
   skipState: {fileID: 8247565496963050370}

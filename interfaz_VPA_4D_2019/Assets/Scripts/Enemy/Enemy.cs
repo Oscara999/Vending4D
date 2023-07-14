@@ -217,7 +217,7 @@ public class Enemy : Singleton<Enemy>
         if (healt.health > 0)
         {
             animator.SetTrigger("GetDamage");
-            StatesManager.Instance.ui.lifeEnemyObject.GetComponent<Animator>().SetTrigger("Damage");
+            //StatesManager.Instance.ui.lifeEnemyObject.GetComponent<Animator>().SetTrigger("Damage");
             healt.TakeDamage(value);
             Debug.Log("Damage");
         }
@@ -380,7 +380,7 @@ public class Enemy : Singleton<Enemy>
 
         if (Vector3.Distance(transform.position, startPoint.transform.position) < 0.1f)
         {
-            StatesManager.Instance.ui.uIController.CrossFireState(true);
+            StatesManager.Instance.leapMotionMovementController.CrossFireState(true);
             isMove = false;
             
             if (ManagerGame.Instance.round == 3)     

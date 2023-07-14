@@ -19,7 +19,7 @@ public class ManagerGame : Singleton<ManagerGame>
     {
         SetChangeTimeLine(timeLines);
         StartCoroutine(StartGame());
-        StatesManager.Instance.ui.uIController.kindScene = kindScene.Game;
+        StatesManager.Instance.kindScene = KindScene.Game;
     }
     void SetChangeTimeLine(GameObject container)
     {
@@ -79,7 +79,7 @@ public class ManagerGame : Singleton<ManagerGame>
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
         yield return new WaitUntil(() => !timeLineRutine.StatePlayable(0));
 
-        StatesManager.Instance.ui.GamePanel.SetActive(true);
+        StatesManager.Instance.ui.gamePanel.SetActive(true);
 
         //Debug.Log("1");
         Player.Instance.StateController();

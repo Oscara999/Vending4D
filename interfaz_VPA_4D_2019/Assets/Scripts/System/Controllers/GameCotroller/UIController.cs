@@ -23,8 +23,6 @@ public class UIController : MonoBehaviour
     [Header("States")]
     public bool enabledMovement;
     public  Vector2 ScreenXy;
-    public kindScene kindScene;
-    public GameObject crossFire;
     public Ray ray;
     public Camera positionReferenceCamera;
 
@@ -73,7 +71,10 @@ public class UIController : MonoBehaviour
         CursorMovement();
         VirtualMouseMovement();
     }
-
+    public Vector2 VirtualMousePosition()
+    {
+        return virtualMouse.position.ReadValue();
+    }
     void VirtualMouseMovement()
     {
         //Moving virtual mouse
@@ -90,12 +91,12 @@ public class UIController : MonoBehaviour
 
     void CursorMovement()
     {
-        if (!crossFire.activeInHierarchy || !Camera.main)
+        if (!StatesManager.Instance.ui.crossFire.activeInHierarchy || !Camera.main)
             return;
 
         Vector3 handPostition = HandModelBase.GetPalmDirection();
         
-        if (kindScene == kindScene.Menu)
+        if (StatesManager.Instance.kindScene == KindScene.Menu)
         {
             if (!StatesManager.Instance.ui.DesingCursor[0].activeInHierarchy)
             {
@@ -113,7 +114,7 @@ public class UIController : MonoBehaviour
                 StatesManager.Instance.ui.DesingCursor[1].SetActive(true);
             }
             
-            ray = Camera.main.ScreenPointToRay(crossFire.transform.position);
+            ray = Camera.main.ScreenPointToRay(StatesManager.Instance.ui.crossFire.transform.position);
             ScreenXy = Camera.main.WorldToScreenPoint(handPostition * speed);
             Debug.DrawRay(ray.origin, ray.direction * 30f, Color.red);
         }
@@ -121,22 +122,18 @@ public class UIController : MonoBehaviour
 
     void AnchorCursor(Vector2 position)
     {
-        crossFire.transform.position = new Vector3(position.x, position.y, crossFire.transform.position.z);
+        StatesManager.Instance.ui.crossFire.transform.position = new Vector3(position.x, position.y, StatesManager.Instance.ui.crossFire.transform.position.z);
     }
 
     public void CrossFireState(bool isSelected)
     {
         if (isSelected)
         {
-            crossFire.SetActive(true);
+            StatesManager.Instance.ui.crossFire.SetActive(true);
         }
         else
         {
-            crossFire.SetActive(false);
+            StatesManager.Instance.ui.crossFire.SetActive(false);
         }
     }
-}
-public enum kindScene
-{
-    Menu, Game
 }

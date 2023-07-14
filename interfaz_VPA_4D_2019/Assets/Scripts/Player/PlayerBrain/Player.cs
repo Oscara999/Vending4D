@@ -14,14 +14,14 @@ public class Player : Singleton<Player>
     [SerializeField] CameraShakeSimpleScript shake;
     [SerializeField] ObjectPooling pooling;
     [SerializeField] GameObject poder_invierno;
-    public Movimiento_UI_Control_Juego movimiento;
+    public Movimiento_UI_Control_Juego movingController;
     public Sound[] fx_Sound;
     public bool IsActivate { get { return isActive; } }
 
     void Start()
     {
         lifes = 3;
-        movimiento = GetComponentInChildren<Movimiento_UI_Control_Juego>();
+        movingController = GetComponentInChildren<Movimiento_UI_Control_Juego>();
         currentTimeSpawn = timeToSpawn;
     }
 
@@ -36,7 +36,7 @@ public class Player : Singleton<Player>
         {
             //ray = new Ray(transform.position, Enemy.Instance.transform.position);
             //Debug.DrawRay(transform.position, ray.direction, Color.green);
-            movimiento.Selected();
+            movingController.Selected();
             //Debug.Log("aqui " + movimiento.crossFire.transform.position);
             currentTimeSpawn++;
         }
@@ -44,12 +44,12 @@ public class Player : Singleton<Player>
 
     public void Attack()
     {
-        if (!StatesManager.Instance.ui.uIController.crossFire.activeInHierarchy)
+        if (!StatesManager.Instance.ui.crossFire.activeInHierarchy)
             return;
 
         if (isActive && currentTimeSpawn > timeToSpawn)
         {
-            Destroy(Instantiate(poder_invierno, StatesManager.Instance.ui.uIController.ray.origin, Quaternion.identity), 20f);
+            Destroy(Instantiate(poder_invierno, StatesManager.Instance.leapMotionMovementController.ray.origin, Quaternion.identity), 20f);
             currentTimeSpawn = 0;
             //ProjectileMoveScript poder = pooling.GetPooledObjects().GetComponent<ProjectileMoveScript>();
             //poder.Start();
@@ -64,7 +64,7 @@ public class Player : Singleton<Player>
         if (!isImmune && lifes != 0)
         {
             SoundManager.Instance.PlayNewSound(Player.Instance.fx_Sound[0].name);
-            //lifes--;
+            lifes--;
         }
 
     }

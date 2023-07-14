@@ -7894,7 +7894,7 @@ MonoBehaviour:
   pooling: {fileID: 819168798}
   poder_invierno: {fileID: 1339477995214658, guid: 4815f9cfb419f904d98fe28319b55b55,
     type: 3}
-  movimiento: {fileID: 1685328157}
+  movingController: {fileID: 1685328157}
   fx_Sound:
   - {fileID: 11400000, guid: 8e78bcb14e3cb9843b19de15154dfc20, type: 2}
   - {fileID: 11400000, guid: 455d068e164e2004d8280076d9907a9f, type: 2}
@@ -8408,6 +8408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossFire: {fileID: 1028250989}
+  mainCamera: {fileID: 1871248041}
 --- !u!1 &1705797070
 GameObject:
   m_ObjectHideFlags: 0
@@ -12862,6 +12863,7 @@ GameObject:
   - component: {fileID: 2061054783}
   - component: {fileID: 2061054784}
   - component: {fileID: 2061054785}
+  - component: {fileID: 2061054786}
   m_Layer: 1
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12962,6 +12964,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1982299030}
+--- !u!114 &2061054786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061054782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945330a7797d44c4b9913669d8a9628d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 0}
+  target: {fileID: 0}
+  sensitivity: 5
+  maxOffset: 5
 --- !u!4 &2105392368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4441688097859436, guid: f920ead74e9fc3a4eb4a731b577291b4,
@@ -16065,7 +16083,7 @@ PrefabInstance:
     - target: {fileID: 2156752328057355424, guid: f24d522c72bc333408654e56fe7ea201,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2156752328057355428, guid: f24d522c72bc333408654e56fe7ea201,
         type: 3}
@@ -16180,6 +16198,11 @@ PrefabInstance:
     - target: {fileID: 2156752328535889946, guid: f24d522c72bc333408654e56fe7ea201,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156752328901786605, guid: f24d522c72bc333408654e56fe7ea201,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2156752328920738605, guid: f24d522c72bc333408654e56fe7ea201,

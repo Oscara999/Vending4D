@@ -54,7 +54,10 @@ public enum MusicLevel
     GAME,
     TEST
 }
-
+public enum KindScene
+{
+    Menu, Game
+}
 public enum MusicType
 {
     BACKGROUND,

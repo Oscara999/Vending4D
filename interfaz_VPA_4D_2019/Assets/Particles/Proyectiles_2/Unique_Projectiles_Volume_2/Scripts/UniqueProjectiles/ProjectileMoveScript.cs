@@ -39,12 +39,19 @@ public class ProjectileMoveScript : MonoBehaviour {
 	private bool collided;
 	private Rigidbody rb;
     private RotateToMouseScript rotateToMouse;
-    private GameObject target;
+    private GameObject currentTarget;
     private Vector3 direction;
 
     public void Start () {
 
-        direction = Player.Instance.movimiento.CurrentObjetivoPosition();
+        //if (Player.Instance.movingController.selected.target != null)
+        //{
+        //    currentTarget = Player.Instance.movingController.selected.target;
+        //}
+        //else
+        //{
+        //}
+        direction = Player.Instance.movingController.CurrentObjetivoPosition();
 
         startPos = transform.position;
         rb = GetComponent <Rigidbody> ();
@@ -85,8 +92,8 @@ public class ProjectileMoveScript : MonoBehaviour {
 
 	void FixedUpdate () {       
 
-        if (target != null)
-            rotateToMouse.RotateToMouse (gameObject, target.transform.position);
+        //if (target != null)
+        //    rotateToMouse.RotateToMouse (gameObject, target.transform.position);
         if (rotate)
             transform.Rotate(0, 0, rotateAmount, Space.Self);
         if (speed != 0 && rb != null)
@@ -94,7 +101,14 @@ public class ProjectileMoveScript : MonoBehaviour {
 
             if (isPlayer)
             {
-                rb.position += (direction * speed * Time.deltaTime);
+                //if (currentTarget != null)
+                //{
+                //    rb.position += (currentTarget.transform.position * speed * Time.deltaTime);
+                //}
+                //else
+                //{
+                    rb.position += (direction * speed * Time.deltaTime);
+                //}
             }
     }
 
@@ -180,9 +194,9 @@ public class ProjectileMoveScript : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
-    public void SetTarget (GameObject trg, RotateToMouseScript rotateTo)
-    {
-        target = trg;
-        rotateToMouse = rotateTo;
-    }
+    //public void SetTarget (GameObject trg, RotateToMouseScript rotateTo)
+    //{
+    //    target = trg;
+    //    rotateToMouse = rotateTo;
+    //}
 }

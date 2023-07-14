@@ -8,7 +8,7 @@ public class EnemyMove : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        StatesManager.Instance.ui.uIController.CrossFireState(false);
+        StatesManager.Instance.leapMotionMovementController.CrossFireState(false);
         boss = Enemy.Instance;
         boss.ChageStateAnimation();
         boss.state = EnemyState.MOVE;

@@ -15,7 +15,6 @@ public class QTEEvent : MonoBehaviour
 {
     [Header("Event settings")]
     public float time = 3f;
-    public int index;
     
     [Header("Event actions")]
     public UnityEvent onStart;

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Movimiento_UI_Control_Juego : MonoBehaviour
 {
     [Header("Selected Settings")] 
-    [SerializeField] GameObject currentObjetivo;
+    [SerializeField] GameObject currentTarget;
     [SerializeField] Color[] colors;
     [SerializeField] Image SelectedUI;
     [SerializeField] float speed;
@@ -16,12 +16,12 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
 
     public void Selected()
     {
-        if (!StatesManager.Instance.ui.uIController.crossFire.activeInHierarchy)
+        if (!StatesManager.Instance.ui.crossFire.activeInHierarchy)
             return;
 
         RaycastHit hit;
 
-        if (Physics.Raycast(StatesManager.Instance.ui.uIController.ray, out hit))
+        if (Physics.Raycast(StatesManager.Instance.leapMotionMovementController.ray, out hit))
         {
             var selection = hit.transform;
 
@@ -29,22 +29,22 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
             {
                 EnemyBullet bullet = hit.transform.GetComponent<EnemyBullet>();
 
-                if (currentObjetivo == null)
+                if (currentTarget == null)
                 {
                     EditBulletSelected(bullet, 2, true);
-                    currentObjetivo = bullet.gameObject;
-                    selected.SetSelectedObject(currentObjetivo);
+                    currentTarget = bullet.gameObject;
+                    selected.SetSelectedObject(currentTarget);
                 }
-                else if (currentObjetivo != null && bullet.selected)
+                else if (currentTarget != null && bullet.selected)
                 {
                     return;
                 }
-                else if (currentObjetivo != null && !bullet.selected)
+                else if (currentTarget != null && !bullet.selected)
                 {
-                    EditBulletSelected(currentObjetivo.GetComponent<EnemyBullet>(), 2, false);
+                    EditBulletSelected(currentTarget.GetComponent<EnemyBullet>(), 2, false);
                     EditBulletSelected(bullet, 2, true);
-                    currentObjetivo = bullet.gameObject;
-                    selected.SetSelectedObject(currentObjetivo);
+                    currentTarget = bullet.gameObject;
+                    selected.SetSelectedObject(currentTarget);
                 }
             }
 
@@ -61,11 +61,11 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
             }
         }
 
-        if (currentObjetivo != null)
+        if (currentTarget != null)
         {
-            if (!currentObjetivo.activeInHierarchy)
+            if (!currentTarget.activeInHierarchy)
             {
-                currentObjetivo = null;
+                currentTarget = null;
             }
         }
     }
@@ -87,13 +87,13 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
 
     public Vector3 CurrentObjetivoPosition()
     {
-        if (currentObjetivo != null)
+        if (currentTarget != null)
         {
             return selected.ray.direction;
         }
         else
         {
-            return StatesManager.Instance.ui.uIController.ray.direction;
+            return StatesManager.Instance.leapMotionMovementController.ray.direction;
         }
     }
 

@@ -15,7 +15,7 @@ public class SceneController : Singleton<SceneController>
     {
         base.Awake();
         SetChangeTimeLine(timeLines);
-        StatesManager.Instance.ui.uIController.kindScene = kindScene.Menu;
+        StatesManager.Instance.kindScene = KindScene.Menu;
     }
 
     void SetChangeTimeLine(GameObject container)
