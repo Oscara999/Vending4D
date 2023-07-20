@@ -15,7 +15,7 @@ public class EnemyBullet : MonoBehaviour
         uiSelected.SetActive(false);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (targetPosition == null || targetLookPosition == null)
             return;

@@ -19,7 +19,7 @@ public class Enemy : Singleton<Enemy>
     float horizon;
     int destPoint;
     int index;
-    bool isInteracting;
+    [SerializeField]bool isInteracting;
 
     [Header("Enemy Settup")]
     [SerializeField] Animator animator;
@@ -62,12 +62,12 @@ public class Enemy : Singleton<Enemy>
                 horizon = 0;
                 rotation = 0;
 
-                for (int i = 0; i < Enemy.Instance.spawns.Count; i++)
+                for (int i = 0; i < spawns.Count; i++)
                 {
-                    Destroy(Enemy.Instance.spawns[i]);
+                    Destroy(spawns[i]);
                 }
 
-                Enemy.Instance.spawns.Clear();
+                spawns.Clear();
             }
         }
         get { return isActive; } }
@@ -180,8 +180,9 @@ public class Enemy : Singleton<Enemy>
        isInteracting = !isInteracting;
     }
 
-    public void LevelUp()
+    public IEnumerator LevelUp()
     {
+        yield return new WaitUntil(() => spawns.Count == 0);
         animator.SetTrigger("LevelUp");
     }
 
@@ -305,9 +306,11 @@ public class Enemy : Singleton<Enemy>
             destPoint = orderwaitPoints[index];
         }
         else
-        {
-            Enemy.Instance.LevelUp();
-        }
+        {  
+            StartCoroutine(LevelUp());
+            Debug.Log("Aqujiiisadd");
+            ChageStateAnimation();
+         }
     }
 
     public void MoveGround()

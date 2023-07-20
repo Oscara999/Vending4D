@@ -13,7 +13,7 @@ public class EnemyLevelUp : StateMachineBehaviour
         //Player.Instance.movimiento.CrossFireState(false);
         timeTexture = starTime; 
         boss = Enemy.Instance;
-        boss.ChageStateAnimation();
+        //boss.ChageStateAnimation();
         boss.state = EnemyState.LEVELUP;
         boss.ChangeStates();
         boss.isMove = true;

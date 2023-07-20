@@ -64,7 +64,7 @@ public class Player : Singleton<Player>
         if (!isImmune && lifes != 0)
         {
             SoundManager.Instance.PlayNewSound(Player.Instance.fx_Sound[0].name);
-            lifes--;
+            //lifes--;
         }
 
     }
@@ -73,6 +73,11 @@ public class Player : Singleton<Player>
     {
         if (other.gameObject.tag == "Selectable")
         {
+            if (Enemy.Instance.spawns.Contains(other.gameObject))
+            {
+                Enemy.Instance.spawns.Remove(other.gameObject);
+            }
+
             Damage();
             other.gameObject.SetActive(false);
         }

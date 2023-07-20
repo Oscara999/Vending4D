@@ -35,7 +35,7 @@ public class EnemyHealt : MonoBehaviour
 
         if (lifes > 0)
         {
-            Enemy.Instance.LevelUp();
+            StartCoroutine(Enemy.Instance.LevelUp());
         }
         else
         {

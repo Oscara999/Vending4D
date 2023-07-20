@@ -156,6 +156,8 @@ public class ProjectileMoveScript : MonoBehaviour {
 
                 if (co.transform.tag == "Selectable")
                 {
+                    Debug.Log("primero aqui Bullet");
+
                     co.gameObject.SetActive(false);
                 }
 
