@@ -10,6 +10,7 @@ public class StatesManager : Singleton<StatesManager>
     public LedsController ledsController;
     public GameObject[] hands;
     public GamePadCursor inputActions;
+    public Timer timer;
     public UIController leapMotionMovementController;
     public Task skapeTask;
     public UI ui;

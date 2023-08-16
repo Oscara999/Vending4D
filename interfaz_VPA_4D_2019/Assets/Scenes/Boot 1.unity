@@ -3777,6 +3777,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1916762540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7354756469910445410, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7341198609881663148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaeb26980c6e644a9a804fe1e208c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1992616200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7354756469140297448, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
@@ -4404,6 +4416,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 5.0999756
       objectReference: {fileID: 0}
+    - target: {fileID: 7354756469910445410, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+        type: 3}
+      propertyPath: startMinutes
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 7354756470005270438, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4553,6 +4570,56 @@ PrefabInstance:
       propertyPath: positionReferenceCamera
       value: 
       objectReference: {fileID: 1723189862}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: maxWorldPoint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: maxWorldPoint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: boundary.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: boundary.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: boundaryMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: boundaryMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: boundaryMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: boundaryMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: maxRotationAngle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477911701488351697, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8178831768890535316, guid: f21a82641291618438f32bdd555fe9bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4778,6 +4845,11 @@ PrefabInstance:
       propertyPath: ui.gamePanel
       value: 
       objectReference: {fileID: 1992616200}
+    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1916762540}
     - target: {fileID: 8178831769025564153, guid: f21a82641291618438f32bdd555fe9bf,
         type: 3}
       propertyPath: demoPanel

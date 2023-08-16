@@ -7,7 +7,7 @@ using System;
 public class Timer : MonoBehaviour
 {
     public float currentTime;
-    public int startMinutes;
+    public float startMinutes;
     public Text ui;
     public bool timerActive;
 
@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
-        currentTime = startMinutes * 60;
+        currentTime = startMinutes;
         timerActive = true;
     }
 }

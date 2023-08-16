@@ -4530,6 +4530,36 @@ VideoPlayer:
     type: 3}
   m_PrefabInstance: {fileID: 7341198609881663148}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7341198609881663162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7354756470495830537, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7341198609881663148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7341198609881663163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7354756469228954090, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7341198609881663148}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7341198609881663164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7354756469910445410, guid: fed3f50f9e09a0e45bcac4c0a09d66f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7341198609881663148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaeb26980c6e644a9a804fe1e208c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8178831769607965580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4712,6 +4742,26 @@ PrefabInstance:
       propertyPath: ui.lifesUI.Array.data[2]
       value: 
       objectReference: {fileID: 545761188}
+    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 7341198609881663164}
+    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: ui.PointOnScreen
+      value: 
+      objectReference: {fileID: 7341198609881663163}
+    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: ui.timerPanel
+      value: 
+      objectReference: {fileID: 7341198609881663162}
+    - target: {fileID: 8178831768890535323, guid: f21a82641291618438f32bdd555fe9bf,
+        type: 3}
+      propertyPath: ui.gamePanel
+      value: 
+      objectReference: {fileID: 1360466907}
     - target: {fileID: 8178831769025564153, guid: f21a82641291618438f32bdd555fe9bf,
         type: 3}
       propertyPath: demoPanel

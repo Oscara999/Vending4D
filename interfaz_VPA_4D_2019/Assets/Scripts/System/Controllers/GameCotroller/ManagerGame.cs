@@ -9,9 +9,8 @@ using UnityEngine.Timeline;
 public class ManagerGame : Singleton<ManagerGame>
 {
     public QTEManager QTEManager;
-    public Timer timer;
     public int round;
-    bool inProcess;
+    public bool inProcess;
     public GameObject timeLines;
     public TimeLineRutine timeLineRutine;
 
@@ -87,7 +86,7 @@ public class ManagerGame : Singleton<ManagerGame>
         Enemy.Instance.IsActivate = true;
         //Enemy.Instance.ChageStateAnimation();
         inProcess = true;
-        timer.StartTimer();
+        StatesManager.Instance.timer.StartTimer();
     }
 
     public void PauseGame()

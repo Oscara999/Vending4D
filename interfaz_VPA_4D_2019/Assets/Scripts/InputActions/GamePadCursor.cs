@@ -44,7 +44,7 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Point"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""edd296b4-cee7-41b2-a8a9-36cf9de3d606"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",

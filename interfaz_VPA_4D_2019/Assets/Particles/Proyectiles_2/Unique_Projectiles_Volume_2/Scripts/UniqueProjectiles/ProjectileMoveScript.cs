@@ -157,6 +157,11 @@ public class ProjectileMoveScript : MonoBehaviour {
                 if (co.transform.tag == "Selectable")
                 {
                     Debug.Log("primero aqui Bullet");
+                    
+                    if (Enemy.Instance.spawns.Contains(co.transform.gameObject))
+                    {
+                        Enemy.Instance.spawns.Remove(co.transform.gameObject);
+                    }
 
                     co.gameObject.SetActive(false);
                 }

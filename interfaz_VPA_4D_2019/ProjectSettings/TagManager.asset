@@ -16,6 +16,8 @@ TagManager:
   - QuestPanel
   - PauseMenu
   - MouseEventTrue
+  - FxTemporaire
+  - RotateCamera
   layers:
   - Default
   - TransparentFX
