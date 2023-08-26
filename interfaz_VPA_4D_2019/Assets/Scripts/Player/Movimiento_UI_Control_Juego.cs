@@ -16,12 +16,12 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
 
     public void Selected()
     {
-        if (!StatesManager.Instance.ui.crossFire.activeInHierarchy)
+        if (!StatesManager.Instance.uiController.crossFire.activeInHierarchy)
             return;
 
         RaycastHit hit;
 
-        if (Physics.Raycast(StatesManager.Instance.leapMotionMovementController.ray, out hit))
+        if (Physics.Raycast(StatesManager.Instance.inputController.ray, out hit))
         {
             var selection = hit.transform;
 
@@ -93,7 +93,7 @@ public class Movimiento_UI_Control_Juego : MonoBehaviour
         }
         else
         {
-            return StatesManager.Instance.leapMotionMovementController.ray.direction;
+            return StatesManager.Instance.inputController.ray.direction;
         }
     }
 

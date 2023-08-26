@@ -12,9 +12,9 @@ public class Selected : MonoBehaviour
         {
             if (target.activeInHierarchy)
             {
-                ray = Player.Instance.movingController.positionReferenceCamera.ScreenPointToRay(StatesManager.Instance.ui.PointOnScreen.transform.position);
+                ray = Player.Instance.movingController.positionReferenceCamera.ScreenPointToRay(StatesManager.Instance.uiController.PointOnScreen.transform.position);
                 Vector3 ScreenXy = Player.Instance.movingController.positionReferenceCamera.WorldToScreenPoint(target.transform.position);
-                StatesManager.Instance.ui.PointOnScreen.transform.position = new Vector3(ScreenXy.x, ScreenXy.y, StatesManager.Instance.ui.PointOnScreen.transform.position.z);
+                StatesManager.Instance.uiController.PointOnScreen.transform.position = new Vector3(ScreenXy.x, ScreenXy.y, StatesManager.Instance.uiController.PointOnScreen.transform.position.z);
                 Debug.DrawRay(ray.origin, ray.direction * 30f, Color.blue); 
             }
             else
@@ -24,7 +24,7 @@ public class Selected : MonoBehaviour
         }
         else
         {
-            StatesManager.Instance.ui.PointOnScreen.transform.position = Vector3.zero;
+            StatesManager.Instance.uiController.PointOnScreen.transform.position = Vector3.zero;
         }
     }
 

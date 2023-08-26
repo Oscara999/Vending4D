@@ -44,7 +44,7 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Point"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""edd296b4-cee7-41b2-a8a9-36cf9de3d606"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -607,6 +607,22 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""c8474345-0207-4821-b8b8-936349dada3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""1c38fde1-6406-4cd5-9192-761f6670db34"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -673,6 +689,28 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7dda6472-79f0-4fe2-9de4-22a16011f897"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6d6fa55-2a0c-4ae3-b67c-d24e4e5673ca"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -772,6 +810,8 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
         m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
         m_Player_Damage = m_Player.FindAction("Damage", throwIfNotFound: true);
         m_Player_Test = m_Player.FindAction("Test", throwIfNotFound: true);
+        m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_Skip = m_Player.FindAction("Skip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -931,6 +971,8 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Restart;
     private readonly InputAction m_Player_Damage;
     private readonly InputAction m_Player_Test;
+    private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_Skip;
     public struct PlayerActions
     {
         private @GamePadCursor m_Wrapper;
@@ -940,6 +982,8 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
         public InputAction @Restart => m_Wrapper.m_Player_Restart;
         public InputAction @Damage => m_Wrapper.m_Player_Damage;
         public InputAction @Test => m_Wrapper.m_Player_Test;
+        public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @Skip => m_Wrapper.m_Player_Skip;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -964,6 +1008,12 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                 @Test.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTest;
                 @Test.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTest;
                 @Test.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTest;
+                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Skip.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkip;
+                @Skip.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkip;
+                @Skip.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkip;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -983,6 +1033,12 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                 @Test.started += instance.OnTest;
                 @Test.performed += instance.OnTest;
                 @Test.canceled += instance.OnTest;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
+                @Skip.started += instance.OnSkip;
+                @Skip.performed += instance.OnSkip;
+                @Skip.canceled += instance.OnSkip;
             }
         }
     }
@@ -1061,5 +1117,7 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
         void OnRestart(InputAction.CallbackContext context);
         void OnDamage(InputAction.CallbackContext context);
         void OnTest(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
+        void OnSkip(InputAction.CallbackContext context);
     }
 }

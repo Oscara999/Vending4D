@@ -383,7 +383,7 @@ public class Enemy : Singleton<Enemy>
 
         if (Vector3.Distance(transform.position, startPoint.transform.position) < 0.1f)
         {
-            StatesManager.Instance.leapMotionMovementController.CrossFireState(true);
+            StatesManager.Instance.uiController.CrossFireState(true);
             isMove = false;
             
             if (ManagerGame.Instance.round == 3)     

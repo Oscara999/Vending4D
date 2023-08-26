@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class QTEManager : MonoBehaviour
 {
     [Header("Configuration")]
-    public UI ui;
     [HideInInspector]
     public bool startEvent;
     public QTEEvent eventData;
@@ -15,11 +14,6 @@ public class QTEManager : MonoBehaviour
     public bool isCorrect;
     public float smoothTimeUpdate;
     float currentTime;
-
-    private void Start()
-    {
-        ui = StatesManager.Instance.ui;
-    }
 
     protected void Update()
     {
@@ -57,9 +51,9 @@ public class QTEManager : MonoBehaviour
         startEvent = true;
         while (currentTime > 0 && startEvent && !isEnded)
         {
-            if (ui.eventTimerText != null)
+            if (StatesManager.Instance.uiController.eventTimerText != null)
             {
-                ui.eventTimerText.text = currentTime.ToString();
+                StatesManager.Instance.uiController.eventTimerText.text = currentTime.ToString();
             }
                 currentTime --;
                 yield return new WaitForSeconds(1f);
@@ -75,9 +69,9 @@ public class QTEManager : MonoBehaviour
     {
         isEnded = true;
 
-        if (ui.eventUI != null)
+        if (StatesManager.Instance.uiController.eventUI != null)
         {
-            ui.eventUI.SetActive(false);
+            StatesManager.Instance.uiController.eventUI.SetActive(false);
         }
 
         if (eventData == null)
@@ -118,17 +112,17 @@ public class QTEManager : MonoBehaviour
     {
         smoothTimeUpdate -= Time.unscaledDeltaTime;
 
-        if (ui.eventTimerImage != null)
+        if (StatesManager.Instance.uiController.eventTimerImage != null)
         {
-            ui.eventTimerImage.fillAmount = smoothTimeUpdate / eventData.time;
+            StatesManager.Instance.uiController.eventTimerImage.fillAmount = smoothTimeUpdate / eventData.time;
         }
     }
 
     protected void setupGUI()
     {
-        if (ui.eventTimerImage != null)
+        if (StatesManager.Instance.uiController.eventTimerImage != null)
         {
-            ui.eventTimerImage.fillAmount = 1;
+            StatesManager.Instance.uiController.eventTimerImage.fillAmount = 1;
         }
     }
 }

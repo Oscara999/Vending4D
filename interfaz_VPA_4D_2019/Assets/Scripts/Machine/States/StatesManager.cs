@@ -7,15 +7,15 @@ using TMPro;
 public class StatesManager : Singleton<StatesManager>
 {
     [Header("Components Settings")]
+    public UIController uiController;
+    public SegregationController segregationController;
     public LedsController ledsController;
-    public GameObject[] hands;
-    public GamePadCursor inputActions;
+    public InputController inputController;
     public Timer timer;
-    public UIController leapMotionMovementController;
     public Task skapeTask;
-    public UI ui;
+    public GameObject[] hands;
 
-    [Header("States")]
+    [Header("Machine States")]
     public KindScene kindScene;
     public ReposeState reposeState;
     public CinematicState cinematicState;
@@ -34,10 +34,11 @@ public class StatesManager : Singleton<StatesManager>
     bool paymentMade;
     [SerializeField]
     bool challengeAccepted;
-
+    [SerializeField]
+    int coins;
 
     public bool isShowing;
-    public int coins;
+
 
     public bool IsHereSomeOne { get => isHereSomeOne; set => isHereSomeOne = value; }
     public bool InCinematic { get => inCinematic; set => inCinematic = value; }
@@ -45,22 +46,16 @@ public class StatesManager : Singleton<StatesManager>
     public bool InGame { get => inGame; set => inGame = value; }
     public bool PaymentMade { get => paymentMade; set => paymentMade = value; }
 
-    void OnEnable()
-    {
-        inputActions = new GamePadCursor();
-        inputActions.Enable();
-    }
-
-    void OnDisable()
-    {
-        inputActions.Disable();
-    }
-
     void Start()
     {
         //BaseDataManager.Instance.Load();
         StartCoroutine(test());
-       // Cursor.visible = false;
+        Cursor.visible = false;
+    }
+    void FixedUpdate()
+    {
+        HandleStateMachine();
+        CoinsValidation();
     }
 
     IEnumerator test()
@@ -70,45 +65,6 @@ public class StatesManager : Singleton<StatesManager>
         Debug.Log("Is there someone");
     }
 
-    void Update()
-    {
-        CoinsValidation();
-        ControlSystem();
-    }
-
-    void ControlSystem()
-    {
-        //Si se preciona action InsertCoin recargaremos 1 coin
-        if (inputActions.Player.InsertCoin.triggered)
-        {
-            Recharge(1);
-        }
-
-        if (inputActions.Player.Menu.triggered)
-        {
-            ScenesManager.Instance.Pause();
-        }
-
-        if (inputActions.Player.Restart.triggered)
-        {
-            RestartMachine();
-        }
-
-        if (inputActions.Player.Damage.triggered)
-        {
-            if (!InGame)
-                return;
-
-            Enemy.Instance.GetDamage(25);
-        }
-
-        if (inputActions.Player.Test.triggered)
-        {
-            InCinematic = false;
-            RestartMachine();
-        }
-
-    }
     public void RestartMachine()
     {
         if (!InGame)
@@ -127,10 +83,23 @@ public class StatesManager : Singleton<StatesManager>
         skipState.exit = true;
         currentState = skipState;
     }
-
-    void FixedUpdate()
+    public void SkipMachine()
     {
-        HandleStateMachine();
+        if (!InGame)
+        {
+            currentState.ExitState();
+            SceneController.Instance.QTEManager.eventData = null;
+            SceneController.Instance.QTEManager.doFinally();
+            DialogueSystem.Instance.EndDialogue();
+        }
+        else
+        {
+            ManagerGame.Instance.QTEManager.eventData = null;
+            ManagerGame.Instance.QTEManager.doFinally();
+        }
+
+        skipState.exit = true;
+        currentState = skipState;
     }
 
     void HandleStateMachine()
@@ -180,9 +149,9 @@ public class StatesManager : Singleton<StatesManager>
 
     public IEnumerator ShowValuePanel()
     {
-        ui.valuePanel.SetActive(true);
+        uiController.valuePanel.SetActive(true);
         yield return new WaitUntil(()=> !isShowing);
-        ui.valuePanel.SetActive(false);
+        uiController.valuePanel.SetActive(false);
     }
 
     public void Segregation()
@@ -196,21 +165,21 @@ public class StatesManager : Singleton<StatesManager>
         {
             if (coins > 0)
             {
-                if (!ui.coinsText.gameObject.activeInHierarchy)
+                if (!uiController.coinsText.gameObject.activeInHierarchy)
                 {
-                    ui.coinsText.gameObject.SetActive(true);
+                    uiController.coinsText.gameObject.SetActive(true);
                 }
-                
-                ui.coinsText.text = "Coins:" + coins.ToString();
+
+                uiController.coinsText.text = "Coins:" + coins.ToString();
             }
             else
             {
-                ui.coinsText.gameObject.SetActive(false);
+                uiController.coinsText.gameObject.SetActive(false);
             }
         }
         else
         {
-            ui.coinsText.gameObject.SetActive(false);
+            uiController.coinsText.gameObject.SetActive(false);
         }
         
     }
@@ -219,31 +188,4 @@ public class StatesManager : Singleton<StatesManager>
     {
         isHereSomeOne = validation;
     }
-}
-
-[System.Serializable]
-public class UI
-{
-    [Header(" UI Settings")]
-    public Canvas canvas;
-    public GameObject[] DesingCursor;
-    public TMP_Text coinsText;
-    public GameObject eventUI;
-    public Text eventTimerText;
-    public Image eventTimerImage;
-    public GameObject crossFire;
-    public GameObject PointOnScreen;
-
-    [Header(" UI Mottis Presentation")]
-    public GameObject questPanel;
-    public GameObject pausePanel;
-    public GameObject rulesPanel;
-    public GameObject valuePanel;
-
-    [Header(" UI Game")]
-    public Text timerPanel;
-    public GameObject lifeEnemyObject;
-    public GameObject gamePanel;
-    public Slider sliderEnemyUI;
-    public Image[] lifesUI;
 }

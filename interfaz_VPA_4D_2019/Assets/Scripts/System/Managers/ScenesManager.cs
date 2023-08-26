@@ -216,7 +216,7 @@ public class ScenesManager : Singleton<ScenesManager>
 
         if (StatesManager.Instance.InGame)
         {
-            StatesManager.Instance.ui.pausePanel.SetActive(is_pause);
+            StatesManager.Instance.uiController.pausePanel.SetActive(is_pause);
         }
         else
         {

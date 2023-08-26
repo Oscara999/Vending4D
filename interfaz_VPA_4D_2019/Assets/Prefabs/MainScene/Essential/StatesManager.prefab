@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5477911701488351697}
   - component: {fileID: 1975470830729766027}
   m_Layer: 0
-  m_Name: UIController
+  m_Name: Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,15 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b435a18f1fb22eb4c872b728cac6a420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 1975470830729766027}
-  HandModelBase: {fileID: 0}
+  userInterface: {fileID: 1975470830729766027}
+  moveHandModelBase: {fileID: 0}
   speed: 10
   enabledMovement: 1
-  ScreenXy: {x: 0, y: 0}
-  positionReferenceCamera: {fileID: 0}
-  currentTime: 0
-  smoothTimeUpdate: 0
-  time: 0
+  screenXy: {x: 0, y: 0}
+  boundaryMax: {x: 0, y: 0}
+  boundaryMin: {x: 0, y: 0}
 --- !u!114 &1975470830729766027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +147,7 @@ Transform:
   - {fileID: 8178831768639153455}
   - {fileID: 8178831770624095051}
   - {fileID: 4468248496622241725}
+  - {fileID: 6778608374452822825}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -164,47 +163,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf01ed3b51f729e41836d0beb5e1dda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiController: {fileID: 7055014592926682331}
+  segregationController: {fileID: 0}
   ledsController: {fileID: 8178831770624095050}
+  inputController: {fileID: 5477911701488351697}
+  timer: {fileID: 0}
+  skapeTask: {fileID: 0}
   hands:
   - {fileID: 0}
   - {fileID: 0}
-  leapMotionMovementController: {fileID: 5477911701488351697}
-  skapeTask: {fileID: 0}
-  ui:
-    canvas: {fileID: 0}
-    DesingCursor:
-    - {fileID: 0}
-    - {fileID: 0}
-    coinsText: {fileID: 0}
-    eventUI: {fileID: 0}
-    eventTimerText: {fileID: 0}
-    eventTimerImage: {fileID: 0}
-    crossFire: {fileID: 0}
-    PointOnScreen: {fileID: 0}
-    questPanel: {fileID: 0}
-    pausePanel: {fileID: 0}
-    rulesPanel: {fileID: 0}
-    valuePanel: {fileID: 0}
-    lifeEnemyObject: {fileID: 0}
-    GamePanel: {fileID: 0}
-    sliderEnemyUI: {fileID: 0}
-    lifesUI:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
   kindScene: 0
   reposeState: {fileID: 8178831769025564153}
   cinematicState: {fileID: 8178831769065517429}
   skipState: {fileID: 8247565496963050370}
   gameState: {fileID: 8178831769806920505}
-  currentState: {fileID: 8178831769025564153}
+  currentState: {fileID: 8178831769806920505}
   inCinematic: 0
   inGame: 0
   isHereSomeOne: 0
   paymentMade: 0
   challengeAccepted: 0
-  isShowing: 0
   coins: 0
+  isShowing: 0
 --- !u!1 &8178831769025564152
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +377,71 @@ MonoBehaviour:
   nextTimeToSwitch: 0.8
   referenceImage: {fileID: 0}
   newColor: {r: 1, g: 0.13725491, b: 0, a: 1}
+--- !u!1 &8553896963719808814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6778608374452822825}
+  - component: {fileID: 7055014592926682331}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6778608374452822825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553896963719808814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8178831768890535316}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7055014592926682331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553896963719808814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690b70d63d64e8a41a80c4c226dc0661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  DesingCursor:
+  - {fileID: 0}
+  - {fileID: 0}
+  coinsText: {fileID: 0}
+  eventUI: {fileID: 0}
+  eventTimerText: {fileID: 0}
+  eventTimerImage: {fileID: 0}
+  crossFire: {fileID: 0}
+  PointOnScreen: {fileID: 0}
+  questPanel: {fileID: 0}
+  pausePanel: {fileID: 0}
+  rulesPanel: {fileID: 0}
+  valuePanel: {fileID: 0}
+  timerPanel: {fileID: 0}
+  lifeEnemyObject: {fileID: 0}
+  gamePanel: {fileID: 0}
+  sliderEnemyUI: {fileID: 0}
+  lifesUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8888531121766711525
 GameObject:
   m_ObjectHideFlags: 0

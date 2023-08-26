@@ -195,7 +195,7 @@ public class CinematicState : State
         StatesManager.Instance.ledsController.ramdom = true;
 
         yield return new WaitForSeconds(1f);
-        StatesManager.Instance.ui.questPanel.SetActive(false);
+        StatesManager.Instance.uiController.questPanel.SetActive(false);
 
         SoundManager.Instance.PlayNewSound("SelectedFinish");
 

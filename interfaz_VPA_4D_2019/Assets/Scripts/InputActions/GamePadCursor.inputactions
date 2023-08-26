@@ -31,7 +31,7 @@
                 },
                 {
                     "name": "Point",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "edd296b4-cee7-41b2-a8a9-36cf9de3d606",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -594,6 +594,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "c8474345-0207-4821-b8b8-936349dada3e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "1c38fde1-6406-4cd5-9192-761f6670db34",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -660,6 +676,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Test",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7dda6472-79f0-4fe2-9de4-22a16011f897",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6d6fa55-2a0c-4ae3-b67c-d24e4e5673ca",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

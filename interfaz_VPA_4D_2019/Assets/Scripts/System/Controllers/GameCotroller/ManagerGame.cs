@@ -78,7 +78,7 @@ public class ManagerGame : Singleton<ManagerGame>
         yield return new WaitUntil(() => !StatesManager.Instance.skapeTask.start);
         yield return new WaitUntil(() => !timeLineRutine.StatePlayable(0));
 
-        StatesManager.Instance.ui.gamePanel.SetActive(true);
+        StatesManager.Instance.uiController.gamePanel.SetActive(true);
 
         //Debug.Log("1");
         Player.Instance.StateController();
@@ -98,12 +98,12 @@ public class ManagerGame : Singleton<ManagerGame>
     {
         if (Enemy.Instance.healt.health > 0)
         {
-            StatesManager.Instance.ui.sliderEnemyUI.gameObject.SetActive(true);
-            StatesManager.Instance.ui.sliderEnemyUI.value = Enemy.Instance.healt.health;
+            StatesManager.Instance.uiController.sliderEnemyUI.gameObject.SetActive(true);
+            StatesManager.Instance.uiController.sliderEnemyUI.value = Enemy.Instance.healt.health;
         }
         else
         {
-            StatesManager.Instance.ui.sliderEnemyUI.gameObject.SetActive(false);
+            StatesManager.Instance.uiController.sliderEnemyUI.gameObject.SetActive(false);
         }
     }
 
@@ -112,14 +112,14 @@ public class ManagerGame : Singleton<ManagerGame>
         switch (Player.Instance.lifes)
         {
             case 0:
-                StatesManager.Instance.ui.lifesUI[0].gameObject.GetComponent<Animator>().SetBool("Damage", true);
+                StatesManager.Instance.uiController.lifesUI[0].gameObject.GetComponent<Animator>().SetBool("Damage", true);
                 FinishGame();
                 break;
             case 1:
-                StatesManager.Instance.ui.lifesUI[1].gameObject.GetComponent<Animator>().SetBool("Damage", true);
+                StatesManager.Instance.uiController.lifesUI[1].gameObject.GetComponent<Animator>().SetBool("Damage", true);
                 break;
             case 2:
-                StatesManager.Instance.ui.lifesUI[2].gameObject.GetComponent<Animator>().SetBool("Damage", true);
+                StatesManager.Instance.uiController.lifesUI[2].gameObject.GetComponent<Animator>().SetBool("Damage", true);
                 break;
         }
     }
@@ -127,7 +127,7 @@ public class ManagerGame : Singleton<ManagerGame>
     public void FinishGame()
     {
         //StatesManager.Instance.uIController.CrossFireState(false);
-        StatesManager.Instance.ui.sliderEnemyUI.gameObject.SetActive(false);
+        StatesManager.Instance.uiController.sliderEnemyUI.gameObject.SetActive(false);
         Enemy.Instance.IsActivate = false;
         Enemy.Instance.ChageStateAnimation();
         Player.Instance.StateController();

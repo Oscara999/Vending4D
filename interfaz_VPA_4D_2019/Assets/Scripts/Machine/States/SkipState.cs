@@ -74,7 +74,7 @@ public class SkipState : State
         }
 
         StatesManager.Instance.isShowing = false;
-        StatesManager.Instance.ui.valuePanel.SetActive(false);
+        StatesManager.Instance.uiController.valuePanel.SetActive(false);
         
         SoundManager.Instance.PauseAllSounds(true);
         exit = false;
@@ -95,12 +95,12 @@ public class SkipState : State
 
     IEnumerator EnabledRules()
     {
-        StatesManager.Instance.ui.rulesPanel.SetActive(true);
+        StatesManager.Instance.uiController.rulesPanel.SetActive(true);
         videoPlayer.Play();
         yield return new WaitUntil(() => !videoPlayer.isPlaying);
 
         yield return new WaitForSeconds(2f);
-        StatesManager.Instance.ui.rulesPanel.SetActive(false);
+        StatesManager.Instance.uiController.rulesPanel.SetActive(false);
         StatesManager.Instance.IsHereSomeOne = false;
         StatesManager.Instance.gameState.startGame = true;
         yield return new WaitForSeconds(2f);

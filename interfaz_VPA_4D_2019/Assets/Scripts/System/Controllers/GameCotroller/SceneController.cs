@@ -66,7 +66,7 @@ public class SceneController : Singleton<SceneController>
 
     public void StartQuestPanel(bool value)
     {
-        StatesManager.Instance.ui.questPanel.SetActive(value);
+        StatesManager.Instance.uiController.questPanel.SetActive(value);
     }
 
     public void StartShowPanel(float timeStart)
