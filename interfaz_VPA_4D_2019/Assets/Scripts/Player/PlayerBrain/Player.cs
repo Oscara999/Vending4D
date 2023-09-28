@@ -21,7 +21,6 @@ public class Player : Singleton<Player>
     void Start()
     {
         lifes = 3;
-        movingController = GetComponentInChildren<Movimiento_UI_Control_Juego>();
         currentTimeSpawn = timeToSpawn;
     }
 
@@ -39,6 +38,7 @@ public class Player : Singleton<Player>
             movingController.Selected();
             //Debug.Log("aqui " + movimiento.crossFire.transform.position);
             currentTimeSpawn++;
+            //MoveCamera();
         }
     }
 

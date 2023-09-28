@@ -44,7 +44,7 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Point"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""edd296b4-cee7-41b2-a8a9-36cf9de3d606"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -623,6 +623,14 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""037e079e-3212-4c18-b8ef-2e6c17a3fb23"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -711,6 +719,17 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3d06ad5-57da-4b40-9463-e2ccd9ea24b8"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -812,6 +831,7 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
         m_Player_Test = m_Player.FindAction("Test", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_Skip = m_Player.FindAction("Skip", throwIfNotFound: true);
+        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -973,6 +993,7 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Test;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_Skip;
+    private readonly InputAction m_Player_Look;
     public struct PlayerActions
     {
         private @GamePadCursor m_Wrapper;
@@ -984,6 +1005,7 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
         public InputAction @Test => m_Wrapper.m_Player_Test;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @Skip => m_Wrapper.m_Player_Skip;
+        public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1014,6 +1036,9 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                 @Skip.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkip;
                 @Skip.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkip;
                 @Skip.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkip;
+                @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1039,6 +1064,9 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
                 @Skip.started += instance.OnSkip;
                 @Skip.performed += instance.OnSkip;
                 @Skip.canceled += instance.OnSkip;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
             }
         }
     }
@@ -1119,5 +1147,6 @@ public class @GamePadCursor : IInputActionCollection, IDisposable
         void OnTest(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnSkip(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
 }

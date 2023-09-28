@@ -128,7 +128,7 @@ public class InputController : MonoBehaviour
 
     public Vector2 VirtualMousePosition()
     {
-        return virtualMouse.position.ReadValue();
+        return gamePadInput.Player.Look.ReadValue<Vector2>();
     }
 
     void VirtualMouseMovement()

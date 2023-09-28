@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Video;
 public class ReposeState : State
 {
-    public CinematicState cinematicState;
     public GameObject demoPanel;
     public VideoPlayer videoPlayer;
     public VideoClip[] videos;
@@ -29,7 +28,7 @@ public class ReposeState : State
         else
         {
             ExitState();
-            return cinematicState;
+            return StatesManager.Instance.cinematicState;
         }
     }
 
@@ -59,7 +58,7 @@ public class ReposeState : State
 
     public override void ExitState()
     {
-        cinematicState.ChangeState(1);
+        StatesManager.Instance.cinematicState.ChangeState(1);
         demoPanel.SetActive(false); 
         videoPlayer.Stop();
         SoundManager.Instance.PlayNewSound("BackGroundMainManu");
